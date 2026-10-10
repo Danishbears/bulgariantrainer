@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Статистика — Болгарский тренажёр</title>
+  <link rel="stylesheet" href="/css/styles.css"><link rel="stylesheet" href="/css/statistics.css">
+  <script type="module" src="/js/layout.js"></script><script type="module" src="/js/statistics.js"></script>
+</head>
+<body><main class="statistics-page">
+  <div class="section-heading stats-heading"><div><span class="badge">Ваш путь в цифрах</span><h1>Статистика обучения</h1>
+    <p class="intro">Результаты сохранённых занятий и ближайшие повторения.</p></div>
+    <button id="refresh" type="button" class="secondary">Обновить</button></div>
+  <p id="statistics-status" role="status" aria-live="polite" tabindex="-1">Загружаем статистику…</p>
+  <section id="statistics-content" aria-busy="true">
+    <div class="stats-grid" aria-label="Общие показатели">
+      <article class="metric"><h2>Всего слов</h2><span id="total-vocabulary" class="value">—</span><p id="vocabulary-detail">В словаре</p></article>
+      <article class="metric"><h2>Новые слова</h2><span id="new-vocabulary" class="value">—</span><p>Активные слова без оценок</p></article>
+      <article class="metric"><h2>Пора повторить</h2><span id="due-vocabulary" class="value">—</span><p>Слова с наступившим сроком</p></article>
+      <article class="metric"><h2>Освоенные слова</h2><span id="mastered-vocabulary" class="value">—</span><p>Освоены во всех трёх упражнениях со словами</p></article>
+      <article class="metric"><h2>Завершено занятий</h2><span id="completed-sessions" class="value">—</span><p>Досрочно завершённые не включены</p></article>
+      <article class="metric"><h2>Проверено ответов</h2><span id="review-attempts" class="value">—</span><p>Включая ответы в досрочных занятиях</p></article>
+      <article class="metric"><h2>Доля правильных</h2><span id="overall-accuracy" class="value">—</span><p id="overall-detail">Оценённые ответы</p></article>
+      <article class="metric"><h2>Дней подряд</h2><span id="study-streak" class="value">—</span><p>По дням UTC с оценённым ответом</p></article>
+      <article class="metric"><h2>Запланировано на сегодня</h2><span id="scheduled-today" class="value">—</span><p>Отдельные повторения слов и предложений</p></article>
+    </div>
+    <section class="panel" aria-labelledby="mode-title"><div class="section-heading"><div><h2 id="mode-title">Результаты по упражнениям</h2>
+      <p class="note">Частично правильные ответы учитываются как попытки, но не как правильные.</p></div></div>
+      <div id="mode-results" class="mode-results"></div>
+      <div id="grading-detail" class="grading-detail" aria-label="Способ оценки"></div>
+    </section>
+    <section class="panel" aria-labelledby="activity-title"><div class="section-heading"><div><h2 id="activity-title">Динамика занятий</h2>
+      <p class="note">Каждый столбец — число оценённых ответов за день по UTC.</p></div>
+      <div class="toolbar period-controls" role="group" aria-label="Период графика">
+        <button id="period-7" type="button" class="secondary" aria-pressed="true">7 дней</button>
+        <button id="period-30" type="button" class="secondary" aria-pressed="false">30 дней</button>
+      </div></div>
+      <p id="activity-summary"></p><div id="activity-chart" class="activity-chart" role="img" aria-label="Количество ответов по дням"></div>
+      <p id="activity-empty" class="empty-note" hidden>За этот период оценённых ответов пока нет.</p>
+    </section>
+    <div class="stats-columns">
+      <section class="panel" aria-labelledby="difficult-title"><h2 id="difficult-title">Слова, требующие внимания</h2>
+        <p class="note">До 20 слов с наибольшим числом неправильных ответов.</p>
+        <ol id="difficult-words" class="difficult-list"></ol>
+        <p id="difficult-empty" class="empty-note" hidden>Неправильных ответов по словам пока нет.</p>
+      </section>
+      <section class="panel" aria-labelledby="recent-title"><h2 id="recent-title">Недавние занятия</h2>
+        <ol id="recent-sessions" class="recent-list"></ol>
+        <p id="recent-empty" class="empty-note" hidden>Занятий пока нет. Начните с карточек или перевода.</p>
+      </section>
+    </div>
+    <section id="mistake-review" class="panel" hidden aria-labelledby="mistake-title">
+      <div class="section-heading"><h2 id="mistake-title" tabindex="-1">Разбор слова</h2>
+        <button id="close-review" class="secondary" type="button">Закрыть</button></div>
+      <p id="mistake-status" role="status" aria-live="polite"></p>
+      <button id="mistake-retry" class="secondary" type="button" hidden>Повторить загрузку</button>
+      <div id="mistake-content"></div>
+    </section>
+  </section>
+  <noscript>Для просмотра статистики включите JavaScript. <a href="/">На главную</a></noscript>
+</main></body></html>

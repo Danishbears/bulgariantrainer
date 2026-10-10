@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Импорт слов — Болгарский тренажёр</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/import.css">
+    <script type="module" src="/js/import.js"></script>
+    <script type="module" src="/js/layout.js"></script>
+</head>
+<body>
+<main class="import-page">
+    <span class="badge">Ваш личный словарь</span>
+    <h1>Импорт слов</h1>
+    <p>Сначала проверьте распознанные записи. Слова сохранятся только после подтверждения.</p>
+    <ol class="import-steps" aria-label="Этапы импорта"><li>1. Выберите файл</li><li>2. Проверьте слова</li><li>3. Подтвердите импорт</li></ol>
+    <section class="panel" aria-labelledby="upload-title">
+        <h2 id="upload-title">1. Выберите документ</h2>
+        <p>Файл ТХТ или CSV в кодировке UTF-8, до 1 МБ и 2000 записей.</p>
+        <details><summary>Какие форматы поддерживаются?</summary><p class="note">Поддерживаются пары «куче - собака», «куче = собака», тире и табуляция.
+            Для CSV нужны заголовки <code>bulgarian,russian,partOfSpeech</code>
+            (третий столбец необязателен). Поля с запятыми заключайте в двойные кавычки.</p></details>
+        <form id="upload-form">
+            <fieldset id="upload-fields">
+                <span id="file-label">Документ со словами</span>
+                <div class="file-picker">
+                    <input id="vocabulary-file" name="file" type="file" accept=".txt,.csv" hidden aria-labelledby="file-label">
+                    <button id="choose-file" type="button" class="secondary">Выбрать файл</button>
+                    <span id="file-name" role="status">Файл не выбран</span>
+                </div>
+                <button type="submit">Предпросмотр</button>
+            </fieldset>
+        </form>
+    </section>
+    <p id="message" role="status" aria-live="polite"></p>
+    <section id="preview" class="panel" aria-labelledby="preview-title" hidden>
+        <h2 id="preview-title">2. Проверьте и выберите записи</h2>
+        <p id="preview-description"></p>
+        <p class="note">Слева — болгарский, справа — русский. Языки не меняются местами автоматически.
+            Запятые, варианты через косую черту и примечания сохраняются целиком.
+            Сомнительные строки, заголовки, пустые записи и повторы не выбраны.</p>
+        <p class="note">Создание пропускает слова, уже имеющиеся в словаре. Чтобы дополнить найденное слово,
+            выберите «Добавить перевод». Его существующие переводы и заметки останутся прежними.
+            Повторы внутри нового файла можно дополнить после первого импорта и повторного предпросмотра.</p>
+        <fieldset id="preview-fields">
+            <div class="toolbar">
+                <label for="row-filter">Показать
+                    <select id="row-filter">
+                        <option value="all">Все записи</option>
+                        <option value="review">Требуют проверки</option>
+                        <option value="selected">Выбранные</option>
+                    </select>
+                </label>
+                <button id="select-safe" type="button" class="secondary">Выбрать только без предупреждений</button>
+                <button id="deselect-all" type="button" class="secondary">Снять все отметки</button>
+            </div>
+            <p id="selection-count" aria-live="polite"></p>
+            <div class="table-wrap" tabindex="0" role="region" aria-label="Предпросмотр слов, таблица с горизонтальной прокруткой">
+                <table>
+                    <caption>Редактируйте пары и отметьте записи для сохранения</caption>
+                    <thead><tr>
+                        <th scope="col">Выбрать</th><th scope="col">Источник</th>
+                        <th scope="col">Болгарский</th><th scope="col">Русский</th>
+                        <th scope="col">Часть речи</th><th scope="col">Проверка и действие</th>
+                    </tr></thead>
+                    <tbody id="preview-rows"></tbody>
+                </table>
+            </div>
+            <div class="pagination">
+                <button id="previous-page" type="button" class="secondary">Назад</button>
+                <span id="page-label"></span>
+                <button id="next-page" type="button" class="secondary">Далее</button>
+            </div>
+        </fieldset>
+        <p class="note">Предпросмотр действует 30 минут и сбрасывается при перезапуске приложения.
+            Если выбранная запись некорректна, весь импорт отменяется — исправьте её и повторите подтверждение.</p>
+        <button id="confirm-import" type="button">Подтвердить импорт</button>
+    </section>
+    <section id="result" class="panel" aria-labelledby="result-title" hidden>
+        <h2 id="result-title">Результат импорта</h2>
+        <p id="result-summary" role="status" aria-live="polite"></p>
+        <details><summary>Результат по каждой исходной записи</summary><ol id="result-rows"></ol></details>
+        <p>Чтобы импортировать ещё один документ, выберите файл и откройте новый предпросмотр.</p>
+        <a class="button secondary" href="/vocabulary.html">Открыть словарь</a>
+    </section>
+    <noscript>Для предпросмотра и подтверждения импорта включите JavaScript.</noscript>
+</main>
+</body>
+</html>

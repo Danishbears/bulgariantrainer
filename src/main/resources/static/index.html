@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Обзор — Болгарский тренажёр</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script type="module" src="/js/layout.js"></script>
+  <script type="module" src="/js/app.js"></script>
+</head>
+<body>
+<main class="home">
+  <section class="hero" aria-labelledby="welcome-title">
+    <div>
+      <span class="badge">Ваш путь к болгарскому</span>
+      <h1 id="welcome-title">Больше слов.<br>Ближе к языку.</h1>
+      <p class="intro">Собирайте полезные слова, сохраняйте переводы и постепенно создавайте свой личный словарь.</p>
+      <div class="toolbar"><a class="button" href="/vocabulary.html">Открыть словарь <span aria-hidden="true">→</span></a><a href="/import.html">Импортировать слова</a></div>
+    </div>
+    <div class="hero-art" aria-hidden="true"><div class="art-back"></div><div class="art-card"><span>Б б</span><small>Шаг за шагом</small></div></div>
+  </section>
+  <div class="section-heading"><h2>Ваш словарь сегодня</h2><button id="refresh-overview" class="secondary" type="button">Обновить</button></div>
+  <div id="overview" class="dashboard-metrics" aria-busy="true">
+    <section class="metric" aria-labelledby="active-title"><h2 id="active-title">Активные слова</h2><span id="active-count" class="value">—</span><p>В вашем личном словаре</p></section>
+    <section class="metric" aria-labelledby="archive-title"><h2 id="archive-title">В архиве</h2><span id="archive-count" class="value">—</span><p>Сохранены, можно восстановить</p></section>
+    <section class="metric" aria-labelledby="progress-title"><h2 id="progress-title">Пора повторить</h2><span id="due-count" class="value">—</span><p>Слов с наступившим сроком. <a href="/statistics.html">Вся статистика</a></p></section>
+  </div>
+  <p id="overview-status" role="status" aria-live="polite">Загружаем данные словаря…</p>
+  <section id="dictionary-empty" class="empty-state" hidden aria-labelledby="empty-title">
+    <h2 id="empty-title">Начните с первого слова</h2><p id="empty-description">Добавьте слово вручную или перенесите записи из вашего документа. Всё начнётся с вашего собственного словаря.</p>
+    <a class="button blue-button" href="/import.html">Импортировать документ</a>
+  </section>
+  <div class="section-heading"><h2>Практика в вашем темпе</h2><span>Карточки и ввод перевода доступны</span></div>
+  <div class="mode-grid">
+    <a class="mode-card" href="/flashcards.html"><span class="mode-icon" aria-hidden="true">▤</span><h2>Карточки</h2><p>Вспоминайте значение слова и отмечайте, насколько хорошо его знаете.</p><span class="soon">Начать или продолжить →</span></a>
+    <a class="mode-card" href="/typing.html"><span class="mode-icon" aria-hidden="true">↔</span><h2>Ввод перевода</h2><p>Практикуйте перевод с болгарского на русский и в обратную сторону.</p><span class="soon">Начать или продолжить →</span></a>
+    <a class="mode-card" href="/sentences.html"><span class="mode-icon" aria-hidden="true">≡</span><h2>Предложения</h2><p>Переводите одобренные предложения, проверяйте грамматику и оценивайте свои варианты.</p><span class="soon">Начать или продолжить →</span></a>
+  </div>
+  <section class="connection" aria-labelledby="connection-title">
+    <div><h2 id="connection-title">Связь с приложением</h2><p id="connection-status" role="status" aria-live="polite">Проверяем соединение…</p></div>
+    <button id="check-connection" class="secondary" type="button">Проверить соединение</button>
+  </section>
+  <noscript>Для загрузки словаря и навигации включите JavaScript. <a href="/vocabulary.html">Словарь</a> · <a href="/import.html">Импорт</a></noscript>
+</main>
+</body>
+</html>
+
+

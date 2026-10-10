@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Словарь — Болгарский тренажёр</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/vocabulary.css">
+  <script type="module" src="/js/vocabulary.js"></script>
+  <script type="module" src="/js/layout.js"></script>
+</head>
+<body><main class="vocabulary-page">
+  <span class="badge">Ваш личный словарь</span>
+  <h1>Словарь</h1>
+  <p>Болгарские слова, русские переводы и ваши заметки.</p>
+  <button id="new-word" type="button">Добавить слово</button>
+  <section id="editor" class="panel" hidden aria-labelledby="editor-title">
+    <h2 id="editor-title">Новое слово</h2>
+    <form id="word-form">
+      <fieldset id="editor-fields">
+        <label>Болгарское слово или выражение<input id="bulgarian" required maxlength="255" lang="bg"></label>
+        <div class="metadata">
+          <label>Часть речи<input id="word-part" maxlength="100" list="part-options"></label>
+          <label>Грамматический род<input id="gender" maxlength="100"></label>
+        </div>
+        <datalist id="part-options"><option value="существительное"></option><option value="глагол"></option><option value="прилагательное"></option><option value="наречие"></option></datalist>
+        <h3>Русские переводы</h3>
+        <p class="note">Каждый перевод — отдельное поле. Отметьте основной перевод.</p>
+        <div id="translations"></div>
+        <button id="add-translation" type="button" class="secondary">Добавить перевод</button>
+        <label>Заметки<textarea id="notes" maxlength="4000" rows="3"></textarea></label>
+        <div class="toolbar"><button type="submit">Сохранить</button><button id="cancel-edit" type="button" class="secondary">Отмена</button></div>
+      </fieldset>
+      <p id="editor-message" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+  <section class="panel" aria-label="Поиск и фильтры">
+    <form id="filters" class="filters">
+      <label>Поиск на болгарском или русском<input id="query" type="search" maxlength="255" placeholder="Например, къща или дом"></label>
+      <label>Часть речи<select id="part-filter"><option value="">Все части речи</option></select></label>
+      <label>Записи<select id="archive-filter"><option value="false">Активные</option><option value="true">Архив</option></select></label>
+      <label>На странице<select id="page-size"><option>10</option><option selected>20</option><option>50</option></select></label>
+      <button type="submit">Найти</button>
+    </form>
+  </section>
+  <p id="message" role="status" aria-live="polite"></p>
+  <button id="retry" type="button" hidden>Повторить загрузку</button>
+  <section id="results" aria-label="Слова" aria-busy="false"></section>
+  <nav class="toolbar pagination" aria-label="Страницы словаря">
+    <button id="previous" type="button" disabled>Назад</button><span id="page-info"></span><button id="next" type="button" disabled>Далее</button>
+  </nav>
+  <p class="note">Архивирование сохраняет переводы и историю обучения. Слова из архива можно восстановить.</p>
+  <noscript>Для работы со словарём включите JavaScript. <a href="/">На главную</a></noscript>
+</main></body></html>

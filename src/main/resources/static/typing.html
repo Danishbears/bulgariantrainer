@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ввод перевода — Болгарский тренажёр</title>
+  <link rel="stylesheet" href="/css/styles.css"><link rel="stylesheet" href="/css/typing.css">
+  <script type="module" src="/js/layout.js"></script><script type="module" src="/js/typing.js"></script>
+</head>
+<body><main class="practice-page">
+  <span class="badge">Активное вспоминание</span><h1>Ввод перевода</h1>
+  <p id="typing-message" role="status" tabindex="-1" aria-live="polite">Загружаем словарь…</p>
+  <button id="retry" class="secondary" hidden>Повторить запрос</button>
+  <section id="settings" class="panel">
+    <h2>Перевод в обе стороны</h2>
+    <p>30 разных слов: 15 вопросов с болгарского на русский и 15 — в обратную сторону. Порядок случайный.</p>
+    <p id="availability"></p>
+    <label for="study-scope">Режим повторения</label><select id="study-scope"><option value="MIXED">Смешанное занятие</option><option value="DUE">Пора повторить</option><option value="NEW">Новые слова</option></select>
+    <p>Введите один из переводов из вашего словаря. Регистр и лишние пробелы не влияют на оценку; написание букв имеет значение.</p>
+    <button id="start" disabled>Начать занятие</button>
+    <p><a href="/vocabulary.html">Открыть словарь</a> · <a href="/import.html">Импортировать слова</a></p>
+  </section>
+  <section id="training" class="panel" hidden aria-busy="false">
+    <div class="section-heading"><p id="question-number"></p><button id="end" class="secondary">Завершить досрочно</button></div>
+    <progress id="progress" aria-label="Прогресс занятия" max="30" value="0"></progress>
+    <p id="direction" class="badge"></p><h2 id="prompt" class="typing-prompt"></h2>
+    <form id="answer-form">
+      <label for="answer-input">Ваш перевод</label>
+      <input id="answer-input" name="answer" autocomplete="off" autocapitalize="off" spellcheck="false" required maxlength="4000" aria-describedby="answer-help">
+      <p id="answer-help">Нажмите Enter, чтобы проверить ответ.</p>
+      <button id="submit">Проверить</button>
+    </form>
+    <section id="feedback" hidden aria-labelledby="feedback-title" aria-live="polite">
+      <h3 id="feedback-title"></h3><p id="submitted-answer"></p><p id="accepted"></p>
+      <button id="next">Следующий вопрос</button>
+    </section>
+  </section>
+  <section id="summary" class="panel" hidden>
+    <h2 id="summary-title" tabindex="-1">Занятие завершено</h2><p id="summary-counts"></p>
+    <h3>Разбор ошибок</h3><p id="no-mistakes" hidden>Ошибок в сохранённых ответах нет.</p><ol id="mistakes"></ol>
+    <button id="new">Новое занятие</button>
+  </section>
+  <noscript>Для занятий включите JavaScript. <a href="/">На главную</a></noscript>
+</main></body></html>

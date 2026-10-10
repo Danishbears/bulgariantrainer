@@ -1,0 +1,14 @@
+<!doctype html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Импорт предложений — Болгарский тренажёр</title><link rel="stylesheet" href="/css/styles.css"><link rel="stylesheet" href="/css/sentences.css">
+<script type="module" src="/js/layout.js"></script><script type="module" src="/js/sentence-import.js"></script></head>
+<body><main class="import-page"><span class="badge">Проверьте перед сохранением</span><h1>Импорт предложений</h1>
+<p>Выберите CSV-файл, проверьте русский текст, болгарский перевод и варианты. Предложения сохраняются только после подтверждения.</p>
+<section class="panel"><h2>1. Файл CSV</h2><p>Поддерживается UTF-8 с BOM, стандартное CSV с кавычками и JSON-массив в столбце вариантов перевода. Максимум 1 МБ.</p>
+<form id="upload-form"><span id="sentence-file-label">Файл с предложениями</span><input id="sentence-file" type="file" accept=".csv,text/csv" hidden aria-labelledby="sentence-file-label"><div class="toolbar"><button id="choose-sentence-file" type="button" class="secondary">Выбрать файл</button><span id="selected-file-name" role="status">Файл не выбран</span></div><div class="toolbar"><button>Предпросмотр выбранного файла</button><button id="preview-project-file" type="button" class="secondary">Предпросмотр файла проекта</button></div></form></section>
+<p id="import-message" role="status" aria-live="polite" tabindex="-1"></p><button id="retry-import" class="secondary" hidden>Повторить запрос</button>
+<section id="preview" class="panel" hidden><h2>2. Проверьте записи</h2><p id="preview-count"></p>
+<p class="note">Повторы не отмечены. Некорректные строки остаются видимыми: исправьте их перед выбором. Идентификатор из файла служит только для проверки источника.</p>
+<div id="import-rows"></div><div class="pagination"><button id="previous-import-page" type="button" class="secondary">Назад</button><span id="import-page-label"></span><button id="next-import-page" type="button" class="secondary">Далее</button></div>
+<button id="confirm-import" type="button">Подтвердить выбранные записи</button></section>
+<section id="import-result" class="panel" hidden><h2>Результат импорта</h2><p id="import-summary"></p><a class="button" href="/sentences.html">Открыть предложения</a></section>
+<noscript>Для импорта предложений включите JavaScript.</noscript></main></body></html>

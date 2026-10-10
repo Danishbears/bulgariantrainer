@@ -1,0 +1,30 @@
+<!doctype html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Предложения — Болгарский тренажёр</title><link rel="stylesheet" href="/css/styles.css"><link rel="stylesheet" href="/css/sentences.css">
+<script type="module" src="/js/layout.js"></script><script type="module" src="/js/sentences.js"></script></head>
+<body><main class="practice-page"><span class="badge">Грамматика в контексте</span><h1>Перевод предложений</h1>
+<p id="sentence-message" role="status" tabindex="-1" aria-live="polite">Загрузка…</p><button id="retry" class="secondary" hidden>Повторить запрос</button>
+<section id="settings" class="panel"><h2>Перевод с русского на болгарский</h2>
+<p>Используются только сохранённые и одобренные предложения. Ответ проверяется по основному и дополнительным переводам.</p>
+ <form id="start-form"><label for="study-scope">Режим повторения</label><select id="study-scope"><option value="MIXED">Смешанное занятие</option><option value="DUE">Пора повторить</option><option value="NEW">Новые предложения</option></select><label for="session-size">Количество предложений</label><input id="session-size" type="number" min="1" max="100" value="10" required><button>Начать занятие</button></form>
+<p><a href="#manage">Управлять предложениями</a> · <a href="/sentence-import.html">Импортировать предложения</a></p></section>
+<section id="training" class="panel" hidden aria-busy="false"><div class="section-heading"><p id="question-count"></p><button id="end" class="secondary">Завершить досрочно</button></div>
+<progress id="question-progress" max="10" value="0" aria-label="Прогресс занятия"></progress><p class="badge">Русский → болгарский</p><h2 id="russian-prompt" lang="ru"></h2>
+<form id="answer-form"><label for="answer-input">Ваш перевод на болгарский</label><textarea id="answer-input" lang="bg" rows="4" maxlength="4000" required></textarea><button id="submit">Проверить</button></form>
+<section id="feedback" hidden aria-live="polite"><h3 id="feedback-heading"></h3><p id="user-answer"></p><p id="approved"></p><p id="explanation"></p>
+<fieldset id="self-rating" hidden><legend>Самооценка: сравните свой ответ с одобренными вариантами</legend><div class="toolbar"><button type="button" data-rating="CORRECT">Мой ответ правильный</button><button type="button" data-rating="PARTIAL" class="secondary">Частично правильный</button><button type="button" data-rating="INCORRECT" class="secondary">Неправильный</button></div></fieldset>
+<button id="next-question" type="button" hidden>Следующий вопрос</button></section></section>
+<section id="summary" class="panel" hidden><h2 id="summary-title" tabindex="-1">Результат занятия</h2><p id="summary-counts"></p><h3>Ваши ответы</h3><ol id="review-list"></ol><button id="new-session">Новое занятие</button></section>
+<section id="manage" class="panel"><div class="section-heading"><h2>Мои предложения</h2><a class="button secondary" href="/sentence-import.html">Импорт CSV</a></div>
+<div class="toolbar"><label for="archive-filter">Показать</label><select id="archive-filter"><option value="false">Активные</option><option value="true">Архив</option></select><button id="reload-list" type="button" class="secondary">Обновить</button></div>
+<p id="list-message" role="status" aria-live="polite"></p><div id="sentence-list" aria-busy="false"></div><div class="pagination"><button id="previous-page" class="secondary">Назад</button><span id="page-label"></span><button id="next-page" class="secondary">Далее</button></div></section>
+<section id="editor" class="panel"><h2 id="editor-title">Добавить предложение</h2><p id="editor-message" role="status" aria-live="polite"></p>
+<form id="sentence-form"><fieldset id="editor-fields"><div class="sentence-fields">
+<label for="russian-text">Русский текст<textarea id="russian-text" rows="3" maxlength="4000" required></textarea></label>
+<label for="bulgarian-text">Основной перевод на болгарский<textarea id="bulgarian-text" rows="3" maxlength="4000" required></textarea></label>
+<label for="alternatives">Другие одобренные переводы, по одному на строку<textarea id="alternatives" rows="3"></textarea></label>
+<label for="grammar">Грамматическое пояснение<textarea id="grammar" rows="3" maxlength="4000"></textarea></label>
+<label for="difficulty">Сложность<select id="difficulty"><option value="">Не указана</option><option value="1">1 — базовая</option><option value="2">2 — средняя</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></label>
+<label for="topic">Тема<input id="topic" maxlength="255"></label></div>
+<div class="panel linked-panel"><h3>Связанные слова из словаря</h3><label for="word-search">Найти болгарское слово<input id="word-search" autocomplete="off" placeholder="Поиск в словаре"></label><button id="search-words" type="button" class="secondary">Найти слова</button><div id="word-matches"></div><p id="selected-words"></p></div>
+<div class="toolbar"><button type="submit">Сохранить предложение</button><button id="cancel-edit" type="button" class="secondary" hidden>Отменить редактирование</button></div></fieldset></form></section>
+<noscript>Для занятий и управления предложениями включите JavaScript.</noscript></main></body></html>

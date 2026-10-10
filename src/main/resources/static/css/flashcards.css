@@ -1,0 +1,36 @@
+.practice-page { max-width: 1120px; }
+.session-settings { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+.session-settings label { display: flex; flex-direction: column; gap: 8px; }
+.session-toolbar { display: flex; gap: 16px; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-top: 24px; }
+.session-toolbar p { margin: 0; }
+progress { width: 100%; height: 12px; border: 0; border-radius: 12px; overflow: hidden; accent-color: var(--green); margin-top: 18px; }
+progress::-webkit-progress-bar { background: #e1ebe7; border-radius: 12px; }
+progress::-webkit-progress-value { background: var(--green); border-radius: 12px; transition: width .2s; }
+.flip-scene { perspective: 1400px; }
+.flip-card { display: grid; transform-style: preserve-3d; transition: transform .45s ease; }
+.flip-card.revealed { transform: rotateY(180deg); }
+.flip-card.resetting { transition: none; }
+.card-face { grid-area: 1 / 1; padding: 36px 28px; min-height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border: 1px solid var(--line); border-radius: 24px; background: white; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.card-back { transform: rotateY(180deg); background: #eef8f2; }
+.card-word { width: 100%; font-size: clamp(1.7rem, 4vw, 3rem); line-height: 1.25; font-weight: 650; margin: 24px 0; overflow-wrap: anywhere; }
+.card-word p { margin: 10px 0; }
+.card-controls { display: grid; justify-items: center; gap: 16px; margin-top: 24px; }
+.rating-controls { display: flex; gap: 16px; }
+.rating-controls button { min-width: 155px; }
+.keyboard-help { text-align: center; }
+kbd { font: inherit; font-size: .8rem; border: 1px solid currentColor; padding: 0 5px; border-radius: 4px; opacity: .85; }
+.summary-counts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.summary-counts p { text-align: center; background: #eef5f2; border-radius: 14px; padding: 18px 8px; }
+.summary-counts strong { display: block; font-size: 2rem; }
+#result-list { padding-left: 24px; overflow-wrap: anywhere; }
+#result-list li { padding: 10px 0; }
+#new-session { margin-top: 24px; }
+#flash-message:not(:empty) { padding: 14px; border-radius: 10px; background: #edf5f1; }
+#flash-message[data-state=error] { background: #fff1ef; }
+@media (max-width: 600px) {
+  .session-settings { grid-template-columns: 1fr; }
+  .card-face { min-height: 280px; padding: 24px 18px; }
+  .rating-controls { width: 100%; gap: 10px; }
+  .rating-controls button { min-width: 0; flex: 1; padding: 12px 10px; }
+  .summary-counts { gap: 8px; font-size: .85rem; }
+}

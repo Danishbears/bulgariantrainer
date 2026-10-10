@@ -1,0 +1,25 @@
+.vocabulary-page label { display: flex; flex-direction: column; gap: 6px; }
+.vocabulary-page input, .vocabulary-page select, .vocabulary-page textarea { width: 100%; }
+.filters { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 110px auto; gap: 16px; }
+.filters > label:first-child { grid-column: 1 / -1; }
+.filters button { align-self: end; }
+.metadata { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 16px 0; }
+#notes { margin-bottom: 16px; }
+.translation-row { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 12px; align-items: end; margin-bottom: 12px; }
+.translation-row .primary-label { flex-direction: row; align-items: center; align-self: center; font-weight: 400; }
+.primary-label input { width: auto; }
+#add-translation { margin-bottom: 20px; }
+#results { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.word-card { overflow-wrap: anywhere; display: flex; flex-direction: column; }
+.word-card h2 { font-size: 1.45rem; margin-bottom: 8px; }
+.word-card p { margin: 8px 0; white-space: pre-wrap; }
+.word-card ul { padding-left: 20px; margin: 8px 0; }
+.word-card li::marker { color: var(--green); }
+.word-card .toolbar { margin-top: auto; padding-top: 20px; }
+#results .empty-state { grid-column: 1 / -1; margin-top: 0; }
+@media (max-width: 1100px) { .filters { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) {
+  #results, .filters, .metadata { grid-template-columns: 1fr; }
+  .translation-row { grid-template-columns: 1fr auto; }
+  .translation-row > label:first-child { grid-column: 1 / -1; }
+}

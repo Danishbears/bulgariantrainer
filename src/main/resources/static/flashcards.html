@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Карточки — Болгарский тренажёр</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/flashcards.css">
+  <script type="module" src="/js/layout.js"></script>
+  <script type="module" src="/js/flashcards.js"></script>
+</head>
+<body><main class="practice-page">
+  <span class="badge">Узнавайте и запоминайте</span>
+  <h1>Карточки</h1>
+  <p class="intro">Вспомните перевод, откройте ответ и честно оцените себя.</p>
+  <p id="flash-message" role="status" aria-live="polite" tabindex="-1"></p>
+  <button id="retry-action" class="secondary" type="button" hidden>Повторить запрос</button>
+  <section id="settings" class="panel" aria-labelledby="settings-title">
+    <h2 id="settings-title">Настройте занятие</h2>
+    <form id="start-form"><fieldset id="settings-fields">
+        <div class="session-settings">
+         <label for="study-scope">Режим повторения<select id="study-scope"><option value="MIXED">Смешанное занятие</option><option value="DUE">Пора повторить</option><option value="NEW">Новые слова</option></select></label>
+        <label for="direction">Направление<select id="direction"><option value="BG_TO_RU">Болгарский → русский</option><option value="RU_TO_BG">Русский → болгарский</option><option value="MIXED">Смешанное</option></select></label>
+        <label for="session-size">Количество слов<input id="session-size" type="number" min="1" max="100" value="20" required></label>
+      </div>
+      <p class="note">От 1 до 100 слов. Если активных слов меньше, используем все доступные. Слова в занятии не повторяются.</p>
+      <button id="start-session" type="submit">Начать занятие</button>
+    </fieldset></form>
+  </section>
+  <section id="empty-dictionary" class="empty-state" hidden>
+    <h2>Пока нечего повторять</h2><p>Добавьте слова с переводами или восстановите их из архива, затем начните занятие.</p>
+    <a class="button" href="/vocabulary.html">Открыть словарь</a> <a href="/import.html">Импортировать слова</a>
+  </section>
+  <section id="training" hidden aria-label="Текущая карточка">
+    <div class="session-toolbar"><p id="session-progress" role="status"></p><button id="end-session" type="button" class="secondary">Завершить досрочно</button></div>
+    <progress id="progress" value="0" max="1" aria-label="Прогресс занятия"></progress>
+    <p id="card-direction" class="note"></p>
+    <div class="flip-scene"><div id="flashcard" class="flip-card">
+      <div id="card-front" class="card-face"><span class="badge">Вспомните перевод</span><div id="prompt" class="card-word"></div><p class="note">Откройте ответ, когда будете готовы</p></div>
+      <div id="card-back" class="card-face card-back" aria-hidden="true"><span class="badge">Перевод</span><div id="answer" class="card-word" aria-live="polite"></div><p class="note">Получилось вспомнить?</p></div>
+    </div></div>
+    <div class="card-controls">
+      <button id="reveal" type="button">Показать ответ <kbd>Пробел</kbd></button>
+      <div class="rating-controls"><button id="unknown" type="button" class="secondary" disabled><kbd>1</kbd> Не знаю</button><button id="known" type="button" disabled><kbd>2</kbd> Знаю</button></div>
+    </div>
+    <p class="note keyboard-help">Пробел — показать ответ · 1 — не знаю · 2 — знаю</p>
+    <p class="note">Оценка отражает ваше узнавание слова. Один просмотр не означает, что слово выучено.</p>
+  </section>
+  <section id="summary" class="panel" hidden aria-labelledby="summary-title">
+    <h2 id="summary-title" tabindex="-1">Результаты занятия</h2>
+    <p id="summary-description"></p>
+    <div class="summary-counts"><p><strong id="known-count"></strong>Знаю</p><p><strong id="unknown-count"></strong>Не знаю</p><p><strong id="unrated-count"></strong>Без оценки</p></div>
+    <p class="note">Это ваши оценки узнавания, а не показатель полного владения словами.</p>
+    <details><summary>Посмотреть слова занятия</summary><ol id="result-list"></ol></details>
+  </section>
+  <button id="new-session" type="button" hidden>Новое занятие</button>
+  <noscript>Для карточек включите JavaScript. <a href="/">На главную</a></noscript>
+</main></body></html>
