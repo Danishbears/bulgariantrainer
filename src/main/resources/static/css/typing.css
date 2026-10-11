@@ -1,4 +1,6 @@
 .practice-page { max-width: 900px; }
+#settings label[for="study-scope"] { display: block; margin: 20px 0 8px; }
+#settings #study-scope { display: block; width: min(100%, 320px); margin-bottom: 20px; }
 .typing-prompt { font-size: clamp(1.8rem, 5vw, 3rem); line-height: 1.3; overflow-wrap: anywhere; margin: 1.2rem 0 2rem; }
 #training progress { width: 100%; accent-color: var(--green, #199875); height: .7rem; }
 #answer-form { display: grid; gap: .65rem; }

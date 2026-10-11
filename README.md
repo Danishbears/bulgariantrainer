@@ -2,9 +2,9 @@
 
 A single-user local application for learning Bulgarian vocabulary as a Russian speaker.
 The backend provides vocabulary CRUD and search, multiple Russian translations, controlled
-Flyway migrations, and persistence models for sentences and study history. The Russian
-homepage checks connectivity and links to vocabulary management, two-step import, flashcards, and bidirectional typing practice.
-Spaced repetition scheduling, aggregate statistics, and authentication are not implemented.
+Flyway migrations, sentence management, persistent training sessions, spaced repetition,
+and learning statistics. The Russian interface connects the dashboard, two-step imports,
+three training modes, and statistics to the local REST API. Authentication is not implemented.
 
 ## Interface
 
@@ -21,7 +21,8 @@ system fonts, and vanilla ES modules. No third-party frontend libraries or remot
 - `/typing.html`: bidirectional typed recall, balanced persistent sessions, feedback, and mistake review.
 - `/sentences.html`: sentence practice and management with approved alternatives, self-assessment, linked vocabulary, and archive.
 - `/sentence-import.html`: review and confirm the supplied sentence CSV or another matching file.
-- `/statistics.html`: explicitly marked placeholder.
+  If confirmation loses its response, edits stay locked until the exact request is retried.
+- `/statistics.html`: live vocabulary, retention, accuracy, activity, and mistake-review metrics.
   No sample vocabulary, invented statistics, or simulated training results are displayed.
 
 Navigation highlights the current page. On mobile, use the **Меню** button; Escape closes it.
@@ -82,9 +83,9 @@ This endpoint reports application liveness, not a database readiness probe.
 java -jar target/bulgariantrainer-0.0.1-SNAPSHOT.jar
 ```
 
-On macOS/Linux replace `.\mvnw.cmd` with `./mvnw`. Tests cover context startup,
-health JSON, static resources, vocabulary CRUD/search/validation, duplicate prevention,
-history-safe deletion, database constraints, and migration persistence. The `test` profile
+On macOS/Linux replace `.\mvnw.cmd` with `./mvnw`. Tests cover startup and static resources,
+vocabulary CRUD and import, all three training modes, review scheduling, statistics,
+database constraints, idempotent submissions, and migration persistence. The `test` profile
 uses a separate in-memory H2 database, never the personal file database.
 
 Vocabulary manager browser smoke test (use an isolated database):
@@ -132,18 +133,18 @@ src/main/java/com/example/bulgariantrainer/
 src/main/resources/
   application.properties
   db/migration/                     # Versioned Flyway SQL migrations
-  static/index.html
-  static/css/styles.css
-  static/js/app.js                   # Vanilla JavaScript ES module
+  static/*.html                     # Dashboard, management, imports, practice, statistics
+  static/css/*.css                  # Shared and page-specific styles
+  static/js/*.js                    # Vanilla JavaScript ES modules
 src/test/java/                      # JUnit 5 / Spring Boot integration tests
 src/test/resources/application-test.properties
 ```
 
 Domain features follow `controller -> service -> repository -> database`.
 Controllers use validated request DTOs and response records. WordService owns transaction
-boundaries, normalization, primary translation selection, and deletion policy. FlashcardService
-owns durable queues, recognition ratings, and session progress. Sentence and typing practice
-still have no training endpoints.
+boundaries, normalization, primary translation selection, and deletion policy. FlashcardService,
+TypingService, and SentencePracticeService own durable queues, answers, and session progress.
+SpacedRepetitionScheduler owns review timing; StatisticsService calculates live aggregates.
 See [AGENTS.md](AGENTS.md) for contributor rules.
 
 The POM uses Spring Web MVC, Spring Data JPA, H2, Flyway, validation, and test starters.

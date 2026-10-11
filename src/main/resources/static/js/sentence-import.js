@@ -1,6 +1,17 @@
 const $ = id => document.getElementById(id);
 let preview = null, rows = [], page = 0, busy = false, pendingConfirm = null;
 const perPage = 10;
+function syncControls() {
+  const locked = busy || pendingConfirm !== null;
+  $('sentence-file').disabled = locked;
+  $('choose-sentence-file').disabled = locked;
+  $('upload-form').querySelector('button:not([type="button"])').disabled = locked;
+  $('preview-project-file').disabled = locked;
+  $('import-edit-fields').disabled = locked;
+  $('confirm-import').disabled = locked || !preview;
+  $('retry-import').hidden = pendingConfirm === null || busy;
+  $('retry-import').disabled = busy;
+}
 $('choose-sentence-file').addEventListener('click', () => $('sentence-file').click());
 $('sentence-file').addEventListener('change', () => { $('selected-file-name').textContent = $('sentence-file').files[0]?.name || 'Файл не выбран'; });
 const warningNames = {
@@ -53,6 +64,7 @@ function render() {
       field('Тема', draft.topic, v => draft.topic = v));
     card.append(heading, choose, flags, grid, source); $('import-rows').append(card);
   }
+  syncControls();
 }
 function showPreview(data) {
   preview = data;
@@ -64,21 +76,21 @@ function showPreview(data) {
   status(`Предпросмотр готов: ${rows.length} строк. Проверьте записи перед сохранением.`);
 }
 $('upload-form').addEventListener('submit', async event => {
-  event.preventDefault(); if (busy) return;
+  event.preventDefault(); if (busy || pendingConfirm) return;
   const file = $('sentence-file').files[0]; if (!file) { status('Выберите файл CSV.', true); return; }
-  busy = true; $('upload-form').querySelector('button').disabled = true; status('Читаем файл и проверяем повторы…');
+  busy = true; syncControls(); status('Читаем файл и проверяем повторы…');
   try {
     const form = new FormData(); form.append('file', file);
     showPreview(await api('/api/sentence-imports/preview', { method: 'POST', body: form }));
   } catch (error) { status(error.message, true); }
-  finally { busy = false; $('upload-form').querySelector('button').disabled = false; }
+  finally { busy = false; syncControls(); }
 });
 $('preview-project-file').addEventListener('click', async () => {
-  if (busy) return;
-  busy = true; $('preview-project-file').disabled = true; status('Читаем файл проекта…');
+  if (busy || pendingConfirm) return;
+  busy = true; syncControls(); status('Читаем файл проекта…');
   try { showPreview(await api('/api/sentence-imports/preview-initial', { method: 'POST' })); }
   catch (error) { status(error.message, true); }
-  finally { busy = false; $('preview-project-file').disabled = false; }
+  finally { busy = false; syncControls(); }
 });
 $('previous-import-page').addEventListener('click', () => { if (page > 0) { page--; render(); } });
 $('next-import-page').addEventListener('click', () => { if ((page + 1) * perPage < rows.length) { page++; render(); } });
@@ -92,7 +104,7 @@ function buildConfirm() {
 async function confirm() {
   if (busy || !preview) return;
   if (!pendingConfirm) pendingConfirm = buildConfirm();
-  busy = true; $('confirm-import').disabled = true; $('retry-import').hidden = true; status('Сохраняем выбранные предложения…');
+  busy = true; syncControls(); status('Сохраняем выбранные предложения…');
   try {
     const result = await api('/api/sentence-imports/confirm', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(pendingConfirm) });
     pendingConfirm = null; $('preview').hidden = true; $('import-result').hidden = false;
@@ -100,9 +112,10 @@ async function confirm() {
     status('Импорт завершён. Предложения доступны для занятия.');
   } catch (error) {
     if (error.definite) pendingConfirm = null;
-    else $('retry-import').hidden = false;
-    status(error.message, true); $('import-message').focus();
-  } finally { busy = false; $('confirm-import').disabled = false; }
+    status(error.definite ? error.message : 'Ответ сервера не получен. Изменения заблокированы: повторите тот же запрос, чтобы узнать результат сохранения.', true);
+    $('import-message').focus();
+  } finally { busy = false; syncControls(); }
 }
 $('confirm-import').addEventListener('click', confirm);
 $('retry-import').addEventListener('click', confirm);
+syncControls();

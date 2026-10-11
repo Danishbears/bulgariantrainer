@@ -5,7 +5,11 @@
 <p id="sentence-message" role="status" tabindex="-1" aria-live="polite">Загрузка…</p><button id="retry" class="secondary" hidden>Повторить запрос</button>
 <section id="settings" class="panel"><h2>Перевод с русского на болгарский</h2>
 <p>Используются только сохранённые и одобренные предложения. Ответ проверяется по основному и дополнительным переводам.</p>
- <form id="start-form"><label for="study-scope">Режим повторения</label><select id="study-scope"><option value="MIXED">Смешанное занятие</option><option value="DUE">Пора повторить</option><option value="NEW">Новые предложения</option></select><label for="session-size">Количество предложений</label><input id="session-size" type="number" min="1" max="100" value="10" required><button>Начать занятие</button></form>
+ <form id="start-form">
+  <div class="session-setting"><label for="study-scope">Режим повторения</label><select id="study-scope"><option value="MIXED">Смешанное занятие</option><option value="DUE">Пора повторить</option><option value="NEW">Новые предложения</option></select></div>
+  <div class="session-setting"><label for="session-size">Количество предложений</label><input id="session-size" type="number" min="1" max="100" value="10" required></div>
+  <button>Начать занятие</button>
+ </form>
 <p><a href="#manage">Управлять предложениями</a> · <a href="/sentence-import.html">Импортировать предложения</a></p></section>
 <section id="training" class="panel" hidden aria-busy="false"><div class="section-heading"><p id="question-count"></p><button id="end" class="secondary">Завершить досрочно</button></div>
 <progress id="question-progress" max="10" value="0" aria-label="Прогресс занятия"></progress><p class="badge">Русский → болгарский</p><h2 id="russian-prompt" lang="ru"></h2>
