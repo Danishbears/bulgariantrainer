@@ -1,5 +1,5 @@
 <!doctype html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Предложения — Болгарский тренажёр</title><link rel="stylesheet" href="/css/styles.css"><link rel="stylesheet" href="/css/sentences.css">
+<title>Предложения — Болгарский тренажёр</title><link rel="stylesheet" href="/css/styles.css"><link rel="stylesheet" href="/css/sentences.css"><link rel="stylesheet" href="/css/pronunciation.css">
 <script type="module" src="/js/layout.js"></script><script type="module" src="/js/sentences.js"></script></head>
 <body><main class="practice-page"><span class="badge">Грамматика в контексте</span><h1>Перевод предложений</h1>
 <p id="sentence-message" role="status" tabindex="-1" aria-live="polite">Загрузка…</p><button id="retry" class="secondary" hidden>Повторить запрос</button>
@@ -10,11 +10,11 @@
   <div class="session-setting"><label for="session-size">Количество предложений</label><input id="session-size" type="number" min="1" max="100" value="10" required></div>
   <button>Начать занятие</button>
  </form>
-<p><a href="#manage">Управлять предложениями</a> · <a href="/sentence-import.html">Импортировать предложения</a></p></section>
+<p><a href="#manage">Управлять предложениями</a> · <a href="/sentence-import.html">Импортировать предложения</a></p><div id="voice-settings"></div></section>
 <section id="training" class="panel" hidden aria-busy="false"><div class="section-heading"><p id="question-count"></p><button id="end" class="secondary">Завершить досрочно</button></div>
 <progress id="question-progress" max="10" value="0" aria-label="Прогресс занятия"></progress><p class="badge">Русский → болгарский</p><h2 id="russian-prompt" lang="ru"></h2>
 <form id="answer-form"><label for="answer-input">Ваш перевод на болгарский</label><textarea id="answer-input" lang="bg" rows="4" maxlength="4000" required></textarea><button id="submit">Проверить</button></form>
-<section id="feedback" hidden aria-live="polite"><h3 id="feedback-heading"></h3><p id="user-answer"></p><p id="approved"></p><p id="explanation"></p>
+<section id="feedback" hidden aria-live="polite"><h3 id="feedback-heading"></h3><p id="user-answer"></p><p id="approved"></p><div id="sentence-pronunciation"></div><p id="explanation"></p>
 <fieldset id="self-rating" hidden><legend>Самооценка: сравните свой ответ с одобренными вариантами</legend><div class="toolbar"><button type="button" data-rating="CORRECT">Мой ответ правильный</button><button type="button" data-rating="PARTIAL" class="secondary">Частично правильный</button><button type="button" data-rating="INCORRECT" class="secondary">Неправильный</button></div></fieldset>
 <button id="next-question" type="button" hidden>Следующий вопрос</button></section></section>
 <section id="summary" class="panel" hidden><h2 id="summary-title" tabindex="-1">Результат занятия</h2><p id="summary-counts"></p><h3>Ваши ответы</h3><ol id="review-list"></ol><button id="new-session">Новое занятие</button></section>

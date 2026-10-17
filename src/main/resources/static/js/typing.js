@@ -1,4 +1,10 @@
+import { BulgarianPronunciation, createPlaybackControls, mountVoiceSettings, typingBulgarianText } from './pronunciation.js';
+
 const $ = id => document.getElementById(id);
+const pronunciation = new BulgarianPronunciation();
+const audio = createPlaybackControls(pronunciation);
+$('pronunciation-controls').append(audio.element);
+mountVoiceSettings(pronunciation, $('voice-settings'));
 const base = '/api/typing';
 const storageKey = 'bulgariantrainer.typing';
 const errors = {
@@ -47,6 +53,7 @@ async function api(url, options = {}) {
   return response.json();
 }
 function showAvailability(data) {
+  pronunciation.stop(); audio.setText(null);
   availability = data;
   $('settings').hidden = false; $('summary').hidden = true; $('training').hidden = true;
   $('availability').textContent = data.eligibleWords === 0 ? 'В выбранном режиме пока нет доступных слов.'
@@ -63,6 +70,7 @@ async function display(data) {
   const question = data.currentQuestion;
   $('training').hidden = !question;
   if (!question) {
+    pronunciation.stop(); audio.setText(null);
     const result = await api(`${base}/sessions/${sessionId}/results`);
     $('summary-title').textContent = data.status === 'ABANDONED' ? 'Занятие завершено досрочно' : 'Занятие завершено';
     $('summary-counts').textContent = `Ответов: ${data.answeredQuestions} из ${data.totalQuestions}. Верно: ${data.correctAnswers}. Ошибок: ${data.answeredQuestions - data.correctAnswers}. Без ответа: ${data.totalQuestions - data.answeredQuestions}.`;
@@ -80,7 +88,8 @@ async function display(data) {
   $('prompt').textContent = question.prompt.join('; ');
   $('prompt').lang = question.direction === 'BG_TO_RU' ? 'bg' : 'ru';
   $('answer-input').lang = question.direction === 'BG_TO_RU' ? 'ru' : 'bg';
-  if (previousId !== question.id) $('answer-input').value = '';
+  if (previousId !== question.id) { pronunciation.stop(); $('answer-input').value = ''; }
+  audio.setText(typingBulgarianText(question));
   $('feedback').hidden = !question.feedback; $('submit').hidden = !!question.feedback;
   if (question.feedback) {
     $('answer-input').value = question.feedback.userAnswer;
@@ -127,10 +136,11 @@ $('answer-form').addEventListener('submit', event => {
   if (busy || pending || !state?.currentQuestion || state.currentQuestion.feedback) return;
   execute({ action: 'answers', sessionId, body: { questionId: state.currentQuestion.id, answer: $('answer-input').value } });
 });
-$('next').addEventListener('click', () => { if (!busy && !pending) execute({ action: 'next', sessionId, body: { questionId: state.currentQuestion.id } }); });
-$('end').addEventListener('click', () => { if (!busy && !pending) execute({ action: 'complete', sessionId }); });
+$('next').addEventListener('click', () => { if (!busy && !pending) { pronunciation.stop(); execute({ action: 'next', sessionId, body: { questionId: state.currentQuestion.id } }); } });
+$('end').addEventListener('click', () => { if (!busy && !pending) { pronunciation.stop(); execute({ action: 'complete', sessionId }); } });
 $('retry').addEventListener('click', () => { if (pending) execute(pending); });
 $('new').addEventListener('click', () => {
+  pronunciation.stop(); audio.setText(null);
   state = null; sessionId = null; pending = null; remember(); history.replaceState(null, '', '/typing.html'); execute({ action: 'availability' });
 });
 let saved = null;

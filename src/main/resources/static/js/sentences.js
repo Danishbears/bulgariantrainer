@@ -1,4 +1,23 @@
+import { BulgarianPronunciation, createPlaybackControls, mountVoiceSettings, sentenceBulgarianTexts } from './pronunciation.js';
+
 const $ = id => document.getElementById(id);
+const pronunciation = new BulgarianPronunciation();
+const sentenceAudio = [];
+mountVoiceSettings(pronunciation, $('voice-settings'));
+function clearSentenceAudio() {
+  pronunciation.stop();
+  for (const control of sentenceAudio.splice(0)) control.destroy();
+  $('sentence-pronunciation').replaceChildren();
+}
+function showSentenceAudio(question) {
+  clearSentenceAudio();
+  sentenceBulgarianTexts(question).forEach((text, index) => {
+    const row = document.createElement('div'); row.className = 'pronunciation-variant';
+    const description = document.createElement('p'); description.lang = 'bg'; description.textContent = text;
+    const control = createPlaybackControls(pronunciation, { text, label: index === 0 ? 'Основной перевод' : `Вариант ${index}` });
+    sentenceAudio.push(control); row.append(description, control.element); $('sentence-pronunciation').append(row);
+  });
+}
 const base = '/api/sentence-practice/sessions';
 const storageKey = 'bulgariantrainer.sentences';
 const errorText = {
@@ -46,9 +65,12 @@ function controls() {
   $('training').setAttribute('aria-busy', String(busy));
 }
 function resetSession() {
+  clearSentenceAudio();
   state = null; sessionId = null; pending = null; remember();
   history.replaceState(null, '', '/sentences.html');
   $('training').hidden = true; $('summary').hidden = true; $('settings').hidden = false;
+  $('manage').hidden = false; $('editor').hidden = false;
+  void loadList();
   status('sentence-message', 'Выберите размер занятия.'); controls(); $('session-size').focus();
 }
 async function display(data) {
@@ -58,7 +80,10 @@ async function display(data) {
   $('settings').hidden = true; $('summary').hidden = true;
   const q = data.currentQuestion;
   $('training').hidden = !q;
+  $('manage').hidden = !!q; $('editor').hidden = !!q;
+  if (q) $('sentence-list').replaceChildren();
   if (!q) {
+    clearSentenceAudio();
     const result = await api(`${base}/${sessionId}/results`);
     $('summary-title').textContent = data.status === 'ABANDONED' ? 'Занятие завершено досрочно' : 'Занятие завершено';
     $('summary-counts').textContent = `Оценено: ${data.answeredQuestions} из ${data.totalQuestions}. Правильно: ${data.correctAnswers}. Частично: ${data.partialAnswers}.`;
@@ -69,13 +94,16 @@ async function display(data) {
       li.textContent = `${item.russianText} — ${rating}${item.evaluationSource === 'SELF' ? ' (самооценка)' : ''}. ${item.userAnswer ? `Ваш ответ: ${item.userAnswer}. ` : ''}Одобренные варианты: ${item.acceptedAnswers.join('; ')}.${item.explanation ? ` Пояснение: ${item.explanation}` : ''}`;
       $('review-list').append(li);
     }
-    $('summary').hidden = false; status('sentence-message', 'Результаты сохранены.'); $('summary-title').focus(); return;
+    $('summary').hidden = false; status('sentence-message', 'Результаты сохранены.'); $('summary-title').focus();
+    void loadList();
+    return;
   }
   $('question-count').textContent = `Предложение ${q.position} из ${data.totalQuestions} · Оценено: ${data.answeredQuestions}`;
   $('question-progress').max = data.totalQuestions; $('question-progress').value = data.answeredQuestions;
   $('russian-prompt').textContent = q.russianText;
   if (previous !== q.id) $('answer-input').value = '';
   $('feedback').hidden = !q.feedback; $('submit').hidden = !!q.feedback;
+  if (previous !== q.id || !q.feedback) clearSentenceAudio();
   if (q.feedback) {
     const feedback = q.feedback;
     $('answer-input').value = feedback.userAnswer;
@@ -83,6 +111,7 @@ async function display(data) {
     $('feedback-heading').textContent = feedback.needsSelfAssessment ? 'Проверьте свой вариант' : feedback.result === 'CORRECT' ? 'Совпало с одобренным переводом' : feedback.result === 'PARTIAL' ? 'Частично правильно — ваша самооценка' : 'Неправильно — ваша самооценка';
     $('user-answer').textContent = `Ваш ответ: ${feedback.userAnswer}`;
     $('approved').textContent = `Одобренные варианты: ${feedback.acceptedAnswers.join('; ')}`;
+    showSentenceAudio(q);
     $('explanation').textContent = feedback.explanation ? `Пояснение: ${feedback.explanation}` : '';
     $('self-rating').hidden = !feedback.needsSelfAssessment;
     $('next-question').hidden = feedback.needsSelfAssessment;
@@ -111,14 +140,15 @@ async function execute(operation) {
 $('start-form').addEventListener('submit', event => { event.preventDefault(); if (busy || pending) return; execute({ action: 'start', body: { requestId: crypto.randomUUID(), size: Number($('session-size').value), scope: $('study-scope').value } }); });
 $('answer-form').addEventListener('submit', event => { event.preventDefault(); if (busy || pending || !state?.currentQuestion || state.currentQuestion.feedback) return; execute({ action: 'answers', sessionId, body: { questionId: state.currentQuestion.id, answer: $('answer-input').value } }); });
 $('self-rating').addEventListener('click', event => { const rating = event.target.closest('[data-rating]'); if (rating && !busy && !pending) execute({ action: 'self-rating', sessionId, body: { questionId: state.currentQuestion.id, result: rating.dataset.rating } }); });
-$('next-question').addEventListener('click', () => { if (!busy && !pending) execute({ action: 'next', sessionId, body: { questionId: state.currentQuestion.id } }); });
-$('end').addEventListener('click', () => { if (!busy && !pending) execute({ action: 'complete', sessionId }); });
+$('next-question').addEventListener('click', () => { if (!busy && !pending) { clearSentenceAudio(); execute({ action: 'next', sessionId, body: { questionId: state.currentQuestion.id } }); } });
+$('end').addEventListener('click', () => { if (!busy && !pending) { clearSentenceAudio(); execute({ action: 'complete', sessionId }); } });
 $('new-session').addEventListener('click', resetSession);
 $('retry').addEventListener('click', () => { if (pending) execute(pending); });
 let saved = null; try { saved = JSON.parse(localStorage.getItem(storageKey)); } catch { /* Optional storage. */ }
 const requested = new URLSearchParams(location.search).get('session');
 if (requested && /^\d+$/.test(requested) && Number(requested) > 0) sessionId = Number(requested);
 else if (Number.isSafeInteger(saved?.sessionId) && saved.sessionId > 0) sessionId = saved.sessionId;
+if (sessionId) { $('manage').hidden = true; $('editor').hidden = true; }
 if (saved?.pending && (!requested || String(saved.sessionId) === requested) && ['start', 'load', 'answers', 'self-rating', 'next', 'complete'].includes(saved.pending.action)) {
   pending = saved.pending; $('settings').hidden = !!sessionId;
   status('sentence-message', 'Незавершённый запрос. Нажмите «Повторить запрос» для безопасного восстановления.', true); controls();
@@ -126,10 +156,12 @@ if (saved?.pending && (!requested || String(saved.sessionId) === requested) && [
 
 let listPage = 0, listPages = 0, editingId = null, selectedWords = new Map(), listBusy = false;
 async function loadList() {
+  if (state?.currentQuestion) return;
   if (listBusy) return; listBusy = true; $('sentence-list').setAttribute('aria-busy', 'true');
   status('list-message', 'Загружаем предложения…');
   try {
     const data = await api(`/api/sentences?archived=${$('archive-filter').value}&page=${listPage}&size=10`);
+    if (state?.currentQuestion) { $('sentence-list').replaceChildren(); return; }
     if (listPage >= data.totalPages && listPage > 0) { listPage = Math.max(0, data.totalPages - 1); listBusy = false; return loadList(); }
     listPages = data.totalPages; $('sentence-list').replaceChildren();
     if (!data.content.length) { const p = document.createElement('p'); p.textContent = $('archive-filter').value === 'true' ? 'Архив предложений пуст.' : 'Предложений пока нет. Добавьте их или импортируйте CSV.'; $('sentence-list').append(p); }
@@ -206,4 +238,4 @@ $('archive-filter').addEventListener('change', () => { listPage = 0; loadList();
 $('reload-list').addEventListener('click', loadList);
 $('previous-page').addEventListener('click', () => { if (listPage > 0) { listPage--; loadList(); } });
 $('next-page').addEventListener('click', () => { if (listPage + 1 < listPages) { listPage++; loadList(); } });
-renderSelectedWords(); loadList();
+renderSelectedWords(); if (!sessionId) loadList();

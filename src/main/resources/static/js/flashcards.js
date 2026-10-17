@@ -1,4 +1,10 @@
+import { BulgarianPronunciation, createPlaybackControls, flashcardBulgarianText, mountVoiceSettings } from './pronunciation.js';
+
 const $ = id => document.getElementById(id);
+const pronunciation = new BulgarianPronunciation();
+const audio = createPlaybackControls(pronunciation);
+$('pronunciation-controls').append(audio.element);
+mountVoiceSettings(pronunciation, $('voice-settings'));
 const base = '/api/flashcards/sessions';
 const storageKey = 'bulgariantrainer.flashcards';
 const errors = {
@@ -61,6 +67,7 @@ async function display(data) {
   $('training').hidden = data.status !== 'IN_PROGRESS';
   $('new-session').hidden = data.status === 'IN_PROGRESS';
   if (data.status !== 'IN_PROGRESS') {
+    pronunciation.stop(); audio.setText(null);
     message('Загружаем результаты…');
     const result = await api(`${base}/${sessionId}/results`);
     $('summary-title').textContent = result.session.status === 'ABANDONED' ? 'Занятие завершено досрочно' : 'Занятие завершено';
@@ -85,6 +92,7 @@ async function display(data) {
   $('prompt').lang = question.direction === 'BG_TO_RU' ? 'bg' : 'ru';
   $('answer').lang = question.direction === 'BG_TO_RU' ? 'ru' : 'bg';
   const changed = previousQuestion !== question.id;
+  if (changed) pronunciation.stop();
   if (changed) $('flashcard').classList.add('resetting');
   lines($('prompt'), question.prompt); lines($('answer'), question.answer);
   $('flashcard').classList.toggle('revealed', question.revealed);
@@ -93,6 +101,7 @@ async function display(data) {
   $('reveal').hidden = question.revealed;
   if (changed) { void $('flashcard').offsetWidth; $('flashcard').classList.remove('resetting'); }
   previousQuestion = question.id;
+  audio.setText(flashcardBulgarianText(question));
   message(question.revealed ? 'Оцените, удалось ли вспомнить перевод.' : 'Вспомните перевод и откройте ответ.');
 }
 async function execute(operation) {
@@ -130,21 +139,23 @@ function reveal() {
 }
 function rate(known) {
   if (busy || pending || !state?.currentQuestion?.revealed) return;
+  pronunciation.stop();
   execute({ action: 'ratings', sessionId, body: { questionId: state.currentQuestion.id, known } });
 }
 $('reveal').addEventListener('click', reveal);
 $('unknown').addEventListener('click', () => rate(false));
 $('known').addEventListener('click', () => rate(true));
-$('end-session').addEventListener('click', () => { if (!busy && !pending) execute({ action: 'complete', sessionId }); });
+$('end-session').addEventListener('click', () => { if (!busy && !pending) { pronunciation.stop(); execute({ action: 'complete', sessionId }); } });
 $('retry-action').addEventListener('click', () => { if (pending) execute(pending); });
 $('new-session').addEventListener('click', () => {
+  pronunciation.stop(); audio.setText(null);
   state = null; sessionId = null; pending = null; previousQuestion = null; remember();
   history.replaceState(null, '', '/flashcards.html');
   $('summary').hidden = true; $('new-session').hidden = true; $('settings').hidden = false;
   message(''); controls(); $('direction').focus();
 });
 document.addEventListener('keydown', event => {
-  if ($('training').hidden || busy || pending || event.altKey || event.ctrlKey || event.metaKey || event.target.closest('input,select,textarea,a,[contenteditable=true],summary,.site-sidebar')) return;
+  if ($('training').hidden || busy || pending || event.altKey || event.ctrlKey || event.metaKey || event.target.closest('button,input,select,textarea,a,[contenteditable=true],summary,.site-sidebar')) return;
   if (event.code === 'Space' || event.key === '1' || event.key === '2') {
     event.preventDefault();
     if (event.repeat || busy || pending) return;

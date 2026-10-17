@@ -6,6 +6,7 @@
   <title>Карточки — Болгарский тренажёр</title>
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="/css/flashcards.css">
+  <link rel="stylesheet" href="/css/pronunciation.css">
   <script type="module" src="/js/layout.js"></script>
   <script type="module" src="/js/flashcards.js"></script>
 </head>
@@ -26,6 +27,7 @@
       <p class="note">От 1 до 100 слов. Если активных слов меньше, используем все доступные. Слова в занятии не повторяются.</p>
       <button id="start-session" type="submit">Начать занятие</button>
     </fieldset></form>
+    <div id="voice-settings"></div>
   </section>
   <section id="empty-dictionary" class="empty-state" hidden>
     <h2>Пока нечего повторять</h2><p>Добавьте слова с переводами или восстановите их из архива, затем начните занятие.</p>
@@ -39,6 +41,7 @@
       <div id="card-front" class="card-face"><span class="badge">Вспомните перевод</span><div id="prompt" class="card-word"></div><p class="note">Откройте ответ, когда будете готовы</p></div>
       <div id="card-back" class="card-face card-back" aria-hidden="true"><span class="badge">Перевод</span><div id="answer" class="card-word" aria-live="polite"></div><p class="note">Получилось вспомнить?</p></div>
     </div></div>
+    <div id="pronunciation-controls"></div>
     <div class="card-controls">
       <button id="reveal" type="button">Показать ответ <kbd>Пробел</kbd></button>
       <div class="rating-controls"><button id="unknown" type="button" class="secondary" disabled><kbd>1</kbd> Не знаю</button><button id="known" type="button" disabled><kbd>2</kbd> Знаю</button></div>

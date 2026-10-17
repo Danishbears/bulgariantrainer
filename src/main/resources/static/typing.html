@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ввод перевода — Болгарский тренажёр</title>
-  <link rel="stylesheet" href="/css/styles.css"><link rel="stylesheet" href="/css/typing.css">
+  <link rel="stylesheet" href="/css/styles.css"><link rel="stylesheet" href="/css/typing.css"><link rel="stylesheet" href="/css/pronunciation.css">
   <script type="module" src="/js/layout.js"></script><script type="module" src="/js/typing.js"></script>
 </head>
 <body><main class="practice-page">
@@ -18,11 +18,13 @@
     <p>Введите один из переводов из вашего словаря. Регистр и лишние пробелы не влияют на оценку; написание букв имеет значение.</p>
     <button id="start" disabled>Начать занятие</button>
     <p><a href="/vocabulary.html">Открыть словарь</a> · <a href="/import.html">Импортировать слова</a></p>
+    <div id="voice-settings"></div>
   </section>
   <section id="training" class="panel" hidden aria-busy="false">
     <div class="section-heading"><p id="question-number"></p><button id="end" class="secondary">Завершить досрочно</button></div>
     <progress id="progress" aria-label="Прогресс занятия" max="30" value="0"></progress>
     <p id="direction" class="badge"></p><h2 id="prompt" class="typing-prompt"></h2>
+    <div id="pronunciation-controls"></div>
     <form id="answer-form">
       <label for="answer-input">Ваш перевод</label>
       <input id="answer-input" name="answer" autocomplete="off" autocapitalize="off" spellcheck="false" required maxlength="4000" aria-describedby="answer-help">

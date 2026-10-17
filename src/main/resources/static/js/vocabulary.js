@@ -1,4 +1,9 @@
+import { BulgarianPronunciation, createPlaybackControls, mountVoiceSettings } from './pronunciation.js';
+
 const $ = id => document.getElementById(id);
+const pronunciation = new BulgarianPronunciation();
+const audioControls = [];
+mountVoiceSettings(pronunciation, $('voice-settings'));
 const labels = { noun: 'Существительное', verb: 'Глагол', adjective: 'Прилагательное', adverb: 'Наречие', pronoun: 'Местоимение', preposition: 'Предлог', conjunction: 'Союз', interjection: 'Междометие', numeral: 'Числительное', masculine: 'Мужской', feminine: 'Женский', neuter: 'Средний' };
 const display = text => labels[text?.toLowerCase()] || text;
 let page = 0, totalPages = 0, editingId = null, requestNumber = 0, saving = false;
@@ -47,6 +52,7 @@ async function loadParts() {
 async function loadWords(notice = '') {
   const version = ++requestNumber;
   $('results').setAttribute('aria-busy', 'true');
+  for (const control of audioControls.splice(0)) control.destroy();
   $('results').replaceChildren();
   $('previous').disabled = true; $('next').disabled = true; $('retry').hidden = true;
   message('message', 'Загрузка слов…');
@@ -79,6 +85,8 @@ async function loadWords(notice = '') {
 function renderWord(word) {
   const card = document.createElement('article'); card.className = 'word-card';
   const title = document.createElement('h2'); title.textContent = word.bulgarianText; title.lang = 'bg'; card.append(title);
+  const audio = createPlaybackControls(pronunciation, { text: word.bulgarianText, label: word.bulgarianText });
+  audioControls.push(audio); card.append(audio.element);
   const translations = document.createElement('ul');
   for (const translation of word.translations) {
     const item = document.createElement('li'); item.textContent = translation.russianText + (translation.isPrimary ? ' — основной' : ''); translations.append(item);

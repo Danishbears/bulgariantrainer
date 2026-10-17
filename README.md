@@ -464,4 +464,29 @@ Definitions used by the API and page:
   active and abandoned sessions; their answered/correct values are derived
   from finalized attempt rows.
 
+## Bulgarian pronunciation
+
+The vocabulary list, flashcards, typing practice, and sentence practice use
+the browser Web Speech API. Pronunciation starts only when you activate
+**Прослушать** or **Медленно**; the latter uses a rate of 0.5 (half the normal rate). Use
+**Остановить** to cancel playback. The browser must provide a voice whose
+language is `bg` or begins with `bg-`. No other language is substituted.
+Open **Настройки произношения** to retry voice discovery or, when multiple
+Bulgarian voices exist, select one. The choice is saved in this browser's
+local storage; if that voice disappears, another available Bulgarian voice
+is used. The app does not save audio or send speech text to its own service.
+Depending on the browser and selected voice, speech synthesis may use a
+remote service, so offline playback is not guaranteed.
+
+To check audible pronunciation, enable a Bulgarian voice in the device's
+speech settings, open `/vocabulary.html`, and play a word. Check normal and
+slow playback, replay, stop, and the voice selector. On flashcards and typing
+questions in the Russian-to-Bulgarian direction, the audio controls appear
+only after the Bulgarian answer is revealed or submitted. In sentence
+practice, submit an answer before playing the reference translation or an
+approved alternative. If no voice appears immediately, wait briefly and use
+**Повторить поиск голосов**. Automated browser mocks test the application
+logic, but cannot verify the device's voice quality or audible output. Run
+`node --test src/test/js/pronunciation.test.mjs` for the focused mock tests.
+
 
