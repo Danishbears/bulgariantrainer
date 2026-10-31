@@ -21,6 +21,10 @@ import java.util.Map;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
+    @ExceptionHandler(AspectPairException.class)
+    ResponseEntity<ApiError> aspectPairFailure(AspectPairException exception) {
+        return error(exception.getStatus(), exception.getCode(), exception.getMessage(), Map.of());
+    }
     @ExceptionHandler(SentenceException.class)
     ResponseEntity<ApiError> sentenceFailure(SentenceException exception) {
         return error(exception.getStatus(), exception.getCode(), exception.getMessage(), Map.of());
@@ -81,7 +85,8 @@ public class GlobalExceptionHandler {
         return error(400, "INVALID_REQUEST", "Invalid request body or query parameters", Map.of());
     }
 
-    @ExceptionHandler({DataIntegrityViolationException.class, PessimisticLockingFailureException.class})
+    @ExceptionHandler({DataIntegrityViolationException.class, PessimisticLockingFailureException.class,
+            org.springframework.dao.OptimisticLockingFailureException.class})
     ResponseEntity<ApiError> integrity(Exception exception) {
         return error(409, "DATA_CONFLICT",
                 "The operation conflicts with existing data. No changes were saved.", Map.of());

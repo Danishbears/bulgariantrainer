@@ -62,4 +62,21 @@ class SpacedRepetitionSchedulerTests {
         assertThat(record.getTotalAttempts()).isEqualTo(3);
         assertThat(record.getNextReviewAt()).isEqualTo(now.plus(Duration.ofDays(1)));
     }
+
+    @Test void aspectSchedulesUseSameIntervalsAndKeepDirectionsIndependent() {
+        AspectPair pair=new AspectPair(new AspectDataset("test"),"one");
+        AspectProgress forward=new AspectProgress(pair,AspectDirection.IMPERFECTIVE_TO_PERFECTIVE);
+        AspectProgress reverse=new AspectProgress(pair,AspectDirection.PERFECTIVE_TO_IMPERFECTIVE);
+        for(int interval:new int[]{1,3,7,14,28,56,112,224,365,365}){
+            scheduler.record(forward,true);
+            assertThat(forward.getRepetitionInterval()).isEqualTo(interval);
+        }
+        assertThat(scheduler.category(forward,now)).isEqualTo(LearningCategory.MASTERED);
+        assertThat(scheduler.category(forward,forward.getNextReviewAt())).isEqualTo(LearningCategory.DUE);
+        scheduler.record(forward,false);
+        assertThat(forward.getConsecutiveCorrect()).isZero();assertThat(forward.getSuccessfulReviewCount()).isEqualTo(10);
+        assertThat(forward.getNextReviewAt()).isEqualTo(now.plus(Duration.ofDays(1)));
+        assertThat(scheduler.category(reverse,now)).isEqualTo(LearningCategory.NEW);
+        assertThat(reverse.getTotalAttempts()).isZero();
+    }
 }

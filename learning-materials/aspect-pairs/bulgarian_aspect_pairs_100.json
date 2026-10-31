@@ -1,0 +1,2304 @@
+{
+  "format": "bulgariantrainer.aspect-pairs",
+  "formatVersion": 1,
+  "language": "bg",
+  "translationLanguage": "ru",
+  "createdOn": "2026-10-30",
+  "entryForm": "1st_person_singular_present_citation_form",
+  "sources": [
+    {
+      "id": "lesson13",
+      "title": "Урок 13 (ниво А2). Свършен и несвършен вид на глагола",
+      "url": "https://docs.google.com/presentation/d/1WgMUvekEtZHVHr00sd3g_OdE7hz3yfaO/edit",
+      "accessedOn": "2026-10-30",
+      "extractedTableRows": 56
+    }
+  ],
+  "editorialStatus": "Учебный набор: 56 строк источника нормализованы, 44 пары добавлены составителем. Дополнения не выдаются за материал презентации. Независимая словарная проверка всех дополнений не выполнена.",
+  "entries": [
+    {
+      "id": "bgasp-001",
+      "imperfective": "вземам",
+      "perfective": "взема",
+      "russianImperfective": "брать",
+      "russianPerfective": "взять",
+      "topic": "Быт",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Вариант НСВ: взимам.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 1
+      },
+      "acceptedImperfective": [
+        "вземам",
+        "взимам"
+      ],
+      "acceptedPerfective": [
+        "взема"
+      ],
+      "examples": {
+        "imperfective": {
+          "bg": "Всеки ден вземам автобуса до работа.",
+          "ru": "Каждый день я еду на работу на автобусе."
+        },
+        "perfective": {
+          "bg": "Утре ще взема автобуса до работа.",
+          "ru": "Завтра я поеду на работу на автобусе."
+        }
+      }
+    },
+    {
+      "id": "bgasp-002",
+      "imperfective": "влизам",
+      "perfective": "вляза",
+      "russianImperfective": "входить",
+      "russianPerfective": "войти",
+      "topic": "Движение",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Чередование: вляза, влезеш, влязат.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 2
+      },
+      "acceptedImperfective": [
+        "влизам"
+      ],
+      "acceptedPerfective": [
+        "вляза"
+      ]
+    },
+    {
+      "id": "bgasp-003",
+      "imperfective": "виждам",
+      "perfective": "видя",
+      "russianImperfective": "видеть",
+      "russianPerfective": "увидеть",
+      "topic": "Восприятие",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 3
+      },
+      "acceptedImperfective": [
+        "виждам"
+      ],
+      "acceptedPerfective": [
+        "видя"
+      ]
+    },
+    {
+      "id": "bgasp-004",
+      "imperfective": "идвам",
+      "perfective": "дойда",
+      "russianImperfective": "приходить",
+      "russianPerfective": "прийти",
+      "topic": "Движение",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Разные основы. Не заменять дойда на отида: различается направление движения.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 4
+      },
+      "acceptedImperfective": [
+        "идвам"
+      ],
+      "acceptedPerfective": [
+        "дойда"
+      ]
+    },
+    {
+      "id": "bgasp-005",
+      "imperfective": "донасям",
+      "perfective": "донеса",
+      "russianImperfective": "приносить",
+      "russianPerfective": "принести",
+      "topic": "Быт",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "В презентации также нося. Нося означает носить и не равно донасям во всех контекстах.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 5
+      },
+      "acceptedImperfective": [
+        "донасям"
+      ],
+      "acceptedPerfective": [
+        "донеса"
+      ],
+      "examples": {
+        "imperfective": {
+          "bg": "Често донасям храна на сестра си.",
+          "ru": "Я часто приношу еду своей сестре."
+        },
+        "perfective": {
+          "bg": "Утре ще донеса храна на сестра си.",
+          "ru": "Завтра я принесу еду своей сестре."
+        }
+      }
+    },
+    {
+      "id": "bgasp-006",
+      "imperfective": "запалвам",
+      "perfective": "запаля",
+      "russianImperfective": "зажигать",
+      "russianPerfective": "зажечь",
+      "topic": "Быт",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 6
+      },
+      "acceptedImperfective": [
+        "запалвам"
+      ],
+      "acceptedPerfective": [
+        "запаля"
+      ]
+    },
+    {
+      "id": "bgasp-007",
+      "imperfective": "започвам",
+      "perfective": "започна",
+      "russianImperfective": "начинать",
+      "russianPerfective": "начать",
+      "topic": "Действия",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 7
+      },
+      "acceptedImperfective": [
+        "започвам"
+      ],
+      "acceptedPerfective": [
+        "започна"
+      ]
+    },
+    {
+      "id": "bgasp-008",
+      "imperfective": "извличам",
+      "perfective": "извлека",
+      "russianImperfective": "извлекать",
+      "russianPerfective": "извлечь",
+      "topic": "Действия",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Чередование: извлека, извлечеш.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 8
+      },
+      "acceptedImperfective": [
+        "извличам"
+      ],
+      "acceptedPerfective": [
+        "извлека"
+      ]
+    },
+    {
+      "id": "bgasp-009",
+      "imperfective": "излизам",
+      "perfective": "изляза",
+      "russianImperfective": "выходить",
+      "russianPerfective": "выйти",
+      "topic": "Движение",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Изляза, излезеш, излязат.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 9
+      },
+      "acceptedImperfective": [
+        "излизам"
+      ],
+      "acceptedPerfective": [
+        "изляза"
+      ]
+    },
+    {
+      "id": "bgasp-010",
+      "imperfective": "пея",
+      "perfective": "изпея",
+      "russianImperfective": "петь",
+      "russianPerfective": "спеть",
+      "topic": "Досуг",
+      "studyStage": 2,
+      "relationType": "resultative",
+      "note": "Спеть песню целиком. НСВ с той же приставкой: изпявам.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 10
+      },
+      "acceptedImperfective": [
+        "пея",
+        "изпявам"
+      ],
+      "acceptedPerfective": [
+        "изпея"
+      ]
+    },
+    {
+      "id": "bgasp-011",
+      "imperfective": "пия",
+      "perfective": "изпия",
+      "russianImperfective": "пить",
+      "russianPerfective": "выпить",
+      "topic": "Еда",
+      "studyStage": 2,
+      "relationType": "resultative",
+      "note": "Выпить определённое количество целиком. НСВ с той же приставкой: изпивам.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 11
+      },
+      "acceptedImperfective": [
+        "пия",
+        "изпивам"
+      ],
+      "acceptedPerfective": [
+        "изпия"
+      ],
+      "examples": {
+        "imperfective": {
+          "bg": "Сега пия чаша вода.",
+          "ru": "Сейчас я пью стакан воды."
+        },
+        "perfective": {
+          "bg": "След малко ще изпия тази чаша вода.",
+          "ru": "Скоро я выпью этот стакан воды."
+        }
+      }
+    },
+    {
+      "id": "bgasp-012",
+      "imperfective": "казвам",
+      "perfective": "кажа",
+      "russianImperfective": "говорить; сообщать",
+      "russianPerfective": "сказать; сообщить",
+      "topic": "Общение",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Говорить здесь в значении сообщать что-либо, не владеть языком.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 12
+      },
+      "acceptedImperfective": [
+        "казвам"
+      ],
+      "acceptedPerfective": [
+        "кажа"
+      ]
+    },
+    {
+      "id": "bgasp-013",
+      "imperfective": "качвам се",
+      "perfective": "кача се",
+      "russianImperfective": "подниматься; садиться в транспорт",
+      "russianPerfective": "подняться; сесть в транспорт",
+      "topic": "Движение",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Сохранять се. Качвам без се — поднимать или загружать что-либо.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 13
+      },
+      "acceptedImperfective": [
+        "качвам се"
+      ],
+      "acceptedPerfective": [
+        "кача се"
+      ]
+    },
+    {
+      "id": "bgasp-014",
+      "imperfective": "лягам",
+      "perfective": "легна",
+      "russianImperfective": "ложиться",
+      "russianPerfective": "лечь",
+      "topic": "Быт",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "В презентации также лежа. Лежа — находиться лёжа, а лягам — принимать это положение.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 14
+      },
+      "acceptedImperfective": [
+        "лягам"
+      ],
+      "acceptedPerfective": [
+        "легна"
+      ],
+      "examples": {
+        "imperfective": {
+          "bg": "Обикновено лягам в единадесет.",
+          "ru": "Обычно я ложусь в одиннадцать."
+        },
+        "perfective": {
+          "bg": "Довечера ще легна по-рано.",
+          "ru": "Сегодня вечером я лягу раньше."
+        }
+      }
+    },
+    {
+      "id": "bgasp-015",
+      "imperfective": "пиша",
+      "perfective": "напиша",
+      "russianImperfective": "писать",
+      "russianPerfective": "написать",
+      "topic": "Учёба",
+      "studyStage": 2,
+      "relationType": "resultative",
+      "note": "Создать законченный текст. НСВ с той же приставкой: написвам.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 15
+      },
+      "acceptedImperfective": [
+        "пиша",
+        "написвам"
+      ],
+      "acceptedPerfective": [
+        "напиша"
+      ]
+    },
+    {
+      "id": "bgasp-016",
+      "imperfective": "правя",
+      "perfective": "направя",
+      "russianImperfective": "делать",
+      "russianPerfective": "сделать",
+      "topic": "Действия",
+      "studyStage": 2,
+      "relationType": "resultative",
+      "note": "Обозначает завершённое действие или результат.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 16
+      },
+      "acceptedImperfective": [
+        "правя"
+      ],
+      "acceptedPerfective": [
+        "направя"
+      ]
+    },
+    {
+      "id": "bgasp-017",
+      "imperfective": "напускам",
+      "perfective": "напусна",
+      "russianImperfective": "покидать",
+      "russianPerfective": "покинуть",
+      "topic": "Движение",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 17
+      },
+      "acceptedImperfective": [
+        "напускам"
+      ],
+      "acceptedPerfective": [
+        "напусна"
+      ]
+    },
+    {
+      "id": "bgasp-018",
+      "imperfective": "научавам",
+      "perfective": "науча",
+      "russianImperfective": "выучивать; узнавать",
+      "russianPerfective": "выучить; узнать",
+      "topic": "Учёба",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "В презентации также уча. Уча — учить или изучать; научавам — узнавать или выучивать. Контекст значения обязателен.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 18
+      },
+      "acceptedImperfective": [
+        "научавам"
+      ],
+      "acceptedPerfective": [
+        "науча"
+      ]
+    },
+    {
+      "id": "bgasp-019",
+      "imperfective": "обаждам се",
+      "perfective": "обадя се",
+      "russianImperfective": "звонить; давать о себе знать",
+      "russianPerfective": "позвонить; дать о себе знать",
+      "topic": "Общение",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Обаждам се на някого. Сохранять се.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 19
+      },
+      "acceptedImperfective": [
+        "обаждам се"
+      ],
+      "acceptedPerfective": [
+        "обадя се"
+      ]
+    },
+    {
+      "id": "bgasp-020",
+      "imperfective": "обличам се",
+      "perfective": "облека се",
+      "russianImperfective": "одеваться",
+      "russianPerfective": "одеться",
+      "topic": "Быт",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Облека се, облечеш се. Без се — одевать кого-либо.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 20
+      },
+      "acceptedImperfective": [
+        "обличам се"
+      ],
+      "acceptedPerfective": [
+        "облека се"
+      ]
+    },
+    {
+      "id": "bgasp-021",
+      "imperfective": "опитвам се",
+      "perfective": "опитам се",
+      "russianImperfective": "пытаться",
+      "russianPerfective": "попытаться",
+      "topic": "Действия",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Опитвам без се может означать пробовать еду.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 21
+      },
+      "acceptedImperfective": [
+        "опитвам се"
+      ],
+      "acceptedPerfective": [
+        "опитам се"
+      ],
+      "examples": {
+        "imperfective": {
+          "bg": "Опитвам се да отворя вратата.",
+          "ru": "Я пытаюсь открыть дверь."
+        },
+        "perfective": {
+          "bg": "Ще се опитам да отворя вратата.",
+          "ru": "Я попытаюсь открыть дверь."
+        }
+      }
+    },
+    {
+      "id": "bgasp-022",
+      "imperfective": "оставям",
+      "perfective": "оставя",
+      "russianImperfective": "оставлять",
+      "russianPerfective": "оставить",
+      "topic": "Быт",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Не путать с оставам — оставаться.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 22
+      },
+      "acceptedImperfective": [
+        "оставям"
+      ],
+      "acceptedPerfective": [
+        "оставя"
+      ],
+      "examples": {
+        "imperfective": {
+          "bg": "Винаги оставям ключа на масата.",
+          "ru": "Я всегда оставляю ключ на столе."
+        },
+        "perfective": {
+          "bg": "Ще оставя ключа на масата.",
+          "ru": "Я оставлю ключ на столе."
+        }
+      }
+    },
+    {
+      "id": "bgasp-023",
+      "imperfective": "оставам",
+      "perfective": "остана",
+      "russianImperfective": "оставаться",
+      "russianPerfective": "остаться",
+      "topic": "Быт",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Не путать с оставям — оставлять что-либо.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 23
+      },
+      "acceptedImperfective": [
+        "оставам"
+      ],
+      "acceptedPerfective": [
+        "остана"
+      ],
+      "examples": {
+        "imperfective": {
+          "bg": "Обикновено оставам вкъщи в неделя.",
+          "ru": "Обычно по воскресеньям я остаюсь дома."
+        },
+        "perfective": {
+          "bg": "Утре ще остана вкъщи.",
+          "ru": "Завтра я останусь дома."
+        }
+      }
+    },
+    {
+      "id": "bgasp-024",
+      "imperfective": "отварям",
+      "perfective": "отворя",
+      "russianImperfective": "открывать",
+      "russianPerfective": "открыть",
+      "topic": "Быт",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 24
+      },
+      "acceptedImperfective": [
+        "отварям"
+      ],
+      "acceptedPerfective": [
+        "отворя"
+      ]
+    },
+    {
+      "id": "bgasp-025",
+      "imperfective": "отивам",
+      "perfective": "отида",
+      "russianImperfective": "идти; отправляться туда",
+      "russianPerfective": "пойти; отправиться туда",
+      "topic": "Движение",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Движение туда. Идвам — движение сюда или к собеседнику.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 25
+      },
+      "acceptedImperfective": [
+        "отивам"
+      ],
+      "acceptedPerfective": [
+        "отида"
+      ]
+    },
+    {
+      "id": "bgasp-026",
+      "imperfective": "отстъпвам",
+      "perfective": "отстъпя",
+      "russianImperfective": "отступать; уступать",
+      "russianPerfective": "отступить; уступить",
+      "topic": "Действия",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Контекст определяет русский перевод.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 26
+      },
+      "acceptedImperfective": [
+        "отстъпвам"
+      ],
+      "acceptedPerfective": [
+        "отстъпя"
+      ]
+    },
+    {
+      "id": "bgasp-027",
+      "imperfective": "бързам",
+      "perfective": "побързам",
+      "russianImperfective": "спешить",
+      "russianPerfective": "поспешить",
+      "topic": "Действия",
+      "studyStage": 3,
+      "relationType": "bounded",
+      "note": "Приставка добавляет ограниченное действие или побуждение: побързай! Не универсальная замена бързам.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 27
+      },
+      "acceptedImperfective": [
+        "бързам"
+      ],
+      "acceptedPerfective": [
+        "побързам"
+      ]
+    },
+    {
+      "id": "bgasp-028",
+      "imperfective": "говоря",
+      "perfective": "поговоря",
+      "russianImperfective": "говорить; разговаривать",
+      "russianPerfective": "поговорить",
+      "topic": "Общение",
+      "studyStage": 3,
+      "relationType": "bounded",
+      "note": "Разговаривать некоторое время. Не эквивалент кажа — сказать.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 28
+      },
+      "acceptedImperfective": [
+        "говоря"
+      ],
+      "acceptedPerfective": [
+        "поговоря"
+      ],
+      "examples": {
+        "imperfective": {
+          "bg": "Говоря с колегата си.",
+          "ru": "Я разговариваю со своим коллегой."
+        },
+        "perfective": {
+          "bg": "След работа ще поговоря с колегата си.",
+          "ru": "После работы я поговорю со своим коллегой."
+        }
+      }
+    },
+    {
+      "id": "bgasp-029",
+      "imperfective": "грижа се",
+      "perfective": "погрижа се",
+      "russianImperfective": "заботиться",
+      "russianPerfective": "позаботиться",
+      "topic": "Быт",
+      "studyStage": 2,
+      "relationType": "resultative",
+      "note": "Сохранять се и управление за: грижа се за някого.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 29
+      },
+      "acceptedImperfective": [
+        "грижа се"
+      ],
+      "acceptedPerfective": [
+        "погрижа се"
+      ]
+    },
+    {
+      "id": "bgasp-030",
+      "imperfective": "дишам",
+      "perfective": "подишам",
+      "russianImperfective": "дышать",
+      "russianPerfective": "подышать",
+      "topic": "Самочувствие",
+      "studyStage": 3,
+      "relationType": "bounded",
+      "note": "Дышать некоторое время. Не закончить дыхание.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 30
+      },
+      "acceptedImperfective": [
+        "дишам"
+      ],
+      "acceptedPerfective": [
+        "подишам"
+      ]
+    },
+    {
+      "id": "bgasp-031",
+      "imperfective": "подреждам",
+      "perfective": "подредя",
+      "russianImperfective": "расставлять; приводить в порядок",
+      "russianPerfective": "расставить; привести в порядок",
+      "topic": "Быт",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Подреждам стаята — приводить комнату в порядок.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 31
+      },
+      "acceptedImperfective": [
+        "подреждам"
+      ],
+      "acceptedPerfective": [
+        "подредя"
+      ]
+    },
+    {
+      "id": "bgasp-032",
+      "imperfective": "звъня",
+      "perfective": "позвъня",
+      "russianImperfective": "звонить",
+      "russianPerfective": "позвонить",
+      "topic": "Общение",
+      "studyStage": 2,
+      "relationType": "resultative",
+      "note": "Звонить по телефону или в дверь.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 32
+      },
+      "acceptedImperfective": [
+        "звъня"
+      ],
+      "acceptedPerfective": [
+        "позвъня"
+      ]
+    },
+    {
+      "id": "bgasp-033",
+      "imperfective": "мисля",
+      "perfective": "помисля",
+      "russianImperfective": "думать",
+      "russianPerfective": "подумать",
+      "topic": "Учёба",
+      "studyStage": 3,
+      "relationType": "bounded",
+      "note": "Подумать некоторое время или обдумать отдельный вопрос. Не любая ситуация с мисля.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 33
+      },
+      "acceptedImperfective": [
+        "мисля"
+      ],
+      "acceptedPerfective": [
+        "помисля"
+      ]
+    },
+    {
+      "id": "bgasp-034",
+      "imperfective": "помагам",
+      "perfective": "помогна",
+      "russianImperfective": "помогать",
+      "russianPerfective": "помочь",
+      "topic": "Общение",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 34
+      },
+      "acceptedImperfective": [
+        "помагам"
+      ],
+      "acceptedPerfective": [
+        "помогна"
+      ]
+    },
+    {
+      "id": "bgasp-035",
+      "imperfective": "питам",
+      "perfective": "попитам",
+      "russianImperfective": "спрашивать",
+      "russianPerfective": "спросить",
+      "topic": "Общение",
+      "studyStage": 2,
+      "relationType": "resultative",
+      "note": "НСВ с той же приставкой: попитвам.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 35
+      },
+      "acceptedImperfective": [
+        "питам",
+        "попитвам"
+      ],
+      "acceptedPerfective": [
+        "попитам"
+      ]
+    },
+    {
+      "id": "bgasp-036",
+      "imperfective": "преча",
+      "perfective": "попреча",
+      "russianImperfective": "мешать",
+      "russianPerfective": "помешать",
+      "topic": "Общение",
+      "studyStage": 2,
+      "relationType": "resultative",
+      "note": "Помешать конкретному действию.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 36
+      },
+      "acceptedImperfective": [
+        "преча"
+      ],
+      "acceptedPerfective": [
+        "попреча"
+      ]
+    },
+    {
+      "id": "bgasp-037",
+      "imperfective": "старая се",
+      "perfective": "постарая се",
+      "russianImperfective": "стараться",
+      "russianPerfective": "постараться",
+      "topic": "Учёба",
+      "studyStage": 3,
+      "relationType": "bounded",
+      "note": "Приложить усилия в отдельной ситуации. Сохранять се.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 37
+      },
+      "acceptedImperfective": [
+        "старая се"
+      ],
+      "acceptedPerfective": [
+        "постарая се"
+      ]
+    },
+    {
+      "id": "bgasp-038",
+      "imperfective": "стоя",
+      "perfective": "постоя",
+      "russianImperfective": "стоять",
+      "russianPerfective": "постоять",
+      "topic": "Движение",
+      "studyStage": 3,
+      "relationType": "bounded",
+      "note": "Стоять некоторое время. Стоя — состояние, не вставать.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 38
+      },
+      "acceptedImperfective": [
+        "стоя"
+      ],
+      "acceptedPerfective": [
+        "постоя"
+      ],
+      "examples": {
+        "imperfective": {
+          "bg": "Стоя пред вратата.",
+          "ru": "Я стою перед дверью."
+        },
+        "perfective": {
+          "bg": "Ще постоя тук пет минути.",
+          "ru": "Я постою здесь пять минут."
+        }
+      }
+    },
+    {
+      "id": "bgasp-039",
+      "imperfective": "превеждам",
+      "perfective": "преведа",
+      "russianImperfective": "переводить",
+      "russianPerfective": "перевести",
+      "topic": "Учёба",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Здесь перевод текста с одного языка на другой.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 39
+      },
+      "acceptedImperfective": [
+        "превеждам"
+      ],
+      "acceptedPerfective": [
+        "преведа"
+      ]
+    },
+    {
+      "id": "bgasp-040",
+      "imperfective": "привличам",
+      "perfective": "привлека",
+      "russianImperfective": "привлекать",
+      "russianPerfective": "привлечь",
+      "topic": "Действия",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Привлека, привлечеш.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 40
+      },
+      "acceptedImperfective": [
+        "привличам"
+      ],
+      "acceptedPerfective": [
+        "привлека"
+      ]
+    },
+    {
+      "id": "bgasp-041",
+      "imperfective": "готвя се",
+      "perfective": "приготвя се",
+      "russianImperfective": "готовиться",
+      "russianPerfective": "приготовиться",
+      "topic": "Быт",
+      "studyStage": 2,
+      "relationType": "resultative",
+      "note": "Стать готовым. НСВ с той же приставкой: приготвям се. Не путать с готовкой еды без се.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 41
+      },
+      "acceptedImperfective": [
+        "готвя се",
+        "приготвям се"
+      ],
+      "acceptedPerfective": [
+        "приготвя се"
+      ]
+    },
+    {
+      "id": "bgasp-042",
+      "imperfective": "продължавам",
+      "perfective": "продължа",
+      "russianImperfective": "продолжать",
+      "russianPerfective": "продолжить",
+      "topic": "Действия",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 42
+      },
+      "acceptedImperfective": [
+        "продължавам"
+      ],
+      "acceptedPerfective": [
+        "продължа"
+      ]
+    },
+    {
+      "id": "bgasp-043",
+      "imperfective": "чета",
+      "perfective": "прочета",
+      "russianImperfective": "читать",
+      "russianPerfective": "прочитать",
+      "topic": "Учёба",
+      "studyStage": 2,
+      "relationType": "resultative",
+      "note": "Прочитать заданный текст. В презентации также прочитам: это НСВ с той же приставкой.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 43
+      },
+      "acceptedImperfective": [
+        "чета",
+        "прочитам"
+      ],
+      "acceptedPerfective": [
+        "прочета"
+      ]
+    },
+    {
+      "id": "bgasp-044",
+      "imperfective": "разхождам се",
+      "perfective": "разходя се",
+      "russianImperfective": "гулять",
+      "russianPerfective": "погулять",
+      "topic": "Досуг",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Сохранять се. Без се — выгуливать или водить кого-либо на прогулку.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 44
+      },
+      "acceptedImperfective": [
+        "разхождам се"
+      ],
+      "acceptedPerfective": [
+        "разходя се"
+      ]
+    },
+    {
+      "id": "bgasp-045",
+      "imperfective": "решавам",
+      "perfective": "реша",
+      "russianImperfective": "решать",
+      "russianPerfective": "решить",
+      "topic": "Учёба",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Решать задачу или принимать решение. Не смешивать с реша — расчёсывать, другим глаголом.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 45
+      },
+      "acceptedImperfective": [
+        "решавам"
+      ],
+      "acceptedPerfective": [
+        "реша"
+      ]
+    },
+    {
+      "id": "bgasp-046",
+      "imperfective": "свършвам",
+      "perfective": "свърша",
+      "russianImperfective": "заканчивать",
+      "russianPerfective": "закончить",
+      "topic": "Действия",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 46
+      },
+      "acceptedImperfective": [
+        "свършвам"
+      ],
+      "acceptedPerfective": [
+        "свърша"
+      ]
+    },
+    {
+      "id": "bgasp-047",
+      "imperfective": "сядам",
+      "perfective": "седна",
+      "russianImperfective": "садиться",
+      "russianPerfective": "сесть",
+      "topic": "Быт",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "В презентации также седя. Седя — сидеть, а сядам — садиться.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 47
+      },
+      "acceptedImperfective": [
+        "сядам"
+      ],
+      "acceptedPerfective": [
+        "седна"
+      ],
+      "examples": {
+        "imperfective": {
+          "bg": "Всеки ден сядам до прозореца.",
+          "ru": "Каждый день я сажусь у окна."
+        },
+        "perfective": {
+          "bg": "Сега ще седна до прозореца.",
+          "ru": "Сейчас я сяду у окна."
+        }
+      }
+    },
+    {
+      "id": "bgasp-048",
+      "imperfective": "слизам",
+      "perfective": "сляза",
+      "russianImperfective": "спускаться; выходить из транспорта",
+      "russianPerfective": "спуститься; выйти из транспорта",
+      "topic": "Движение",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Сляза, слезеш, слязат. Выйти из комнаты — изляза.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 48
+      },
+      "acceptedImperfective": [
+        "слизам"
+      ],
+      "acceptedPerfective": [
+        "сляза"
+      ]
+    },
+    {
+      "id": "bgasp-049",
+      "imperfective": "спирам",
+      "perfective": "спра",
+      "russianImperfective": "останавливать; останавливаться",
+      "russianPerfective": "остановить; остановиться",
+      "topic": "Движение",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Исправлено несовпадение переводов в презентации: спирам колата — останавливаю машину; автобусът спира — автобус останавливается.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 49
+      },
+      "acceptedImperfective": [
+        "спирам"
+      ],
+      "acceptedPerfective": [
+        "спра"
+      ]
+    },
+    {
+      "id": "bgasp-050",
+      "imperfective": "ставам",
+      "perfective": "стана",
+      "russianImperfective": "вставать; становиться",
+      "russianPerfective": "встать; стать",
+      "topic": "Быт",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Стоя из этой строки презентации исключено: стоять не равно вставать.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 50
+      },
+      "acceptedImperfective": [
+        "ставам"
+      ],
+      "acceptedPerfective": [
+        "стана"
+      ],
+      "examples": {
+        "imperfective": {
+          "bg": "Всеки ден ставам в седем.",
+          "ru": "Каждый день я встаю в семь."
+        },
+        "perfective": {
+          "bg": "Утре ще стана в шест.",
+          "ru": "Завтра я встану в шесть."
+        }
+      }
+    },
+    {
+      "id": "bgasp-051",
+      "imperfective": "събличам се",
+      "perfective": "съблека се",
+      "russianImperfective": "раздеваться",
+      "russianPerfective": "раздеться",
+      "topic": "Быт",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Съблека се, съблечеш се. Сохранять се.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 51
+      },
+      "acceptedImperfective": [
+        "събличам се"
+      ],
+      "acceptedPerfective": [
+        "съблека се"
+      ]
+    },
+    {
+      "id": "bgasp-052",
+      "imperfective": "събуждам се",
+      "perfective": "събудя се",
+      "russianImperfective": "просыпаться",
+      "russianPerfective": "проснуться",
+      "topic": "Быт",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Без се — будить кого-либо.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 52
+      },
+      "acceptedImperfective": [
+        "събуждам се"
+      ],
+      "acceptedPerfective": [
+        "събудя се"
+      ],
+      "examples": {
+        "imperfective": {
+          "bg": "Всеки ден се събуждам рано.",
+          "ru": "Каждый день я просыпаюсь рано."
+        },
+        "perfective": {
+          "bg": "Утре ще се събудя рано.",
+          "ru": "Завтра я проснусь рано."
+        }
+      }
+    },
+    {
+      "id": "bgasp-053",
+      "imperfective": "съгласявам се",
+      "perfective": "съглася се",
+      "russianImperfective": "соглашаться",
+      "russianPerfective": "согласиться",
+      "topic": "Общение",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Сохранять се.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 53
+      },
+      "acceptedImperfective": [
+        "съгласявам се"
+      ],
+      "acceptedPerfective": [
+        "съглася се"
+      ]
+    },
+    {
+      "id": "bgasp-054",
+      "imperfective": "шия",
+      "perfective": "ушия",
+      "russianImperfective": "шить",
+      "russianPerfective": "сшить",
+      "topic": "Быт",
+      "studyStage": 2,
+      "relationType": "resultative",
+      "note": "Сшить конкретную вещь. НСВ с той же приставкой: ушивам.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 54
+      },
+      "acceptedImperfective": [
+        "шия",
+        "ушивам"
+      ],
+      "acceptedPerfective": [
+        "ушия"
+      ]
+    },
+    {
+      "id": "bgasp-055",
+      "imperfective": "чувам",
+      "perfective": "чуя",
+      "russianImperfective": "слышать",
+      "russianPerfective": "услышать",
+      "topic": "Восприятие",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 55
+      },
+      "acceptedImperfective": [
+        "чувам"
+      ],
+      "acceptedPerfective": [
+        "чуя"
+      ]
+    },
+    {
+      "id": "bgasp-056",
+      "imperfective": "срещам се",
+      "perfective": "срещна се",
+      "russianImperfective": "встречаться",
+      "russianPerfective": "встретиться",
+      "topic": "Общение",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "В презентации встречается и невозвратный вариант. Без се: срещам — встречать, срещна — встретить. Невозвратную пару следует хранить отдельной записью, если она понадобится.",
+      "provenance": {
+        "kind": "presentation",
+        "sourceId": "lesson13",
+        "tableRow": 56
+      },
+      "acceptedImperfective": [
+        "срещам се"
+      ],
+      "acceptedPerfective": [
+        "срещна се"
+      ]
+    },
+    {
+      "id": "bgasp-057",
+      "imperfective": "купувам",
+      "perfective": "купя",
+      "russianImperfective": "покупать",
+      "russianPerfective": "купить",
+      "topic": "Покупки",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "купувам"
+      ],
+      "acceptedPerfective": [
+        "купя"
+      ],
+      "examples": {
+        "imperfective": {
+          "bg": "Обикновено купувам хляб сутрин.",
+          "ru": "Обычно я покупаю хлеб утром."
+        },
+        "perfective": {
+          "bg": "Утре ще купя хляб сутринта.",
+          "ru": "Завтра я куплю хлеб утром."
+        }
+      }
+    },
+    {
+      "id": "bgasp-058",
+      "imperfective": "продавам",
+      "perfective": "продам",
+      "russianImperfective": "продавать",
+      "russianPerfective": "продать",
+      "topic": "Покупки",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "продавам"
+      ],
+      "acceptedPerfective": [
+        "продам"
+      ]
+    },
+    {
+      "id": "bgasp-059",
+      "imperfective": "плащам",
+      "perfective": "платя",
+      "russianImperfective": "платить",
+      "russianPerfective": "заплатить",
+      "topic": "Покупки",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "плащам"
+      ],
+      "acceptedPerfective": [
+        "платя"
+      ]
+    },
+    {
+      "id": "bgasp-060",
+      "imperfective": "поръчвам",
+      "perfective": "поръчам",
+      "russianImperfective": "заказывать",
+      "russianPerfective": "заказать",
+      "topic": "Покупки",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "поръчвам"
+      ],
+      "acceptedPerfective": [
+        "поръчам"
+      ]
+    },
+    {
+      "id": "bgasp-061",
+      "imperfective": "получавам",
+      "perfective": "получа",
+      "russianImperfective": "получать",
+      "russianPerfective": "получить",
+      "topic": "Общение",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "получавам"
+      ],
+      "acceptedPerfective": [
+        "получа"
+      ]
+    },
+    {
+      "id": "bgasp-062",
+      "imperfective": "изпращам",
+      "perfective": "изпратя",
+      "russianImperfective": "отправлять",
+      "russianPerfective": "отправить",
+      "topic": "Общение",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "изпращам"
+      ],
+      "acceptedPerfective": [
+        "изпратя"
+      ]
+    },
+    {
+      "id": "bgasp-063",
+      "imperfective": "намирам",
+      "perfective": "намеря",
+      "russianImperfective": "находить",
+      "russianPerfective": "найти",
+      "topic": "Быт",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "намирам"
+      ],
+      "acceptedPerfective": [
+        "намеря"
+      ]
+    },
+    {
+      "id": "bgasp-064",
+      "imperfective": "губя",
+      "perfective": "загубя",
+      "russianImperfective": "терять",
+      "russianPerfective": "потерять",
+      "topic": "Быт",
+      "studyStage": 2,
+      "relationType": "resultative",
+      "note": "Здесь о потере вещи. НСВ с той же приставкой: загубвам.",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "губя",
+        "загубвам"
+      ],
+      "acceptedPerfective": [
+        "загубя"
+      ]
+    },
+    {
+      "id": "bgasp-065",
+      "imperfective": "забравям",
+      "perfective": "забравя",
+      "russianImperfective": "забывать",
+      "russianPerfective": "забыть",
+      "topic": "Учёба",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "забравям"
+      ],
+      "acceptedPerfective": [
+        "забравя"
+      ]
+    },
+    {
+      "id": "bgasp-066",
+      "imperfective": "спомням си",
+      "perfective": "спомня си",
+      "russianImperfective": "вспоминать",
+      "russianPerfective": "вспомнить",
+      "topic": "Учёба",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Частица си входит в учебную форму. В предложении: аз си спомням, искам да си спомня.",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "спомням си"
+      ],
+      "acceptedPerfective": [
+        "спомня си"
+      ],
+      "examples": {
+        "imperfective": {
+          "bg": "Често си спомням този ден.",
+          "ru": "Я часто вспоминаю этот день."
+        },
+        "perfective": {
+          "bg": "Може би утре ще си спомня името му.",
+          "ru": "Может быть, завтра я вспомню его имя."
+        }
+      }
+    },
+    {
+      "id": "bgasp-067",
+      "imperfective": "разбирам",
+      "perfective": "разбера",
+      "russianImperfective": "понимать",
+      "russianPerfective": "понять",
+      "topic": "Учёба",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "разбирам"
+      ],
+      "acceptedPerfective": [
+        "разбера"
+      ]
+    },
+    {
+      "id": "bgasp-068",
+      "imperfective": "отговарям",
+      "perfective": "отговоря",
+      "russianImperfective": "отвечать",
+      "russianPerfective": "ответить",
+      "topic": "Общение",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "отговарям"
+      ],
+      "acceptedPerfective": [
+        "отговоря"
+      ]
+    },
+    {
+      "id": "bgasp-069",
+      "imperfective": "повтарям",
+      "perfective": "повторя",
+      "russianImperfective": "повторять",
+      "russianPerfective": "повторить",
+      "topic": "Учёба",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "повтарям"
+      ],
+      "acceptedPerfective": [
+        "повторя"
+      ]
+    },
+    {
+      "id": "bgasp-070",
+      "imperfective": "обяснявам",
+      "perfective": "обясня",
+      "russianImperfective": "объяснять",
+      "russianPerfective": "объяснить",
+      "topic": "Учёба",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "обяснявам"
+      ],
+      "acceptedPerfective": [
+        "обясня"
+      ]
+    },
+    {
+      "id": "bgasp-071",
+      "imperfective": "показвам",
+      "perfective": "покажа",
+      "russianImperfective": "показывать",
+      "russianPerfective": "показать",
+      "topic": "Учёба",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "показвам"
+      ],
+      "acceptedPerfective": [
+        "покажа"
+      ]
+    },
+    {
+      "id": "bgasp-072",
+      "imperfective": "проверявам",
+      "perfective": "проверя",
+      "russianImperfective": "проверять",
+      "russianPerfective": "проверить",
+      "topic": "Учёба",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "проверявам"
+      ],
+      "acceptedPerfective": [
+        "проверя"
+      ]
+    },
+    {
+      "id": "bgasp-073",
+      "imperfective": "поправям",
+      "perfective": "поправя",
+      "russianImperfective": "исправлять; чинить",
+      "russianPerfective": "исправить; починить",
+      "topic": "Быт",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "поправям"
+      ],
+      "acceptedPerfective": [
+        "поправя"
+      ]
+    },
+    {
+      "id": "bgasp-074",
+      "imperfective": "избирам",
+      "perfective": "избера",
+      "russianImperfective": "выбирать",
+      "russianPerfective": "выбрать",
+      "topic": "Покупки",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "избирам"
+      ],
+      "acceptedPerfective": [
+        "избера"
+      ]
+    },
+    {
+      "id": "bgasp-075",
+      "imperfective": "сменям",
+      "perfective": "сменя",
+      "russianImperfective": "менять; заменять",
+      "russianPerfective": "поменять; заменить",
+      "topic": "Быт",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "сменям"
+      ],
+      "acceptedPerfective": [
+        "сменя"
+      ]
+    },
+    {
+      "id": "bgasp-076",
+      "imperfective": "опитвам",
+      "perfective": "опитам",
+      "russianImperfective": "пробовать еду",
+      "russianPerfective": "попробовать еду",
+      "topic": "Еда",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Без се. Опитвам се — пытаться, отдельная запись набора.",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "опитвам"
+      ],
+      "acceptedPerfective": [
+        "опитам"
+      ],
+      "examples": {
+        "imperfective": {
+          "bg": "Често опитвам нови ястия.",
+          "ru": "Я часто пробую новые блюда."
+        },
+        "perfective": {
+          "bg": "Ще опитам тази супа.",
+          "ru": "Я попробую этот суп."
+        }
+      }
+    },
+    {
+      "id": "bgasp-077",
+      "imperfective": "затварям",
+      "perfective": "затворя",
+      "russianImperfective": "закрывать",
+      "russianPerfective": "закрыть",
+      "topic": "Быт",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "затварям"
+      ],
+      "acceptedPerfective": [
+        "затворя"
+      ]
+    },
+    {
+      "id": "bgasp-078",
+      "imperfective": "отключвам",
+      "perfective": "отключа",
+      "russianImperfective": "отпирать",
+      "russianPerfective": "отпереть",
+      "topic": "Быт",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Отпирать замок. Отварям — открывать, не обязательно ключом.",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "отключвам"
+      ],
+      "acceptedPerfective": [
+        "отключа"
+      ]
+    },
+    {
+      "id": "bgasp-079",
+      "imperfective": "заключвам",
+      "perfective": "заключа",
+      "russianImperfective": "запирать",
+      "russianPerfective": "запереть",
+      "topic": "Быт",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "заключвам"
+      ],
+      "acceptedPerfective": [
+        "заключа"
+      ]
+    },
+    {
+      "id": "bgasp-080",
+      "imperfective": "включвам",
+      "perfective": "включа",
+      "russianImperfective": "включать",
+      "russianPerfective": "включить",
+      "topic": "Техника",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "включвам"
+      ],
+      "acceptedPerfective": [
+        "включа"
+      ]
+    },
+    {
+      "id": "bgasp-081",
+      "imperfective": "изключвам",
+      "perfective": "изключа",
+      "russianImperfective": "выключать",
+      "russianPerfective": "выключить",
+      "topic": "Техника",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "изключвам"
+      ],
+      "acceptedPerfective": [
+        "изключа"
+      ]
+    },
+    {
+      "id": "bgasp-082",
+      "imperfective": "слагам",
+      "perfective": "сложа",
+      "russianImperfective": "класть; ставить",
+      "russianPerfective": "положить; поставить",
+      "topic": "Быт",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Выбор русского перевода зависит от предмета.",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "слагам"
+      ],
+      "acceptedPerfective": [
+        "сложа"
+      ]
+    },
+    {
+      "id": "bgasp-083",
+      "imperfective": "махам",
+      "perfective": "махна",
+      "russianImperfective": "убирать; удалять",
+      "russianPerfective": "убрать; удалить",
+      "topic": "Быт",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Здесь убрать предмет. Махам с ръка — махать рукой, другое значение.",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "махам"
+      ],
+      "acceptedPerfective": [
+        "махна"
+      ]
+    },
+    {
+      "id": "bgasp-084",
+      "imperfective": "вдигам",
+      "perfective": "вдигна",
+      "russianImperfective": "поднимать",
+      "russianPerfective": "поднять",
+      "topic": "Быт",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "вдигам"
+      ],
+      "acceptedPerfective": [
+        "вдигна"
+      ]
+    },
+    {
+      "id": "bgasp-085",
+      "imperfective": "свалям",
+      "perfective": "сваля",
+      "russianImperfective": "снимать; опускать",
+      "russianPerfective": "снять; опустить",
+      "topic": "Быт",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Например снять куртку или спустить предмет. По контексту также скачивать файл.",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "свалям"
+      ],
+      "acceptedPerfective": [
+        "сваля"
+      ]
+    },
+    {
+      "id": "bgasp-086",
+      "imperfective": "връщам",
+      "perfective": "върна",
+      "russianImperfective": "возвращать",
+      "russianPerfective": "вернуть",
+      "topic": "Быт",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Возвращать что-либо. С се — возвращаться.",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "връщам"
+      ],
+      "acceptedPerfective": [
+        "върна"
+      ]
+    },
+    {
+      "id": "bgasp-087",
+      "imperfective": "връщам се",
+      "perfective": "върна се",
+      "russianImperfective": "возвращаться",
+      "russianPerfective": "вернуться",
+      "topic": "Движение",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Сохранять се.",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "връщам се"
+      ],
+      "acceptedPerfective": [
+        "върна се"
+      ],
+      "examples": {
+        "imperfective": {
+          "bg": "Обикновено се връщам вечер.",
+          "ru": "Обычно я возвращаюсь вечером."
+        },
+        "perfective": {
+          "bg": "Утре ще се върна по-рано.",
+          "ru": "Завтра я вернусь раньше."
+        }
+      }
+    },
+    {
+      "id": "bgasp-088",
+      "imperfective": "прибирам се",
+      "perfective": "прибера се",
+      "russianImperfective": "возвращаться домой",
+      "russianPerfective": "вернуться домой",
+      "topic": "Движение",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Прибирам се вкъщи. Без се — убирать или забирать что-либо.",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "прибирам се"
+      ],
+      "acceptedPerfective": [
+        "прибера се"
+      ]
+    },
+    {
+      "id": "bgasp-089",
+      "imperfective": "тръгвам",
+      "perfective": "тръгна",
+      "russianImperfective": "отправляться; уходить",
+      "russianPerfective": "отправиться; уйти",
+      "topic": "Движение",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Начало движения. Не равно пътувам — путешествовать.",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "тръгвам"
+      ],
+      "acceptedPerfective": [
+        "тръгна"
+      ]
+    },
+    {
+      "id": "bgasp-090",
+      "imperfective": "пристигам",
+      "perfective": "пристигна",
+      "russianImperfective": "прибывать",
+      "russianPerfective": "прибыть",
+      "topic": "Движение",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "пристигам"
+      ],
+      "acceptedPerfective": [
+        "пристигна"
+      ]
+    },
+    {
+      "id": "bgasp-091",
+      "imperfective": "пресичам",
+      "perfective": "пресека",
+      "russianImperfective": "переходить улицу",
+      "russianPerfective": "перейти улицу",
+      "topic": "Движение",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Пресичам улицата.",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "пресичам"
+      ],
+      "acceptedPerfective": [
+        "пресека"
+      ]
+    },
+    {
+      "id": "bgasp-092",
+      "imperfective": "минавам",
+      "perfective": "мина",
+      "russianImperfective": "проходить; проезжать",
+      "russianPerfective": "пройти; проехать",
+      "topic": "Движение",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Здесь пройти или проехать мимо либо через место.",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "минавам"
+      ],
+      "acceptedPerfective": [
+        "мина"
+      ]
+    },
+    {
+      "id": "bgasp-093",
+      "imperfective": "чакам",
+      "perfective": "изчакам",
+      "russianImperfective": "ждать",
+      "russianPerfective": "подождать; дождаться",
+      "topic": "Общение",
+      "studyStage": 2,
+      "relationType": "resultative",
+      "note": "Дождаться момента или выждать промежуток. НСВ с той же приставкой: изчаквам.",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "чакам",
+        "изчаквам"
+      ],
+      "acceptedPerfective": [
+        "изчакам"
+      ]
+    },
+    {
+      "id": "bgasp-094",
+      "imperfective": "записвам",
+      "perfective": "запиша",
+      "russianImperfective": "записывать",
+      "russianPerfective": "записать",
+      "topic": "Учёба",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Без се — записать информацию. Записвам се — записываться на занятие.",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "записвам"
+      ],
+      "acceptedPerfective": [
+        "запиша"
+      ]
+    },
+    {
+      "id": "bgasp-095",
+      "imperfective": "подписвам",
+      "perfective": "подпиша",
+      "russianImperfective": "подписывать",
+      "russianPerfective": "подписать",
+      "topic": "Работа",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "подписвам"
+      ],
+      "acceptedPerfective": [
+        "подпиша"
+      ]
+    },
+    {
+      "id": "bgasp-096",
+      "imperfective": "рисувам",
+      "perfective": "нарисувам",
+      "russianImperfective": "рисовать",
+      "russianPerfective": "нарисовать",
+      "topic": "Досуг",
+      "studyStage": 2,
+      "relationType": "resultative",
+      "note": "Создать законченный рисунок. Не использовать нарисувам как настоящее актуального действия «сейчас рисую».",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "рисувам"
+      ],
+      "acceptedPerfective": [
+        "нарисувам"
+      ]
+    },
+    {
+      "id": "bgasp-097",
+      "imperfective": "заснемам",
+      "perfective": "заснема",
+      "russianImperfective": "снимать на фото или видео",
+      "russianPerfective": "снять на фото или видео",
+      "topic": "Техника",
+      "studyStage": 1,
+      "relationType": "core",
+      "note": "Выбрана однозначная пара заснемам — заснема вместо двувидового снимам.",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "заснемам"
+      ],
+      "acceptedPerfective": [
+        "заснема"
+      ]
+    },
+    {
+      "id": "bgasp-098",
+      "imperfective": "готвя",
+      "perfective": "сготвя",
+      "russianImperfective": "готовить еду",
+      "russianPerfective": "приготовить еду",
+      "topic": "Еда",
+      "studyStage": 2,
+      "relationType": "resultative",
+      "note": "Без се. Готвя се — готовиться, другое значение.",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "готвя"
+      ],
+      "acceptedPerfective": [
+        "сготвя"
+      ]
+    },
+    {
+      "id": "bgasp-099",
+      "imperfective": "мия",
+      "perfective": "измия",
+      "russianImperfective": "мыть",
+      "russianPerfective": "вымыть",
+      "topic": "Быт",
+      "studyStage": 2,
+      "relationType": "resultative",
+      "note": "Вымыть заданный предмет. НСВ с той же приставкой: измивам.",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "мия",
+        "измивам"
+      ],
+      "acceptedPerfective": [
+        "измия"
+      ]
+    },
+    {
+      "id": "bgasp-100",
+      "imperfective": "чистя",
+      "perfective": "изчистя",
+      "russianImperfective": "чистить; убирать",
+      "russianPerfective": "почистить; убрать начисто",
+      "topic": "Быт",
+      "studyStage": 2,
+      "relationType": "resultative",
+      "note": "Очистить или убрать до результата. НСВ с той же приставкой: изчиствам.",
+      "provenance": {
+        "kind": "added"
+      },
+      "acceptedImperfective": [
+        "чистя",
+        "изчиствам"
+      ],
+      "acceptedPerfective": [
+        "изчистя"
+      ]
+    }
+  ]
+}

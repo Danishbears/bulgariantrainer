@@ -68,7 +68,7 @@ class BulgariantrainerApplicationTests {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"index", "vocabulary", "import", "flashcards", "typing", "sentences", "statistics"})
+    @ValueSource(strings = {"index", "vocabulary", "import", "flashcards", "typing", "sentences", "statistics", "aspect-pairs"})
     void navigationDestinationsServeRussianPagesWithSharedLayout(String page) throws Exception {
         mockMvc.perform(get("/" + page + ".html"))
                 .andExpect(status().isOk())

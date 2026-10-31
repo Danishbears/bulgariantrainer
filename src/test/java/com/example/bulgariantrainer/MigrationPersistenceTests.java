@@ -39,7 +39,7 @@ class MigrationPersistenceTests {
             assertThatThrownBy(() -> execute(db, "UPDATE study_progress SET correct_attempts = 1 WHERE word_id = 1"))
                     .isInstanceOf(SQLException.class);
         }
-        assertThat(flyway.migrate().migrationsExecuted).isEqualTo(5);
+        assertThat(flyway.migrate().migrationsExecuted).isEqualTo(7);
         assertThat(flyway.migrate().migrationsExecuted).isZero();
         flyway.validate();
         try (Connection db = DriverManager.getConnection(url, "sa", "");
@@ -65,7 +65,7 @@ class MigrationPersistenceTests {
             execute(db, "INSERT INTO sentences(id, bulgarian_text, russian_text, normalized_russian, approved, archived) VALUES (1, 'Тук съм.', 'Я здесь.', 'я здесь.', TRUE, FALSE)");
             execute(db, "INSERT INTO sentence_progress(sentence_id, total_attempts, correct_attempts, partial_attempts, incorrect_attempts, last_reviewed_at) VALUES (1, 3, 1, 1, 1, CURRENT_TIMESTAMP)");
         }
-        assertThat(Flyway.configure().dataSource(url, "sa", "").cleanDisabled(true).load().migrate().migrationsExecuted).isEqualTo(1);
+        assertThat(Flyway.configure().dataSource(url, "sa", "").cleanDisabled(true).load().migrate().migrationsExecuted).isEqualTo(3);
         try (Connection db = DriverManager.getConnection(url, "sa", ""); var statement = db.createStatement()) {
             try (var row = statement.executeQuery("SELECT total_attempts, correct_attempts, successful_review_count, next_review_at FROM study_progress WHERE training_mode = 'TYPING'")) {
                 assertThat(row.next()).isTrue();
