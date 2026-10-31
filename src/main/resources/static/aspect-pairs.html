@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Видовые пары — Болгарский тренажёр</title>
+  <link rel="stylesheet" href="/css/styles.css"><link rel="stylesheet" href="/css/aspect-pairs.css">
+  <script type="module" src="/js/layout.js"></script><script type="module" src="/js/aspect-pairs.js"></script>
+</head>
+<body><main class="practice-page aspect-page">
+  <span class="badge">От процесса к результату</span><h1>Видовые пары</h1>
+  <p class="intro">Вспоминайте болгарскую форму нужного вида для указанного значения.</p>
+  <nav class="aspect-tabs toolbar" aria-label="Разделы видовых пар">
+    <a href="#practice" data-view="practice">Практика</a><a href="#pairs" data-view="pairs">Мои пары</a><a href="#import" data-view="import">Импорт JSON</a><a href="#statistics" data-view="statistics">Статистика</a><a href="#help" data-view="help">Как заниматься</a>
+  </nav>
+  <datalist id="aspect-datasets"></datalist>
+  <p id="aspect-storage-note" class="note" hidden>Сохранение в браузере недоступно. Занятие хранится на сервере; для продолжения сохраните адрес этой страницы.</p>
+
+  <section data-panel="practice" aria-labelledby="practice-title">
+    <h2 id="practice-title" class="view-title" tabindex="-1">Практика видовых пар</h2>
+    <p id="practice-message" role="status" aria-live="polite" tabindex="-1">Выберите параметры занятия.</p>
+    <button id="practice-retry" type="button" class="secondary" hidden>Повторить запрос</button>
+    <section id="aspect-resume" class="panel" hidden><h3>Продолжить занятие</h3><p>На этом устройстве сохранена ссылка на занятие. Порядок вопросов и ответы хранятся на сервере.</p><button id="aspect-resume-button" type="button">Продолжить сохранённое занятие</button></section>
+    <section id="practice-settings" class="panel">
+      <h3>Настройте занятие</h3>
+      <p class="note">У формы нет одного универсального соответствия во всех значениях. Отвечайте на вопрос именно этой карточки.</p>
+      <form id="practice-options"><fieldset id="practice-option-fields">
+        <div class="aspect-grid">
+          <label>Набор (пусто — все наборы)<input id="practice-namespace" list="aspect-datasets" maxlength="100" value="bulgarian-aspect-pairs-100" autocapitalize="off" spellcheck="false"></label>
+          <label>Число вопросов<input id="practice-size" type="number" min="1" max="100" value="20" required></label>
+          <label>Направление<select id="practice-direction"><option value="MIXED">В обе стороны</option><option value="IMPERFECTIVE_TO_PERFECTIVE">НСВ → СВ</option><option value="PERFECTIVE_TO_IMPERFECTIVE">СВ → НСВ</option></select></label>
+          <label>Очередь<select id="practice-scope"><option value="MIXED">Смешанная</option><option value="NEW">Новые</option><option value="DUE">Пора повторить</option></select></label>
+          <label>Тема (пусто — все темы)<input id="practice-topic" maxlength="255" placeholder="Например, Покупки"></label>
+        </div>
+        <fieldset class="aspect-stages"><legend>Этапы изучения</legend>
+          <label><input type="checkbox" name="practice-stage" value="1" checked> 1 — основные пары</label>
+          <label><input type="checkbox" name="practice-stage" value="2"> 2 — результат действия</label>
+          <label><input type="checkbox" name="practice-stage" value="3"> 3 — ограниченное действие</label>
+        </fieldset>
+        <p class="note">Этапы 2 и 3 включайте осознанно: значение результата или ограничения будет указано в вопросе. Это не уровни CEFR.</p>
+        <button type="submit">Проверить доступность</button>
+      </fieldset></form>
+      <p id="practice-availability" role="status" aria-live="polite">Доступность ещё не проверена.</p><button id="practice-start" type="button" disabled>Начать занятие</button>
+    </section>
+    <section id="aspect-training" class="panel" hidden aria-busy="false" aria-labelledby="aspect-prompt">
+      <div class="section-heading"><p id="practice-position"></p><button id="practice-end" type="button" class="secondary">Завершить досрочно</button></div>
+      <progress id="practice-progress" aria-label="Прогресс занятия" max="1" value="0"></progress>
+      <p id="practice-aspect" class="badge"></p>
+      <h2 id="aspect-prompt" class="aspect-prompt"><span id="practice-verb" lang="bg"></span><span aria-hidden="true"> — </span><span id="practice-meaning"></span></h2>
+      <p id="practice-instruction" class="aspect-instruction"></p>
+      <p class="note">Нужна словарная форма для указанного значения, а не предложение или спряжение по лицам.</p>
+      <form id="aspect-answer-form">
+        <label for="aspect-answer">Форма на болгарском</label><input id="aspect-answer" lang="bg" required maxlength="4000" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="practice-answer-help">
+        <p id="practice-answer-help" class="note">Enter — проверить. После обратной связи Enter — дальше.</p>
+        <div class="toolbar"><button id="practice-submit" type="submit">Проверить</button><button id="practice-reveal" type="button" class="secondary">Показать ответ</button></div>
+      </form>
+      <p id="practice-reveal-note" class="note">Раскрытие не засчитывается как самостоятельный ответ: серия сбрасывается, повторение назначается через день.</p>
+      <section id="practice-feedback" class="aspect-feedback" hidden aria-live="polite" aria-labelledby="practice-feedback-title">
+        <h3 id="practice-feedback-title"></h3><p id="practice-user-answer"></p><p id="practice-accepted"></p><div id="practice-explanation"></div><button id="practice-next" type="button">Дальше</button>
+      </section>
+    </section>
+    <section id="practice-results" class="panel" hidden aria-labelledby="practice-results-title">
+      <h3 id="practice-results-title" tabindex="-1">Результаты занятия</h3><p id="practice-result-counts"></p><p id="practice-result-accuracy"></p>
+      <h3>Ошибки и раскрытые ответы</h3><p id="practice-no-mistakes" hidden>В сохранённых ответах нет ошибок или раскрытий.</p><div id="practice-mistakes"></div>
+      <details><summary>Все вопросы занятия</summary><div id="practice-all-results"></div></details>
+      <button id="practice-new" type="button">Новое занятие</button>
+    </section>
+  </section>
+
+  <section data-panel="pairs" hidden aria-labelledby="pairs-title">
+    <div class="section-heading"><h2 id="pairs-title" class="view-title" tabindex="-1">Мои пары</h2><button id="pair-create" type="button">Добавить пару</button></div>
+    <section id="pair-editor" class="panel" hidden aria-labelledby="pair-editor-title"><h3 id="pair-editor-title">Новая пара</h3>
+      <form id="pair-form"><fieldset id="pair-editor-fields">
+        <div class="aspect-grid">
+          <label>Код набора<input id="pair-namespace" list="aspect-datasets" required maxlength="100" autocapitalize="off" spellcheck="false"></label>
+          <label>Идентификатор записи в наборе<input id="pair-external-id" required maxlength="100" autocapitalize="off" spellcheck="false"></label>
+          <label>Несовершенный вид<input id="pair-imperfective" lang="bg" required maxlength="255" spellcheck="false"></label>
+          <label>Совершенный вид<input id="pair-perfective" lang="bg" required maxlength="255" spellcheck="false"></label>
+          <label>Русское значение НСВ<input id="pair-russian-imperfective" required maxlength="1000"></label>
+          <label>Русское значение СВ<input id="pair-russian-perfective" required maxlength="1000"></label>
+          <label>Допустимые ответы НСВ — по одному на строке<textarea id="pair-accepted-imperfective" lang="bg" rows="3" required spellcheck="false"></textarea></label>
+          <label>Допустимые ответы СВ — по одному на строке<textarea id="pair-accepted-perfective" lang="bg" rows="3" required spellcheck="false"></textarea></label>
+          <label>Тема<input id="pair-topic" required maxlength="255"></label>
+          <label>Этап изучения<select id="pair-stage"><option value="1">1 — основные пары</option><option value="2">2 — результат действия</option><option value="3">3 — ограниченное действие</option></select></label>
+          <label>Связь форм<select id="pair-relation"><option value="core">Основная пара</option><option value="resultative">Результат действия</option><option value="bounded">Ограниченное действие</option></select></label>
+        </div>
+        <p class="note">Каждая основная форма должна входить в свой список допустимых ответов. Не удаляйте се или си.</p>
+        <label>Пояснение<textarea id="pair-note" rows="3" maxlength="4000"></textarea></label>
+        <details><summary>Примеры и происхождение</summary><div class="aspect-grid">
+          <label>Пример НСВ на болгарском<textarea id="pair-example-imperfective-bg" lang="bg" maxlength="4000" rows="2"></textarea></label>
+          <label>Перевод примера НСВ<textarea id="pair-example-imperfective-ru" maxlength="4000" rows="2"></textarea></label>
+          <label>Пример СВ на болгарском<textarea id="pair-example-perfective-bg" lang="bg" maxlength="4000" rows="2"></textarea></label>
+          <label>Перевод примера СВ<textarea id="pair-example-perfective-ru" maxlength="4000" rows="2"></textarea></label>
+          <label>Происхождение<select id="pair-provenance"><option value="added">Добавлено вручную</option><option value="presentation">Материал урока</option></select></label>
+          <label>Код источника<input id="pair-source" maxlength="100"></label><label>Строка таблицы источника<input id="pair-source-row" type="number" min="1"></label>
+        </div><p class="note">Примеры необязательны. Если добавляете примеры, заполните оба вида и оба перевода.</p></details>
+        <div class="toolbar"><button type="submit">Сохранить пару</button><button id="pair-cancel" type="button" class="secondary">Отмена</button></div>
+      </fieldset></form>
+      <p id="pair-editor-message" role="status" aria-live="polite" tabindex="-1"></p><button id="pair-save-retry" type="button" class="secondary" hidden>Проверить сохранение и повторить</button><button id="pair-reload" type="button" class="secondary" hidden>Загрузить актуальную запись</button>
+    </section>
+    <section class="panel"><form id="pair-filters"><fieldset id="pair-filter-fields" class="aspect-grid">
+      <label class="aspect-wide">Поиск по формам и русским значениям<input id="pair-query" type="search" maxlength="255" placeholder="Например, купувам или покупать"></label>
+      <label>Набор (пусто — все)<input id="pair-filter-namespace" list="aspect-datasets" maxlength="100"></label>
+      <label>Тема (точное название)<input id="pair-filter-topic" maxlength="255"></label>
+      <label>Этап<select id="pair-filter-stage"><option value="">Все этапы</option><option value="1">Этап 1</option><option value="2">Этап 2</option><option value="3">Этап 3</option></select></label>
+      <label>Связь форм<select id="pair-filter-relation"><option value="">Все связи</option><option value="core">Основная пара</option><option value="resultative">Результат действия</option><option value="bounded">Ограниченное действие</option></select></label>
+      <label>Записи<select id="pair-filter-archive"><option value="false">Активные</option><option value="true">Архив</option></select></label>
+      <label>На странице<select id="pair-filter-size"><option>10</option><option selected>20</option><option>50</option></select></label><button type="submit">Найти</button>
+    </fieldset></form></section>
+    <p id="pairs-message" role="status" aria-live="polite" tabindex="-1"></p><button id="pairs-retry" type="button" class="secondary" hidden>Повторить загрузку</button>
+    <div id="pair-list" class="aspect-list" aria-busy="false"></div>
+    <nav class="pagination" aria-label="Страницы видовых пар"><button id="pairs-previous" type="button" class="secondary" disabled>Назад</button><span id="pairs-page"></span><button id="pairs-next" type="button" class="secondary" disabled>Далее</button></nav>
+    <p class="note">Архив сохраняет историю и расписание. Архивные пары не попадают в новые занятия; их можно восстановить.</p>
+  </section>
+
+  <section data-panel="import" hidden aria-labelledby="aspect-import-title">
+    <h2 id="aspect-import-title" class="view-title" tabindex="-1">Импорт видовых пар</h2>
+    <section class="panel"><h3>1. Выберите файл</h3><p>Отдельный формат видовых пар, версия 1. JSON в UTF-8, до 1 МБ. Предпросмотр ничего не сохраняет; импорт слов и предложений остаётся отдельным.</p>
+      <form id="aspect-upload-form"><fieldset id="aspect-upload-fields">
+        <label>Код набора для повторного импорта<input id="aspect-import-namespace" value="bulgarian-aspect-pairs-100" required maxlength="100" autocapitalize="off" spellcheck="false"></label>
+        <p class="note">Для повторного импорта используйте тот же код: совпадение определяется по набору и идентификатору записи. Версия формата не является версией содержимого.</p>
+        <input id="aspect-file" type="file" accept=".json,application/json" hidden aria-label="Файл видовых пар JSON"><div class="toolbar"><button id="aspect-choose-file" type="button" class="secondary">Выбрать JSON</button><span id="aspect-file-name">Файл не выбран</span><button type="submit">Предпросмотр</button></div>
+      </fieldset></form>
+    </section>
+    <p id="aspect-import-message" role="status" aria-live="polite" tabindex="-1"></p><button id="aspect-import-retry" type="button" class="secondary" hidden>Повторить подтверждение</button>
+    <section id="aspect-preview" class="panel" hidden><h3>2. Проверьте изменения</h3><p id="aspect-preview-count"></p><p id="aspect-editorial-note" class="note"></p>
+      <div id="aspect-import-errors" role="alert"></div><p class="note">Новые записи отмечены. Обновления выбирайте явно после сравнения. Исправления вносите в исходный файл и создавайте новый предпросмотр. История и архивное состояние сохраняются.</p>
+      <fieldset id="aspect-preview-fields"><div class="toolbar"><button id="aspect-select-new" type="button" class="secondary">Выбрать новые</button><button id="aspect-select-none" type="button" class="secondary">Снять выбор</button></div><div id="aspect-preview-rows"></div>
+        <nav class="pagination" aria-label="Страницы предпросмотра"><button id="aspect-preview-previous" type="button" class="secondary">Назад</button><span id="aspect-preview-page"></span><button id="aspect-preview-next" type="button" class="secondary">Далее</button></nav>
+      </fieldset><button id="aspect-confirm" type="button">Подтвердить выбранные записи</button>
+    </section>
+    <section id="aspect-import-result" class="panel" hidden><h3>Импорт завершён</h3><p id="aspect-import-summary"></p><details><summary>Результат по записям</summary><ul id="aspect-import-outcomes"></ul></details><a class="button" href="#pairs">Открыть пары</a></section>
+  </section>
+
+  <section data-panel="statistics" hidden aria-labelledby="aspect-statistics-title">
+    <div class="section-heading"><h2 id="aspect-statistics-title" class="view-title" tabindex="-1">Статистика видовых пар</h2><button id="aspect-statistics-refresh" type="button" class="secondary">Обновить</button></div>
+    <p>Только этот режим — отдельно от слов, карточек и предложений. Все наборы, этапы и темы.</p>
+    <p id="aspect-statistics-message" role="status" aria-live="polite" tabindex="-1">Статистика ещё не загружена.</p>
+    <div id="aspect-statistics-content" aria-busy="false">
+      <div class="aspect-statistics-grid" aria-label="Показатели видовых пар">
+        <article class="metric"><h3>Ответов</h3><span id="aspect-stat-answered" class="value">—</span><p>Самостоятельные попытки</p></article>
+        <article class="metric"><h3>Верно</h3><span id="aspect-stat-correct" class="value">—</span><p>Совпали с ответами карточек</p></article>
+        <article class="metric"><h3>Не совпало</h3><span id="aspect-stat-incorrect" class="value">—</span><p>Не вошли в допустимые ответы</p></article>
+        <article class="metric"><h3>Пар к повторению</h3><span id="aspect-stat-due" class="value">—</span><p>С наступившим сроком</p></article>
+      </div>
+      <p id="aspect-stat-revealed" class="note">Раскрытия учитываются отдельно от ответов.</p><p id="aspect-stat-due-detail" class="note">К повторению относятся активные пары хотя бы с одним наступившим направлением.</p>
+      <section class="panel"><h3>По направлениям</h3><div id="aspect-stat-directions"></div></section>
+      <p class="note">История включает ответы из досрочных занятий и архивных пар. Раскрытия и пропуски не входят в число самостоятельных ответов. Архивные пары не входят в очередь повторения.</p>
+    </div>
+  </section>
+
+  <section data-panel="help" hidden aria-labelledby="aspect-help-title" class="panel">
+    <h2 id="aspect-help-title" class="view-title" tabindex="-1">Как заниматься</h2>
+    <p><strong>Несовершенный вид (НСВ)</strong> помогает говорить о процессе, повторении или действии без указания на его завершённость. <strong>Совершенный вид (СВ)</strong> представляет действие как целое, результат или ограниченное действие — смотрите значение карточки.</p>
+    <p><strong>Вид — не время.</strong> Это разные грамматические признаки. Мы тренируем связь форм для конкретного значения, а не таблицу времён или спряжение по лицам.</p>
+    <p>Записи даны в принятой для болгарских словарей форме <strong>первого лица единственного числа</strong>. Частицы <span lang="bg">се</span> и <span lang="bg">си</span> — значимые части учебной формы: не пропускайте их.</p>
+    <p>Например, для <span lang="bg">говоря</span> со значением «говорить» здесь может требоваться <span lang="bg">поговоря</span> — «поговорить». Это не универсальная замена во всех контекстах. У одного глагола могут быть разные связи в разных значениях.</p>
+    <p><strong>Этапы 1–3 — этапы изучения, не уровни CEFR.</strong> Начните с этапа 1. Этапы 2 и 3 включайте отдельно и внимательно читайте, какой результат или ограничение требуется.</p>
+    <p>Введите одну допустимую форму. Регистр, повторные пробелы и отдельные знаки ударения не мешают проверке, но <span lang="bg">и, й, ѝ</span> и написание букв различаются. Несовпадение означает лишь, что ответ не входит в список этой карточки.</p>
+    <p>«Показать ответ» не повышает число правильных ответов: серия этого направления сбрасывается, повторение назначается через день. Расписание каждой пары и каждого направления отдельно от других режимов.</p>
+  </section>
+  <noscript>Для видовых пар включите JavaScript. <a href="/">На главную</a></noscript>
+</main></body></html>

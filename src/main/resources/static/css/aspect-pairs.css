@@ -1,0 +1,49 @@
+.aspect-page { max-width: 1120px; min-width: 0; }
+.aspect-page * { min-width: 0; }
+.aspect-tabs { margin: 22px 0 28px; gap: 8px; }
+.aspect-tabs a { padding: 10px 15px; border-radius: 11px; text-decoration: none; background: #eef4f2; }
+.aspect-tabs a[aria-current] { color: white; background: var(--green); font-weight: 600; }
+.view-title { margin-top: 28px; }
+.aspect-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 16px 0; }
+.aspect-wide { grid-column: 1 / -1; }
+.aspect-page label:not(.aspect-stages label):not(.aspect-selection) { display: flex; flex-direction: column; gap: 6px; }
+.aspect-page input:not([type=checkbox]), .aspect-page select, .aspect-page textarea { width: 100%; }
+.aspect-page input[type=checkbox] { flex-shrink: 0; }
+.aspect-stages { margin: 20px 0 8px; }
+.aspect-stages legend { font-weight: 600; margin-bottom: 8px; }
+.aspect-stages label, .aspect-selection { display: flex; align-items: center; gap: 9px; margin-bottom: 9px; }
+.aspect-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 20px; }
+.aspect-list .empty-state { grid-column: 1 / -1; }
+.aspect-statistics-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.aspect-card, .aspect-review { overflow-wrap: anywhere; }
+.aspect-card h3 { font-size: 1.25rem; }
+.aspect-card .toolbar { margin-top: 20px; }
+.aspect-page p, .aspect-page li, .aspect-page summary, .aspect-page span, .aspect-page h2, .aspect-page h3 { overflow-wrap: anywhere; }
+.aspect-content p { white-space: pre-wrap; margin: 10px 0; }
+.aspect-content .aspect-example { padding-left: 12px; border-left: 3px solid #c7dfd1; margin: 14px 0; }
+.aspect-page details { margin: 18px 0; }
+.aspect-page summary { cursor: pointer; font-weight: 600; padding: 7px 0; }
+.aspect-page .section-heading { margin-top: 12px; }
+.aspect-prompt { font-size: clamp(1.6rem, 4vw, 2.5rem); line-height: 1.35; margin: 22px 0; }
+.aspect-instruction { font-size: 1.12rem; font-weight: 600; }
+#aspect-answer-form { display: grid; gap: 8px; }
+#aspect-answer { font-size: 1.25rem; }
+#practice-progress { width: 100%; accent-color: var(--green); height: 10px; }
+.aspect-feedback { background: #edf8f3; border-radius: 16px; padding: 22px; margin-top: 20px; }
+.aspect-feedback[data-outcome=INCORRECT] { background: #fff3ee; }
+.aspect-feedback[data-outcome=REVEALED] { background: #eef4fc; }
+.aspect-review { border-top: 1px solid var(--line); padding: 20px 0; }
+.aspect-diff { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+#aspect-preview-rows > article { border-top: 1px solid var(--line); margin: 22px 0; padding-top: 20px; }
+#aspect-import-outcomes { max-height: 350px; overflow-y: auto; padding-left: 22px; }
+.aspect-page [aria-busy=true] { opacity: .7; }
+.aspect-page button, .aspect-tabs a { white-space: normal; overflow-wrap: anywhere; }
+.aspect-page [readonly] { background: #f5f8f9; }
+@media (max-width: 620px) {
+  .aspect-grid, .aspect-list, .aspect-diff, .aspect-statistics-grid { grid-template-columns: 1fr; }
+  .aspect-page { padding-left: 16px; padding-right: 16px; }
+  .aspect-page .panel { padding: 18px; }
+  .aspect-tabs a { flex: 1 1 40%; text-align: center; padding: 10px; }
+  .aspect-page .toolbar > button { flex: 1 1 100%; }
+  .aspect-feedback { padding: 15px; }
+}

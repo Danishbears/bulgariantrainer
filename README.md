@@ -4,11 +4,22 @@ A single-user local application for learning Bulgarian vocabulary as a Russian s
 The backend provides vocabulary CRUD and search, multiple Russian translations, controlled
 Flyway migrations, sentence management, persistent training sessions, spaced repetition,
 and learning statistics. The Russian interface connects the dashboard, two-step imports,
-three training modes, and statistics to the local REST API. Authentication is not implemented.
+four training modes, and statistics to the local REST API. Authentication is not implemented.
 
 ## Interface
 
 See [FLASHCARDS.md](FLASHCARDS.md), [TYPING.md](TYPING.md), and [SENTENCES.md](SENTENCES.md) for training usage, API contracts, persistence, and verification.
+
+Aspect-pair storage, management and separate JSON preview/confirm import APIs are
+documented in [ASPECT_PAIRS.md](ASPECT_PAIRS.md). The original 100-entry dataset is
+under `learning-materials/aspect-pairs/` and is never imported at startup.
+Open `/aspect-pairs.html` for pair management, JSON import, typed practice, session
+recovery, results and Russian help. The practice API, durable sessions and
+independent schedules are documented in [ASPECT_PRACTICE.md](ASPECT_PRACTICE.md).
+Its **Статистика** tab reports answered/correct/incorrect and active pairs due for
+review separately; aspect outcomes are excluded from the existing statistics.
+See [ASPECT_PAIRS_REVIEW.md](ASPECT_PAIRS_REVIEW.md) for the final verification
+matrix, review scope and remaining manual checks.
 
 The Russian interface uses shared navigation, responsive white cards, green and blue accents,
 system fonts, and vanilla ES modules. No third-party frontend libraries or remote assets are required.
@@ -19,6 +30,8 @@ system fonts, and vanilla ES modules. No third-party frontend libraries or remot
 - `/import.html`: real document preview, corrections, confirmation, and import summary.
 - `/flashcards.html`: recognition cards with persistent sessions, ratings, progress, and session results.
 - `/typing.html`: bidirectional typed recall, balanced persistent sessions, feedback, and mistake review.
+- `/aspect-pairs.html`: aspect-pair search/edit/archive, separate JSON preview/confirm,
+  typed recall with meaning-specific prompts, independent schedules, resume and results.
 - `/sentences.html`: sentence practice and management with approved alternatives, self-assessment, linked vocabulary, and archive.
 - `/sentence-import.html`: review and confirm the supplied sentence CSV or another matching file.
   If confirmation loses its response, edits stay locked until the exact request is retried.
@@ -109,6 +122,9 @@ and a narrow viewport. These checks must not run against `data/bulgariantrainer`
 - Local user: `sa`; empty password. No authentication or H2 web console.
 - Data survives restarts. Start only one application instance for this database.
 - Stop the application before copying the database file for backup.
+- There is no application-level full backup/restore API or portable backup format.
+  The stopped-file procedure, schema upgrade and rollback limitations are documented
+  in [ASPECT_PAIRS.md](ASPECT_PAIRS.md#backup-and-migration-limitations).
 - Flyway applies versioned SQL migrations from `src/main/resources/db/migration`.
   Hibernate uses `ddl-auto=validate` in both normal and test configurations.
 - Flyway cleaning and automatic baselining are disabled. Do not edit an applied migration;
