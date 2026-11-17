@@ -85,7 +85,7 @@ class AspectFeatureUpgradeTests {
         }
         // An older stopped-file backup can be restored and upgraded by the new app.
         var migration=Flyway.configure().dataSource(url(oldBackup),"sa","").cleanDisabled(true).load();
-        assertThat(migration.migrate().migrationsExecuted).isEqualTo(2);migration.validate();
+        assertThat(migration.migrate().migrationsExecuted).isEqualTo(3);migration.validate();
         assertThat(snapshot(url(oldBackup),LEGACY)).isEqualTo(original);
         for(var rows:snapshot(url(oldBackup),ASPECT).values())assertThat(rows).isEmpty();
     }
