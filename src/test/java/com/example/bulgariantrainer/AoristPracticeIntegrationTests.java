@@ -410,6 +410,63 @@ class AoristPracticeIntegrationTests {
         assertThat(getJson(BASE+"/progress")).isEqualTo(before);
     }
 
+    @Test void statisticsSeparatePersonsTypesRevealsAndRetainArchivedHistory() throws Exception {
+        var legacy=getJson("/api/statistics"); var aspect=getJson("/api/aspect-pair-practice/statistics");
+        var verb=create("чета");
+        var typed=start(AoristExerciseType.TYPED,List.of("1sg"),1,false,StudyScope.MIXED);
+        answer(typed,"четох",200); answer(typed,"четох",200);
+        var wrong=start(AoristExerciseType.TYPED,List.of("1pl"),1,false,StudyScope.MIXED); answer(wrong,"прочетохме",200);
+        var revealed=start(AoristExerciseType.TYPED,List.of("2sg"),1,false,StudyScope.MIXED);
+        String revealUrl=BASE+"/sessions/"+revealed.path("id").asLong()+"/reveal";
+        post(revealUrl,new QuestionRequest(qid(revealed)),200); post(revealUrl,new QuestionRequest(qid(revealed)),200);
+        var choice=start(AoristExerciseType.MULTIPLE_CHOICE,List.of("1sg"),1,false,StudyScope.MIXED);
+        choose(choice,optionFor(choice,"четох"),200);
+        var skipped=start(AoristExerciseType.TYPED,List.of("3pl"),1,false,StudyScope.MIXED);
+        post(BASE+"/sessions/"+skipped.path("id").asLong()+"/complete",Map.of(),200);
+        var stats=getJson(BASE+"/statistics?datasetId=practice");
+        assertThat(stats.at("/exercises/0/answered").asLong()).isEqualTo(2);
+        assertThat(stats.at("/exercises/0/correct").asLong()).isEqualTo(1);
+        assertThat(stats.at("/exercises/0/incorrect").asLong()).isEqualTo(1);
+        assertThat(stats.at("/exercises/0/revealed").asLong()).isEqualTo(1);
+        assertThat(stats.at("/exercises/0/persons")).hasSize(6);
+        assertThat(stats.at("/exercises/0/persons/0/correct").asLong()).isEqualTo(1);
+        assertThat(stats.at("/exercises/0/persons/1/revealed").asLong()).isEqualTo(1);
+        assertThat(stats.at("/exercises/0/persons/3/incorrect").asLong()).isEqualTo(1);
+        assertThat(stats.at("/exercises/1/answered").asLong()).isEqualTo(1);
+        assertThat(stats.at("/exercises/1/correct").asLong()).isEqualTo(1);
+        assertThat(stats.at("/exercises/0/dueForReview").asLong()).isZero();
+        clock.set(NOW.plusSeconds(86400).minusNanos(1));
+        assertThat(getJson(BASE+"/statistics").at("/exercises/0/dueForReview").asLong()).isZero();
+        clock.set(NOW.plusSeconds(86400));
+        var due=getJson(BASE+"/statistics");
+        assertThat(due.at("/exercises/0/dueForReview").asLong()).isEqualTo(3);
+        assertThat(due.at("/exercises/0/dueVerbs").asLong()).isEqualTo(1);
+        assertThat(due.at("/exercises/1/dueForReview").asLong()).isEqualTo(1);
+        var changed=fixture.get("чета").deepCopy(); changed.put("note","Edited learning note");
+        verb=content.update(verb.id(),new AoristDtos.Request("practice",verb.version(),changed,null));
+        var archived=content.archive(verb.id(),new AoristDtos.ArchiveRequest(verb.version(),true));
+        var history=getJson(BASE+"/statistics");
+        assertThat(history.at("/exercises/0/answered")).isEqualTo(stats.at("/exercises/0/answered"));
+        assertThat(history.at("/exercises/0/dueForReview").asLong()).isZero();
+        content.archive(verb.id(),new AoristDtos.ArchiveRequest(archived.version(),false));
+        assertThat(getJson(BASE+"/statistics")).isEqualTo(due);
+        assertThat(count("aorist_attempts")).isEqualTo(4);
+        assertThat(getJson(BASE+"/statistics?datasetId=another").at("/exercises/0/answered").asLong()).isZero();
+        clock.set(NOW);
+        assertThat(getJson("/api/statistics")).isEqualTo(legacy);
+        assertThat(getJson("/api/aspect-pair-practice/statistics").path("answered")).isEqualTo(aspect.path("answered"));
+    }
+
+    @Test void statisticsValidateFiltersAndReturnBothEmptyExerciseTypes() throws Exception {
+        var stats=getJson(BASE+"/statistics");
+        assertThat(stats.path("exercises")).hasSize(2);
+        for(var exercise:stats.path("exercises")) {
+            for(String key:List.of("answered","correct","incorrect","revealed","dueForReview","dueVerbs")) assertThat(exercise.path(key).asLong()).isZero();
+            assertThat(exercise.path("persons")).hasSize(6);
+        }
+        mvc.perform(get(BASE+"/statistics").param("datasetId","INVALID ID")).andExpect(status().isBadRequest());
+    }
+
     private AoristDtos.Response create(String lemma) { return createEntry(fixture.get(lemma).deepCopy()); }
     private AoristDtos.Response createEntry(ObjectNode entry) {
         ObjectNode meta=document.deepCopy(); meta.remove("entries"); meta.put("datasetId","practice");

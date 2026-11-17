@@ -76,6 +76,25 @@ class AoristPracticeRecoveryTests {
             assertThat(submit(practice,initial,originalAnswer).currentQuestion()).isNull();
             assertThat(context.getBean(AoristAttemptRepository.class).count()).isEqualTo(2);
         }
+        // The supported backup is a copy of the closed H2 file, including all modes' tables.
+        Path backup=directory.resolve(type.name()+"-backup.mv.db");
+        Files.copy(directory.resolve(type.name()+".mv.db"),backup);
+        String restoredUrl="jdbc:h2:file:"+directory.resolve(type.name()+"-backup").toString().replace('\\','/')+";WRITE_DELAY=0";
+        try(var context=open(restoredUrl)) {
+            var practice=context.getBean(AoristPracticeService.class);
+            var restored=practice.current(revealed.id());
+            assertThat(restored.settings()).isEqualTo(initial.settings());
+            assertThat(restored.currentQuestion()).isNull();
+            assertThat(practice.results(revealed.id()).items().stream().map(ReviewItem::outcome)).containsExactly("CORRECT","REVEALED");
+            assertThat(context.getBean(AoristAttemptRepository.class).count()).isEqualTo(2);
+            assertThat(context.getBean(AoristProgressRepository.class).findAll()).hasSize(2)
+                    .allMatch(p->p.getExerciseType()==type && p.getTotalAttempts()==1);
+            var stats=context.getBean(AoristStatisticsService.class).overview("recovery");
+            var mode=stats.exercises().stream().filter(e->e.exerciseType()==type).findFirst().orElseThrow();
+            assertThat(mode.answered()).isEqualTo(1); assertThat(mode.correct()).isEqualTo(1);
+            assertThat(mode.revealed()).isEqualTo(1); assertThat(mode.dueForReview()).isZero();
+            assertThat(context.getBean(AoristVerbRepository.class).findAll()).hasSize(1).allMatch(AoristVerb::isArchived);
+        }
     }
     private SessionResponse submit(AoristPracticeService service,SessionResponse state,String answer) {
         UUID option=state.settings().exerciseType()==AoristExerciseType.TYPED?null:state.currentQuestion().options().stream()

@@ -13,7 +13,12 @@ labels, vanilla ES modules, labelled fieldsets, live status messages, skip link
 and visible keyboard focus. It uses real REST data; no demonstration records,
 automatic imports, generated conjugations or sentence-gap exercises are added.
 
-Views are **Практика**, **Глаголы**, **Импорт и экспорт**, **Как заниматься**.
+Views are **Практика**, **Глаголы**, **Импорт и экспорт**, **Статистика**,
+**Как заниматься**. Statistics use persisted aorist attempts and schedules,
+with separate typed/choice totals and all six persons; reveals are separate,
+archive history is retained and only active due questions enter review counts.
+See [AORIST_FINAL_REVIEW.md](AORIST_FINAL_REVIEW.md) for the statistics contract,
+final 251-test build, HTTP/browser verification and backup procedure.
 The help distinguishes aorist from aspect, dictionary forms, six person slots,
 2sg/3sg syncretism, reflexive-particle position and aorist/imperfect spelling
 overlap. It does not equate every aorist with an achieved result. Group labels
@@ -142,7 +147,7 @@ were confined to that disposable database; the supplied source file is unchanged
 | Browser errors | No unexpected browser console errors observed; the deliberate disconnected request showed the intended retry state. |
 | Final packaged build | Fresh empty state verified; keyboard skip link focused main-content without switching away from help. Temporary viewport override was reset and the created browser tab closed. |
 
-Automated checks: Maven Wrapper/JDK 21 `.\mvnw.cmd -B clean verify` passed
+At the web-interface milestone, Maven Wrapper/JDK 21 `.\mvnw.cmd -B clean verify` passed
 **249 tests**, zero failures/errors/skips, and packaged the executable JAR.
 New integration coverage guards full explanation access before answering, across
 unanswered/early-skipped persons, after all reveals and after content edits, without

@@ -3,6 +3,9 @@ import { mountManagement } from './aorist-management.js';
 import { mountImport } from './aorist-import.js';
 import { mountPractice } from './aorist-practice.js';
 
+import { mountStatistics } from './aorist-statistics.js';
+
+const statistics = mountStatistics();
 const practice = mountPractice();
 let catalogBusy = false;
 async function catalog() {
@@ -19,9 +22,10 @@ const changed = () => { catalog(); practice.refreshAvailability(); };
 const management = mountManagement(changed), importer = mountImport(changed);
 function show(focus = true) {
   const requested = location.hash.slice(1);
-  const view = ['practice', 'verbs', 'import', 'help'].includes(requested) ? requested : practice.active() ? 'practice' : importer.pending() ? 'import' : management.pending() ? 'verbs' : 'practice';
+  const view = ['practice', 'verbs', 'import', 'statistics', 'help'].includes(requested) ? requested : practice.active() ? 'practice' : importer.pending() ? 'import' : management.pending() ? 'verbs' : 'practice';
   document.querySelectorAll('[data-panel]').forEach(node => { node.hidden = node.dataset.panel !== view; });
   document.querySelectorAll('[data-view]').forEach(node => { if (node.dataset.view === view) node.setAttribute('aria-current', 'location'); else node.removeAttribute('aria-current'); });
+  if (view === 'statistics') statistics.show();
   if (view === 'verbs') management.show(); else management.hide();
   if (view === 'practice') practice.show(); else practice.hide();
   if (focus) document.querySelector(`[data-panel="${view}"] .view-title`)?.focus();

@@ -4,6 +4,8 @@ import com.example.bulgariantrainer.dto.AoristPracticeDtos.*;
 import com.example.bulgariantrainer.dto.PageResponse;
 import com.example.bulgariantrainer.entity.*;
 import com.example.bulgariantrainer.service.AoristPracticeService;
+import com.example.bulgariantrainer.service.AoristStatisticsService;
+import com.example.bulgariantrainer.dto.AoristStatisticsDtos;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Positive;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +16,11 @@ import java.util.List;
 @RestController @RequestMapping("/api/aorist-practice")
 public class AoristPracticeController {
     private final AoristPracticeService service;
-    public AoristPracticeController(AoristPracticeService service) { this.service=service; }
+    private final AoristStatisticsService statistics;
+    public AoristPracticeController(AoristPracticeService service,AoristStatisticsService statistics) { this.service=service; this.statistics=statistics; }
+    @GetMapping("/statistics") public AoristStatisticsDtos.Summary statistics(@RequestParam(required=false) String datasetId) {
+        return statistics.overview(datasetId);
+    }
     @GetMapping("/availability") public Availability availability(@RequestParam(required=false) Integer size,
             @RequestParam(required=false) AoristExerciseType exerciseType,@RequestParam(required=false) List<String> persons,
             @RequestParam(required=false) String aspect,@RequestParam(required=false) String studyGroup,

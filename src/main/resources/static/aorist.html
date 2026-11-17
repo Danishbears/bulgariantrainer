@@ -9,11 +9,18 @@
 <body><main class="practice-page aorist-page">
   <span class="badge">Формы прошедшего времени</span><h1>Аорист</h1>
   <p class="intro">Практикуйте минало свършено време: один глагол, одно лицо, одна сохранённая форма.</p>
-  <nav class="aorist-tabs toolbar" aria-label="Разделы аориста"><a href="#practice" data-view="practice">Практика</a><a href="#verbs" data-view="verbs">Глаголы</a><a href="#import" data-view="import">Импорт и экспорт</a><a href="#help" data-view="help">Как заниматься</a></nav>
+  <nav class="aorist-tabs toolbar" aria-label="Разделы аориста"><a href="#practice" data-view="practice">Практика</a><a href="#verbs" data-view="verbs">Глаголы</a><a href="#import" data-view="import">Импорт и экспорт</a><a href="#statistics" data-view="statistics">Статистика</a><a href="#help" data-view="help">Как заниматься</a></nav>
   <datalist id="aorist-datasets"></datalist><datalist id="aorist-groups"></datalist>
   <p id="aorist-storage-note" class="note" hidden>Сохранение в браузере недоступно. Занятия хранятся на сервере; сохраните адрес занятия. Несохранённый ввод останется только на этой странице.</p>
   <p id="aorist-catalog-message" role="status" aria-live="polite"></p><button id="aorist-catalog-retry" type="button" class="secondary" hidden>Повторить загрузку наборов</button>
 
+  <section data-panel="statistics" aria-labelledby="as-title" hidden>
+    <h2 id="as-title" class="view-title" tabindex="-1">Статистика аориста</h2>
+    <p class="note">Только аорист. Ввод ответа и выбор варианта учитываются отдельно. История включает архивные глаголы и незавершённые занятия. Раскрытия и пропуски не входят в число ответов или верных ответов.</p>
+    <form id="as-filter" class="toolbar"><label>Набор (пусто — все)<input id="as-dataset" list="aorist-datasets" maxlength="100" autocapitalize="off" spellcheck="false"></label><button id="as-refresh" type="submit">Обновить</button></form>
+    <p id="as-message" role="status" aria-live="polite"></p>
+    <div id="as-content" aria-busy="false"></div>
+  </section>
   <section data-panel="practice" aria-labelledby="aorist-practice-title">
     <h2 id="aorist-practice-title" class="view-title" tabindex="-1">Практика аориста</h2>
     <p id="ap-message" role="status" aria-live="polite" tabindex="-1">Выберите параметры занятия.</p><button id="ap-retry" type="button" class="secondary" hidden>Повторить запрос</button>

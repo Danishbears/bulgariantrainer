@@ -78,6 +78,16 @@ test('aorist practice: live typed/choice sessions, protected answers and JVM rec
     assert.equal(rows.reduce((n, p) => n + p.totalAttempts, 0), 4);
     assert.equal(rows.reduce((n, p) => n + p.correctAttempts, 0), 2);
     for (const p of rows) assert.equal(p.intervalDays, 1);
+    const statistics = await api('/api/aorist-practice/statistics');
+    const typed = statistics.exercises.find(mode => mode.exerciseType === 'TYPED');
+    const choice = statistics.exercises.find(mode => mode.exerciseType === 'MULTIPLE_CHOICE');
+    assert.deepEqual([typed.answered, typed.correct, typed.incorrect, typed.revealed], [2, 1, 1, 0]);
+    assert.deepEqual([choice.answered, choice.correct, choice.incorrect, choice.revealed], [1, 1, 0, 1]);
+    for (const mode of statistics.exercises) {
+      assert.equal(mode.persons.length, 6);
+      assert.equal(mode.persons.reduce((sum, row) => sum + row.answered, 0), mode.answered);
+      assert.equal(mode.dueForReview, 0, 'All verbs were archived before restart');
+    }
     assert.deepEqual(await api('/api/statistics'), saved.legacy);
     return;
   }

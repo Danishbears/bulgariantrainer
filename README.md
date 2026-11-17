@@ -31,6 +31,13 @@ Open `/aorist.html` or **Аорист** in navigation for the Russian interface;
 defaults to typed recall for **аз**. Management, six-person tables, import/export,
 typed/choice practice, resume/results and help are documented in
 [AORIST_WEB.md](AORIST_WEB.md), including actual browser checks and limitations.
+Open **Аорист → Статистика** for persisted answered/correct/incorrect counts,
+due questions and performance by all six persons, separately for typed recall
+and multiple choice. Reveals and archived history are identified explicitly;
+aorist attempts are excluded from other modes' statistics. The endpoint is
+`GET /api/aorist-practice/statistics` with optional datasetId.
+See [AORIST_FINAL_REVIEW.md](AORIST_FINAL_REVIEW.md) for launch/import instructions,
+answer rules, source limitations, backup/migration and final verification.
 Aorist, aspect-pair, vocabulary and
 sentence identities/imports remain separate. Flyway V9 adds content tables without
 modifying earlier migrations; the normal stopped-file H2 backup includes them.
