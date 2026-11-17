@@ -2,7 +2,8 @@
 
 This page documents the backend content APIs from [AORIST_PLAN.md](AORIST_PLAN.md).
 Typed/multiple-choice sessions and independent exercise schedules are now
-documented in [AORIST_PRACTICE.md](AORIST_PRACTICE.md). No aorist page is added yet.
+documented in [AORIST_PRACTICE.md](AORIST_PRACTICE.md). The Russian interface is now
+at `/aorist.html`; see [AORIST_WEB.md](AORIST_WEB.md) for usage and browser checks.
 Existing web sections and their imports remain separate.
 Use Java 21 and the existing Maven Wrapper startup instructions in README.
 

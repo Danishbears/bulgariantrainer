@@ -33,6 +33,8 @@ public class AoristPracticeController {
     @PostMapping("/sessions/{id}/next") public SessionResponse next(@PathVariable @Positive long id,@Valid @RequestBody QuestionRequest request) { return service.next(id,request); }
     @PostMapping("/sessions/{id}/complete") public SessionResponse complete(@PathVariable @Positive long id) { return service.complete(id); }
     @GetMapping("/sessions/{id}/results") public Results results(@PathVariable @Positive long id) { return service.results(id); }
+    @GetMapping("/sessions/{id}/questions/{questionId}/explanation") public Explanation explanation(@PathVariable @Positive long id,
+            @PathVariable @Positive long questionId) { return service.explanation(id,questionId); }
     @GetMapping("/progress") public List<Progress> progress(@RequestParam(required=false) String datasetId,
             @RequestParam(required=false) AoristExerciseType exerciseType,@RequestParam(required=false) String person) {
         return service.progress(datasetId,exerciseType,person);

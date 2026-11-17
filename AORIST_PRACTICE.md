@@ -4,7 +4,8 @@ The backend supports typed recall and multiple choice of Bulgarian indicative
 **минало свършено време**, using the content in [AORIST_CONTENT.md](AORIST_CONTENT.md).
 It never derives a paradigm or swaps a verb for its aspect counterpart. Both
 aspects are eligible; `чета/1pl → четохме` and `прочета/1pl → прочетохме` are
-different learning targets. No aorist frontend or automatic import is added here.
+different learning targets. The Russian interface is at `/aorist.html`, documented
+in [AORIST_WEB.md](AORIST_WEB.md). Import remains explicitly initiated and confirmed.
 
 The current user request supersedes three earlier proposals in AORIST_PLAN:
 default to **typed / 1sg**, allow different persons of a verb in one session,
@@ -115,11 +116,17 @@ with its identity unmarked. A lemma can naturally coincide with an answer; its
 display is not replaced or hidden. Typed questions have an empty options list.
 
 Only the current person's accepted answers appear after submission or reveal.
-Full content and provenance are snapshotted privately, but notes, source links,
-other persons and full paradigms are not returned by practice even after feedback:
-they can disclose later questions for the same verb. Management APIs remain the
-separate place to inspect full learning material. Early results keep skipped
-answers hidden. Choice feedback explains that a distractor is wrong for this
+Full content and provenance are snapshotted privately. A separate guarded
+`GET /sessions/{id}/questions/{questionId}/explanation` route returns
+`available`, `note`, `forms`, `source`, `notice`. It rejects unsubmitted/unrevealed
+questions (409 ANSWER_REQUIRED). For an answered/revealed question with another
+unanswered queued person of that verb, it returns available=false and null
+note/forms/source; otherwise it returns the original full content fields.
+The table is expandable in the UI. Early-skipped persons continue to withhold
+the full explanation, even in closed sessions. Reading explanations never changes
+progress. Result review items now include questionId for this guarded lookup.
+Management APIs remain the separate place to inspect full learning material.
+Early results keep skipped answers hidden. Choice feedback explains that a distractor is wrong for this
 question and may be a valid Bulgarian form in another context.
 
 ## Actions, results and recovery

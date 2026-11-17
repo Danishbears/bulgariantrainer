@@ -32,7 +32,8 @@ public final class AoristPracticeDtos {
                                   Instant startedAt,Instant completedAt,Question currentQuestion) {}
     public record SessionSummary(long id,Settings settings,SessionStatus status,int totalQuestions,
                                  int currentPosition,Instant startedAt) {}
-    public record ReviewItem(int position,Prompt prompt,String outcome,Feedback feedback) {}
+    public record Explanation(boolean available,String note,Map<String,List<String>> forms,AoristDtos.Source source,String notice) {}
+    public record ReviewItem(long questionId,int position,Prompt prompt,String outcome,Feedback feedback) {}
     public record Results(SessionResponse session,Double accuracyPercent,List<ReviewItem> items,List<ReviewItem> mistakes) {}
     public record Progress(long verbId,String person,AoristExerciseType exerciseType,int totalAttempts,int correctAttempts,
                            int successfulReviewCount,int consecutiveCorrect,int intervalDays,

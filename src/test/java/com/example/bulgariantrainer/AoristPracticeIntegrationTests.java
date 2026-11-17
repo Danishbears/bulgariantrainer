@@ -382,6 +382,34 @@ class AoristPracticeIntegrationTests {
         var result=getJson(BASE+"/sessions/"+state.path("id").asLong()+"/results"); assertThat(result.path("accuracyPercent").isNull()).isTrue();
     }
 
+    @Test void fullExplanationsAreSnapshotBasedAndCannotDiscloseUnansweredOrSkippedPersonForms() throws Exception {
+        var verb=create("чета");
+        var one=start(AoristExerciseType.TYPED,List.of("1sg"),1,false,StudyScope.NEW);
+        String firstUrl=BASE+"/sessions/"+one.path("id").asLong()+"/questions/"+qid(one)+"/explanation";
+        mvc.perform(get(firstUrl)).andExpect(status().isConflict());
+        answer(one,"четох",200);
+        var detail=getJson(firstUrl); assertThat(detail.path("available").asBoolean()).isTrue();
+        assertThat(detail.path("forms")).isEqualTo(fixture.get("чета").path("forms"));
+        assertThat(detail.path("note").asText()).isEqualTo(fixture.get("чета").path("note").asText());
+        var two=start(AoristExerciseType.TYPED,List.of("1sg","1pl"),2,false,StudyScope.MIXED);
+        String person=two.at("/currentQuestion/prompt/person").asText(); answer(two,verb.entry().forms().get(person).getFirst(),200);
+        String guarded=BASE+"/sessions/"+two.path("id").asLong()+"/questions/"+qid(two)+"/explanation";
+        var withheld=getJson(guarded); assertThat(withheld.path("available").asBoolean()).isFalse();
+        assertThat(withheld.path("forms").isNull()).isTrue(); assertThat(withheld.path("note").isNull()).isTrue(); assertThat(withheld.path("source").isNull()).isTrue();
+        post(BASE+"/sessions/"+two.path("id").asLong()+"/complete",Map.of(),200);
+        assertThat(getJson(guarded)).isEqualTo(withheld);
+        var all=start(AoristExerciseType.MULTIPLE_CHOICE,List.of("1sg","1pl"),2,false,StudyScope.MIXED);
+        var changed=fixture.get("чета").deepCopy(); changed.put("note","Changed after snapshot");
+        content.update(verb.id(),new AoristDtos.Request("practice",verb.version(),changed,null));
+        post(BASE+"/sessions/"+all.path("id").asLong()+"/reveal",Map.of("questionId",qid(all)),200);
+        var next=post(BASE+"/sessions/"+all.path("id").asLong()+"/next",Map.of("questionId",qid(all)),200);
+        post(BASE+"/sessions/"+all.path("id").asLong()+"/reveal",Map.of("questionId",qid(next)),200);
+        var before=getJson(BASE+"/progress");
+        detail=getJson(BASE+"/sessions/"+all.path("id").asLong()+"/questions/"+qid(all)+"/explanation");
+        assertThat(detail.path("available").asBoolean()).isTrue(); assertThat(detail.path("note").asText()).isEqualTo(verb.entry().note());
+        assertThat(getJson(BASE+"/progress")).isEqualTo(before);
+    }
+
     private AoristDtos.Response create(String lemma) { return createEntry(fixture.get(lemma).deepCopy()); }
     private AoristDtos.Response createEntry(ObjectNode entry) {
         ObjectNode meta=document.deepCopy(); meta.remove("entries"); meta.put("datasetId","practice");

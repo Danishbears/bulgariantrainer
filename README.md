@@ -4,7 +4,7 @@ A single-user local application for learning Bulgarian vocabulary as a Russian s
 The backend provides vocabulary CRUD and search, multiple Russian translations, controlled
 Flyway migrations, sentence management, persistent training sessions, spaced repetition,
 and learning statistics. The Russian interface connects the dashboard, two-step imports,
-four training modes, and statistics to the local REST API. Authentication is not implemented.
+five training modes, and statistics to the local REST API. Authentication is not implemented.
 
 ## Interface
 
@@ -27,7 +27,10 @@ is under `learning-materials/aorist/` and is never imported automatically. This
 content backend stores all six explicit person-form arrays. The aorist typed and
 multiple-choice practice backend, durable recovery and independent verb/person/
 exercise schedules are documented in [AORIST_PRACTICE.md](AORIST_PRACTICE.md).
-It defaults to typed recall for **аз**; no aorist screen is added yet.
+Open `/aorist.html` or **Аорист** in navigation for the Russian interface; it
+defaults to typed recall for **аз**. Management, six-person tables, import/export,
+typed/choice practice, resume/results and help are documented in
+[AORIST_WEB.md](AORIST_WEB.md), including actual browser checks and limitations.
 Aorist, aspect-pair, vocabulary and
 sentence identities/imports remain separate. Flyway V9 adds content tables without
 modifying earlier migrations; the normal stopped-file H2 backup includes them.
@@ -46,6 +49,8 @@ system fonts, and vanilla ES modules. No third-party frontend libraries or remot
 - `/typing.html`: bidirectional typed recall, balanced persistent sessions, feedback, and mistake review.
 - `/aspect-pairs.html`: aspect-pair search/edit/archive, separate JSON preview/confirm,
   typed recall with meaning-specific prompts, independent schedules, resume and results.
+- `/aorist.html`: aorist verb management and six-person tables, JSON import/export,
+  typed/choice practice with separate person labels, resume/results and Russian help.
 - `/sentences.html`: sentence practice and management with approved alternatives, self-assessment, linked vocabulary, and archive.
 - `/sentence-import.html`: review and confirm the supplied sentence CSV or another matching file.
   If confirmation loses its response, edits stay locked until the exact request is retried.
@@ -111,7 +116,7 @@ java -jar target/bulgariantrainer-0.0.1-SNAPSHOT.jar
 ```
 
 On macOS/Linux replace `.\mvnw.cmd` with `./mvnw`. Tests cover startup and static resources,
-vocabulary CRUD and import, all three training modes, review scheduling, statistics,
+vocabulary CRUD and import, learning modes, review scheduling, statistics,
 database constraints, idempotent submissions, and migration persistence. The `test` profile
 uses a separate in-memory H2 database, never the personal file database.
 

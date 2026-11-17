@@ -203,10 +203,20 @@ public class AoristPracticeService {
         AoristSession session=session(id);
         if(session.getStatus()==SessionStatus.IN_PROGRESS) throw conflict("SESSION_NOT_COMPLETED","End the session before requesting results");
         SessionResponse state=state(session);
-        var items=queue(session).stream().map(q->new ReviewItem(q.getPosition(),prompt(q),
+        var items=queue(session).stream().map(q->new ReviewItem(q.getId(),q.getPosition(),prompt(q),
                 q.getAttempt()==null?"SKIPPED":q.getAttempt().getOutcome().name(),feedback(q))).toList();
         Double accuracy=state.answeredQuestions()==0?null:Math.round(state.correctAnswers()*1000.0/state.answeredQuestions())/10.0;
         return new Results(state,accuracy,items,items.stream().filter(i->i.outcome().equals("INCORRECT")).toList());
+    }
+    @Transactional
+    public Explanation explanation(long id,long questionId) {
+        AoristSession session=session(id); AoristQuestion question=question(session,questionId);
+        if(question.getAttempt()==null) throw conflict("ANSWER_REQUIRED","Submit or reveal before requesting explanations");
+        boolean pending=queue(session).stream().anyMatch(q->q.getVerb().getId().equals(question.getVerb().getId()) && q.getAttempt()==null);
+        if(pending) return new Explanation(false,null,null,null,
+                "Полное пояснение и таблица будут доступны после ответа или раскрытия всех вопросов этого глагола. Пропущенные ответы остаются скрытыми.");
+        Entry original=snapshot(question).content();
+        return new Explanation(true,original.note(),original.forms(),original.source(),null);
     }
     @Transactional(readOnly=true)
     public List<Progress> progress(String datasetId,AoristExerciseType type,String person) {
