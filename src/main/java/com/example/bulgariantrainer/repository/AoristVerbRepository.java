@@ -7,6 +7,8 @@ import org.springframework.data.repository.query.Param;
 import java.util.*;
 
 public interface AoristVerbRepository extends JpaRepository<AoristVerb,Long>, JpaSpecificationExecutor<AoristVerb> {
+    @Query("select v.id from AoristVerb v where v.archived=false and (:datasetId is null or v.dataset.namespace=:datasetId) and (:aspect is null or v.aspect=:aspect) and (:studyGroup is null or v.studyGroup=:studyGroup) order by v.id")
+    List<Long> findPracticeIds(@Param("datasetId") String datasetId,@Param("aspect") String aspect,@Param("studyGroup") String studyGroup);
     Optional<AoristVerb> findByDatasetIdAndExternalId(Long datasetId,String externalId);
     @Query("select v.dataset.namespace from AoristVerb v where v.id=:id")
     Optional<String> findNamespace(@Param("id") long id);

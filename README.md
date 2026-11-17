@@ -24,10 +24,16 @@ matrix, review scope and remaining manual checks.
 Aorist learning-content management and dedicated JSON import/export APIs are
 documented in [AORIST_CONTENT.md](AORIST_CONTENT.md). The original 40-verb material
 is under `learning-materials/aorist/` and is never imported automatically. This
-backend milestone stores all six explicit person-form arrays; it does not yet
-add an aorist screen or practice sessions. Aorist, aspect-pair, vocabulary and
+content backend stores all six explicit person-form arrays. The aorist typed and
+multiple-choice practice backend, durable recovery and independent verb/person/
+exercise schedules are documented in [AORIST_PRACTICE.md](AORIST_PRACTICE.md).
+It defaults to typed recall for **аз**; no aorist screen is added yet.
+Aorist, aspect-pair, vocabulary and
 sentence identities/imports remain separate. Flyway V9 adds content tables without
 modifying earlier migrations; the normal stopped-file H2 backup includes them.
+V10 is an additive Java Flyway migration under `src/main/java/db/migration`;
+it preserves existing progress as TYPED while extending its key with exercise type
+and adding aorist practice tables. Do not edit applied Java or SQL migrations.
 
 The Russian interface uses shared navigation, responsive white cards, green and blue accents,
 system fonts, and vanilla ES modules. No third-party frontend libraries or remote assets are required.

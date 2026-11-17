@@ -29,7 +29,7 @@ class AoristContentPersistenceTests {
         var legacy=snapshot(url,List.of("words","study_progress","aspect_pairs","aspect_progress"));
         Path oldBackup=directory.resolve("v8-backup"); Files.copy(Path.of(database+".mv.db"),Path.of(oldBackup+".mv.db"));
         var migration=Flyway.configure().dataSource(url,"sa","").cleanDisabled(true).load();
-        assertThat(migration.migrate().migrationsExecuted).isEqualTo(1); migration.validate();
+        assertThat(migration.migrate().migrationsExecuted).isEqualTo(2); migration.validate();
         assertThat(migration.migrate().migrationsExecuted).isZero();
         ConfirmRequest request; Summary summary; String exported;
         try(var context=open(url)) {
@@ -57,7 +57,7 @@ class AoristContentPersistenceTests {
             assertThat(snapshot(url(restored),List.of("words","study_progress","aspect_pairs","aspect_progress"))).isEqualTo(legacy);
         }
         var restoredOld=Flyway.configure().dataSource(url(oldBackup),"sa","").cleanDisabled(true).load();
-        assertThat(restoredOld.migrate().migrationsExecuted).isEqualTo(1); restoredOld.validate();
+        assertThat(restoredOld.migrate().migrationsExecuted).isEqualTo(2); restoredOld.validate();
         assertThat(snapshot(url(oldBackup),List.of("words","study_progress","aspect_pairs","aspect_progress"))).isEqualTo(legacy);
         assertThat(snapshot(url(oldBackup),List.of("aorist_verbs")).get("aorist_verbs")).isEmpty();
     }

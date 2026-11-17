@@ -1,5 +1,13 @@
 # Aorist: web implementation plan
 
+Implementation update (2026-11-17): the subsequent practice request supersedes
+the original proposals for all-person defaults, once-per-verb sessions and a
+typed-only canonical schedule. Implemented policy is typed/1sg by default,
+unique verb/person per session, and independent verb/person/exercise schedules.
+Feedback is limited to the requested person to protect later questions; full
+private snapshots include persisted options. See AORIST_PRACTICE.md for the
+current backend contract; the rest below preserves the original planning record.
+
 Status: planning only, 2026-11-17. No application code, migration, import, or
 personal database is changed by this task.
 Inspected repository: `Danishbears/bulgariantrainer`, HEAD `2792dc3` on `master`

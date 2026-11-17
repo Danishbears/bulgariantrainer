@@ -1,8 +1,9 @@
 # Aorist content storage and management
 
-This milestone implements the backend content APIs from [AORIST_PLAN.md](AORIST_PLAN.md).
-It does not yet add an aorist page, typed/multiple-choice practice, sessions or
-scheduling behavior. Existing web sections and their imports remain separate.
+This page documents the backend content APIs from [AORIST_PLAN.md](AORIST_PLAN.md).
+Typed/multiple-choice sessions and independent exercise schedules are now
+documented in [AORIST_PRACTICE.md](AORIST_PRACTICE.md). No aorist page is added yet.
+Existing web sections and their imports remain separate.
 Use Java 21 and the existing Maven Wrapper startup instructions in README.
 
 ## Content and identity
@@ -27,8 +28,8 @@ different external IDs may share a lemma or represent different senses.
 
 The new tables are `aorist_datasets`, `aorist_verbs`, `aorist_forms`,
 `aorist_progress` and `aorist_import_receipts`. Progress is independently keyed
-by internal verb/person and is never updated by these content operations. No
-attempt/session tables or practice API are added in this milestone. Edits and
+by internal verb/person/exercise type after V10 and is never updated by these
+content operations. The practice backend owns its own attempt/session tables. Edits and
 archive/restore preserve verb ID, creation timestamp, progress and receipt history;
 there is no permanent-delete API. Later practice can reference these same IDs.
 
@@ -206,7 +207,7 @@ There is no application-level full backup/restore API. Continue to stop the app
 normally and copy the actual `.mv.db` file while no other instance uses it. That
 file includes all aorist tables as well as existing modes. Keep application/H2/
 schema versions and original material files with backups. Restore only while
-stopped, keeping the current file first. Older V8 copies upgrade with V9; there
+stopped, keeping the current file first. Older V8 copies upgrade through V9/V10; there
 is no automatic downgrade, arbitrary-engine compatibility or history merge.
 Never reset/baseline/clear a user's database to resolve a migration failure.
 
@@ -238,7 +239,8 @@ content and exact receipt replay, then stops its test server. It never uses the
 normal port 8080 or the personal database. The underlying optional Node test is
 skipped without `AORIST_HTTP_BASE_URL`; a skipped test is not HTTP verification.
 
-Executed on 2026-11-17:
+Content-milestone checks executed on 2026-11-17 (current practice/build checks
+are recorded separately in [AORIST_PRACTICE.md](AORIST_PRACTICE.md)):
 
 - Maven Wrapper 3.9.16 / Temurin JDK 21.0.13: initial compilation passed;
   full `.\mvnw.cmd -B clean verify` passed all **207 tests**, no failures,

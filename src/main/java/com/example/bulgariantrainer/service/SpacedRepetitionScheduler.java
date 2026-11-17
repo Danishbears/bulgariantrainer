@@ -55,6 +55,17 @@ public class SpacedRepetitionScheduler {
         progress.record(correct, now(), intervalFor(correct, progress.getConsecutiveCorrect(), progress.getRepetitionInterval()));
     }
 
+    public void record(AoristProgress progress, boolean correct) {
+        progress.record(correct, now(), intervalFor(correct, progress.getConsecutiveCorrect(), progress.getRepetitionInterval()));
+    }
+
+    public LearningCategory category(AoristProgress progress, Instant at) {
+        return category(progress == null ? 0 : progress.getTotalAttempts(),
+                progress == null ? null : progress.getNextReviewAt(),
+                progress == null ? 0 : progress.getConsecutiveCorrect(),
+                progress == null ? 0 : progress.getRepetitionInterval(), at);
+    }
+
     public LearningCategory category(AspectProgress progress, Instant at) {
         return category(progress == null ? 0 : progress.getTotalAttempts(),
                 progress == null ? null : progress.getNextReviewAt(),

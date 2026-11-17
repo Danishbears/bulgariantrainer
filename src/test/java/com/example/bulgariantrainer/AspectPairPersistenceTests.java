@@ -18,7 +18,7 @@ class AspectPairPersistenceTests {
             s.executeUpdate("INSERT INTO study_progress(word_id,training_mode,total_attempts,correct_attempts) VALUES (1,'TYPING_BG_TO_RU',4,2)");
         }
         Flyway latest=Flyway.configure().dataSource(url,"sa","").cleanDisabled(true).load();
-        assertThat(latest.migrate().migrationsExecuted).isEqualTo(3);latest.validate();
+        assertThat(latest.migrate().migrationsExecuted).isEqualTo(4);latest.validate();
         try(Connection db=DriverManager.getConnection(url,"sa","");Statement s=db.createStatement()){
             s.executeUpdate("INSERT INTO aspect_datasets(id,namespace,metadata_json,content_revision,created_at,updated_at) VALUES (1,'test','{\"formatVersion\":1}','revision',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)");
             s.executeUpdate("INSERT INTO aspect_pairs(id,dataset_id,external_id,imperfective,perfective,russian_imperfective,russian_perfective,topic,study_stage,relation_type,note,provenance_json,search_text,content_hash,created_at,updated_at) VALUES (1,1,'bgasp-057','купувам','купя','покупать','купить','Покупки',1,'core','','{\"kind\":\"added\"}','купувам купя','hash',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)");
