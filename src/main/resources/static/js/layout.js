@@ -5,6 +5,7 @@ const pages = [
   ['/flashcards.html', 'Карточки', 'M6 7h15v14H6Z M3 17V3h14'],
   ['/typing.html', 'Ввод перевода', 'M2 5h20v14H2Z M5 9h1m3 0h1m3 0h1m3 0h1 M6 15h12'],
   ['/aspect-pairs.html', 'Видовые пары', 'M3 7h16m-4-4 4 4-4 4 M21 17H5m4-4-4 4 4 4'],
+  ['/aorist.html', 'Аорист', 'M4 5h16v15H4Z M8 2v6 M16 2v6 M8 12h8 M8 16h5'],
   ['/sentence-import.html', 'Импорт предложений', 'M12 16V3 M7 8l5-5 5 5 M4 15v6h16v-6'],
   ['/sentences.html', 'Предложения', 'M3 4h18v13H9l-6 4Z M7 8h10 M7 12h7'],
   ['/statistics.html', 'Статистика', 'M4 20V10 M12 20V4 M20 20v-7'],

@@ -21,6 +21,10 @@ import java.util.Map;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
+    @ExceptionHandler(AoristException.class)
+    ResponseEntity<ApiError> aoristFailure(AoristException exception) {
+        return error(exception.getStatus(), exception.getCode(), exception.getMessage(), Map.of());
+    }
     @ExceptionHandler(AspectPairException.class)
     ResponseEntity<ApiError> aspectPairFailure(AspectPairException exception) {
         return error(exception.getStatus(), exception.getCode(), exception.getMessage(), Map.of());

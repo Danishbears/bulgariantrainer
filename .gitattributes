@@ -1,2 +1,4 @@
 /mvnw text eol=lf
 *.cmd text eol=crlf
+# Preserve the original learning document bytes and its published SHA-256.
+learning-materials/aorist/bulgarian_aorist_40.json -text

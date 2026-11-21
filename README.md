@@ -4,7 +4,7 @@ A single-user local application for learning Bulgarian vocabulary as a Russian s
 The backend provides vocabulary CRUD and search, multiple Russian translations, controlled
 Flyway migrations, sentence management, persistent training sessions, spaced repetition,
 and learning statistics. The Russian interface connects the dashboard, two-step imports,
-four training modes, and statistics to the local REST API. Authentication is not implemented.
+five training modes, and statistics to the local REST API. Authentication is not implemented.
 
 ## Interface
 
@@ -21,6 +21,30 @@ review separately; aspect outcomes are excluded from the existing statistics.
 See [ASPECT_PAIRS_REVIEW.md](ASPECT_PAIRS_REVIEW.md) for the final verification
 matrix, review scope and remaining manual checks.
 
+Aorist learning-content management and dedicated JSON import/export APIs are
+documented in [AORIST_CONTENT.md](AORIST_CONTENT.md). The original 40-verb material
+is under `learning-materials/aorist/` and is never imported automatically. This
+content backend stores all six explicit person-form arrays. The aorist typed and
+multiple-choice practice backend, durable recovery and independent verb/person/
+exercise schedules are documented in [AORIST_PRACTICE.md](AORIST_PRACTICE.md).
+Open `/aorist.html` or **Аорист** in navigation for the Russian interface; it
+defaults to typed recall for **аз**. Management, six-person tables, import/export,
+typed/choice practice, resume/results and help are documented in
+[AORIST_WEB.md](AORIST_WEB.md), including actual browser checks and limitations.
+Open **Аорист → Статистика** for persisted answered/correct/incorrect counts,
+due questions and performance by all six persons, separately for typed recall
+and multiple choice. Reveals and archived history are identified explicitly;
+aorist attempts are excluded from other modes' statistics. The endpoint is
+`GET /api/aorist-practice/statistics` with optional datasetId.
+See [AORIST_FINAL_REVIEW.md](AORIST_FINAL_REVIEW.md) for launch/import instructions,
+answer rules, source limitations, backup/migration and final verification.
+Aorist, aspect-pair, vocabulary and
+sentence identities/imports remain separate. Flyway V9 adds content tables without
+modifying earlier migrations; the normal stopped-file H2 backup includes them.
+V10 is an additive Java Flyway migration under `src/main/java/db/migration`;
+it preserves existing progress as TYPED while extending its key with exercise type
+and adding aorist practice tables. Do not edit applied Java or SQL migrations.
+
 The Russian interface uses shared navigation, responsive white cards, green and blue accents,
 system fonts, and vanilla ES modules. No third-party frontend libraries or remote assets are required.
 
@@ -32,6 +56,8 @@ system fonts, and vanilla ES modules. No third-party frontend libraries or remot
 - `/typing.html`: bidirectional typed recall, balanced persistent sessions, feedback, and mistake review.
 - `/aspect-pairs.html`: aspect-pair search/edit/archive, separate JSON preview/confirm,
   typed recall with meaning-specific prompts, independent schedules, resume and results.
+- `/aorist.html`: aorist verb management and six-person tables, JSON import/export,
+  typed/choice practice with separate person labels, resume/results and Russian help.
 - `/sentences.html`: sentence practice and management with approved alternatives, self-assessment, linked vocabulary, and archive.
 - `/sentence-import.html`: review and confirm the supplied sentence CSV or another matching file.
   If confirmation loses its response, edits stay locked until the exact request is retried.
@@ -97,7 +123,7 @@ java -jar target/bulgariantrainer-0.0.1-SNAPSHOT.jar
 ```
 
 On macOS/Linux replace `.\mvnw.cmd` with `./mvnw`. Tests cover startup and static resources,
-vocabulary CRUD and import, all three training modes, review scheduling, statistics,
+vocabulary CRUD and import, learning modes, review scheduling, statistics,
 database constraints, idempotent submissions, and migration persistence. The `test` profile
 uses a separate in-memory H2 database, never the personal file database.
 

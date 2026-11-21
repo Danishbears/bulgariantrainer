@@ -1,0 +1,1460 @@
+{
+  "format": "bulgariantrainer.aorist",
+  "formatVersion": 1,
+  "datasetId": "bg-aorist-core-40",
+  "datasetRevision": 1,
+  "createdOn": "2026-11-17",
+  "language": "bg",
+  "translationLanguage": "ru",
+  "tense": "aorist",
+  "entryForm": "first_person_singular_present_dictionary_form",
+  "notes": [
+    "Новый формат для будущего режима; существующие импорты приложения не проверены на совместимость.",
+    "Все шесть форм сохранены явно, не генерировать их из окончания заглавной формы.",
+    "Ударения не размечены; источник может показывать их.",
+    "Слова облека се и съблека се используют се после глагола в изолированном ответе. В связном предложении положение частицы зависит от окружения.",
+    "Третье лицо единственного числа общее для той, тя и то. Формы аориста не меняются по роду."
+  ],
+  "entries": [
+    {
+      "id": "bgaor-001",
+      "lemma": "гледам",
+      "russian": "смотреть",
+      "aspect": "imperfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "гледах"
+        ],
+        "2sg": [
+          "гледа"
+        ],
+        "3sg": [
+          "гледа"
+        ],
+        "1pl": [
+          "гледахме"
+        ],
+        "2pl": [
+          "гледахте"
+        ],
+        "3pl": [
+          "гледаха"
+        ]
+      },
+      "note": "Модель -ах. У этого глагола часть форм аориста и имперфекта совпадает.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/b640a7aba828181fd5e0c028399b5502",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "1_ah"
+    },
+    {
+      "id": "bgaor-002",
+      "lemma": "слушам",
+      "russian": "слушать",
+      "aspect": "imperfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "слушах"
+        ],
+        "2sg": [
+          "слуша"
+        ],
+        "3sg": [
+          "слуша"
+        ],
+        "1pl": [
+          "слушахме"
+        ],
+        "2pl": [
+          "слушахте"
+        ],
+        "3pl": [
+          "слушаха"
+        ]
+      },
+      "note": "Модель -ах. Ти/той слуша, но имперфект: слушаше.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/0727c207c4f58cdd75ea7be6744effc8",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "1_ah"
+    },
+    {
+      "id": "bgaor-003",
+      "lemma": "работя",
+      "russian": "работать",
+      "aspect": "imperfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "работих"
+        ],
+        "2sg": [
+          "работи"
+        ],
+        "3sg": [
+          "работи"
+        ],
+        "1pl": [
+          "работихме"
+        ],
+        "2pl": [
+          "работихте"
+        ],
+        "3pl": [
+          "работиха"
+        ]
+      },
+      "note": "Аорист работих; имперфект работех — другое время.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/71ba08e53154e4d3c1eca2b8beea64d8",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "2_ih"
+    },
+    {
+      "id": "bgaor-004",
+      "lemma": "уча",
+      "russian": "учить; изучать",
+      "aspect": "imperfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "учих"
+        ],
+        "2sg": [
+          "учи"
+        ],
+        "3sg": [
+          "учи"
+        ],
+        "1pl": [
+          "учихме"
+        ],
+        "2pl": [
+          "учихте"
+        ],
+        "3pl": [
+          "учиха"
+        ]
+      },
+      "note": "Учих не означает автоматически выучил до конца. Науча — отдельный глагол.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/2a7df5c5eabf94c6bb81f1de984ea4bb",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "2_ih"
+    },
+    {
+      "id": "bgaor-005",
+      "lemma": "говоря",
+      "russian": "говорить; разговаривать",
+      "aspect": "imperfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "говорих"
+        ],
+        "2sg": [
+          "говори"
+        ],
+        "3sg": [
+          "говори"
+        ],
+        "1pl": [
+          "говорихме"
+        ],
+        "2pl": [
+          "говорихте"
+        ],
+        "3pl": [
+          "говориха"
+        ]
+      },
+      "note": "Аорист говорих; имперфект говорех.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/db13fc2f4d1d05c73d324c98c29deec6",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "2_ih"
+    },
+    {
+      "id": "bgaor-006",
+      "lemma": "правя",
+      "russian": "делать",
+      "aspect": "imperfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "правих"
+        ],
+        "2sg": [
+          "прави"
+        ],
+        "3sg": [
+          "прави"
+        ],
+        "1pl": [
+          "правихме"
+        ],
+        "2pl": [
+          "правихте"
+        ],
+        "3pl": [
+          "правиха"
+        ]
+      },
+      "note": "Не подменять на направих: это аорист другого глагола, направя.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/f02c846c4eb260a0b0b70ce3eac7ce58",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "2_ih"
+    },
+    {
+      "id": "bgaor-007",
+      "lemma": "направя",
+      "russian": "сделать",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "направих"
+        ],
+        "2sg": [
+          "направи"
+        ],
+        "3sg": [
+          "направи"
+        ],
+        "1pl": [
+          "направихме"
+        ],
+        "2pl": [
+          "направихте"
+        ],
+        "3pl": [
+          "направиха"
+        ]
+      },
+      "note": "Направя — совершенный вид; направих — его форма аориста.",
+      "source": {
+        "title": "Речник Читанка",
+        "url": "https://rechnik.chitanka.info/w/направя",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "2_ih"
+    },
+    {
+      "id": "bgaor-008",
+      "lemma": "купя",
+      "russian": "купить",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "купих"
+        ],
+        "2sg": [
+          "купи"
+        ],
+        "3sg": [
+          "купи"
+        ],
+        "1pl": [
+          "купихме"
+        ],
+        "2pl": [
+          "купихте"
+        ],
+        "3pl": [
+          "купиха"
+        ]
+      },
+      "note": "Модель -их. Не купях.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/19c72412128027e9b7c0992cd896f37a",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "2_ih"
+    },
+    {
+      "id": "bgaor-009",
+      "lemma": "вземам",
+      "russian": "брать",
+      "aspect": "imperfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "вземах"
+        ],
+        "2sg": [
+          "взема"
+        ],
+        "3sg": [
+          "взема"
+        ],
+        "1pl": [
+          "вземахме"
+        ],
+        "2pl": [
+          "вземахте"
+        ],
+        "3pl": [
+          "вземаха"
+        ]
+      },
+      "note": "Вземам — НСВ. Взема — отдельный глагол СВ, его аорист взех. Вариант взимам здесь не включён отдельной парадигмой.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/4bc27df5dfa88eb5c03fba3089bb25a1",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "2_ih"
+    },
+    {
+      "id": "bgaor-010",
+      "lemma": "реша",
+      "russian": "решить",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "реших"
+        ],
+        "2sg": [
+          "реши"
+        ],
+        "3sg": [
+          "реши"
+        ],
+        "1pl": [
+          "решихме"
+        ],
+        "2pl": [
+          "решихте"
+        ],
+        "3pl": [
+          "решиха"
+        ]
+      },
+      "note": "Здесь реша — решить задачу или принять решение. Омоним реша — расчёсывать имеет аорист ресах.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/1614260f28d6427e87301799369a820e",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "2_ih"
+    },
+    {
+      "id": "bgaor-011",
+      "lemma": "пиша",
+      "russian": "писать",
+      "aspect": "imperfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "писах"
+        ],
+        "2sg": [
+          "писа"
+        ],
+        "3sg": [
+          "писа"
+        ],
+        "1pl": [
+          "писахме"
+        ],
+        "2pl": [
+          "писахте"
+        ],
+        "3pl": [
+          "писаха"
+        ]
+      },
+      "note": "Чередование ш/с: пиша — писах. Пишех — имперфект.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/87f3c65e61756ca5aff69579ba3734d9",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "3_ah_stem"
+    },
+    {
+      "id": "bgaor-012",
+      "lemma": "напиша",
+      "russian": "написать",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "написах"
+        ],
+        "2sg": [
+          "написа"
+        ],
+        "3sg": [
+          "написа"
+        ],
+        "1pl": [
+          "написахме"
+        ],
+        "2pl": [
+          "написахте"
+        ],
+        "3pl": [
+          "написаха"
+        ]
+      },
+      "note": "То же чередование ш/с: напиша — написах.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/0976a6f6fb680feb29d819063700f0a6",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "3_ah_stem"
+    },
+    {
+      "id": "bgaor-013",
+      "lemma": "кажа",
+      "russian": "сказать",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "казах"
+        ],
+        "2sg": [
+          "каза"
+        ],
+        "3sg": [
+          "каза"
+        ],
+        "1pl": [
+          "казахме"
+        ],
+        "2pl": [
+          "казахте"
+        ],
+        "3pl": [
+          "казаха"
+        ]
+      },
+      "note": "Чередование ж/з. Не кажах.",
+      "source": {
+        "title": "Речник Читанка",
+        "url": "https://rechnik.chitanka.info/w/кажа",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "3_ah_stem"
+    },
+    {
+      "id": "bgaor-014",
+      "lemma": "покажа",
+      "russian": "показать",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "показах"
+        ],
+        "2sg": [
+          "показа"
+        ],
+        "3sg": [
+          "показа"
+        ],
+        "1pl": [
+          "показахме"
+        ],
+        "2pl": [
+          "показахте"
+        ],
+        "3pl": [
+          "показаха"
+        ]
+      },
+      "note": "Чередование ж/з, как в кажа — казах.",
+      "source": {
+        "title": "Речник Читанка",
+        "url": "https://rechnik.chitanka.info/w/покажа",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "3_ah_stem"
+    },
+    {
+      "id": "bgaor-015",
+      "lemma": "започна",
+      "russian": "начать",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "започнах"
+        ],
+        "2sg": [
+          "започна"
+        ],
+        "3sg": [
+          "започна"
+        ],
+        "1pl": [
+          "започнахме"
+        ],
+        "2pl": [
+          "започнахте"
+        ],
+        "3pl": [
+          "започнаха"
+        ]
+      },
+      "note": "Модель -ах с сохранением н. Формы ти и той совпадают по написанию с заглавной формой.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/5d6db5e63b9c7bbd57d848604e4165eb",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "3_ah_stem"
+    },
+    {
+      "id": "bgaor-016",
+      "lemma": "свърша",
+      "russian": "закончить",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "свърших"
+        ],
+        "2sg": [
+          "свърши"
+        ],
+        "3sg": [
+          "свърши"
+        ],
+        "1pl": [
+          "свършихме"
+        ],
+        "2pl": [
+          "свършихте"
+        ],
+        "3pl": [
+          "свършиха"
+        ]
+      },
+      "note": "Модель -их. Не переносить модель започнах на все глаголы.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/c07c0cc12b1f4f42d7c0030e29b3b258",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "2_ih"
+    },
+    {
+      "id": "bgaor-017",
+      "lemma": "стана",
+      "russian": "встать; стать",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "станах"
+        ],
+        "2sg": [
+          "стана"
+        ],
+        "3sg": [
+          "стана"
+        ],
+        "1pl": [
+          "станахме"
+        ],
+        "2pl": [
+          "станахте"
+        ],
+        "3pl": [
+          "станаха"
+        ]
+      },
+      "note": "Глагол стана, а не стоя — стоять.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/9a18bd89302487c8dea8d5b86ee8e9f5/",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "3_ah_stem"
+    },
+    {
+      "id": "bgaor-018",
+      "lemma": "остана",
+      "russian": "остаться",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "останах"
+        ],
+        "2sg": [
+          "остана"
+        ],
+        "3sg": [
+          "остана"
+        ],
+        "1pl": [
+          "останахме"
+        ],
+        "2pl": [
+          "останахте"
+        ],
+        "3pl": [
+          "останаха"
+        ]
+      },
+      "note": "Не путать с оставя — оставить что-либо.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/1a728236ac849162586254a8a62eebb2",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "3_ah_stem"
+    },
+    {
+      "id": "bgaor-019",
+      "lemma": "разбера",
+      "russian": "понять",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "разбрах"
+        ],
+        "2sg": [
+          "разбра"
+        ],
+        "3sg": [
+          "разбра"
+        ],
+        "1pl": [
+          "разбрахме"
+        ],
+        "2pl": [
+          "разбрахте"
+        ],
+        "3pl": [
+          "разбраха"
+        ]
+      },
+      "note": "Изменение основы бер/бр: разбера — разбрах.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/d85753a49d2acd24938eed46a7075d2d",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "3_ah_stem"
+    },
+    {
+      "id": "bgaor-020",
+      "lemma": "избера",
+      "russian": "выбрать",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "избрах"
+        ],
+        "2sg": [
+          "избра"
+        ],
+        "3sg": [
+          "избра"
+        ],
+        "1pl": [
+          "избрахме"
+        ],
+        "2pl": [
+          "избрахте"
+        ],
+        "3pl": [
+          "избраха"
+        ]
+      },
+      "note": "Та же модель, что разбера — разбрах.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/e168ac9b0b44cd7a316a4cc8b67d291f",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "3_ah_stem"
+    },
+    {
+      "id": "bgaor-021",
+      "lemma": "чета",
+      "russian": "читать",
+      "aspect": "imperfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "четох"
+        ],
+        "2sg": [
+          "чете"
+        ],
+        "3sg": [
+          "чете"
+        ],
+        "1pl": [
+          "четохме"
+        ],
+        "2pl": [
+          "четохте"
+        ],
+        "3pl": [
+          "четоха"
+        ]
+      },
+      "note": "Четох, но ти/той чете. Аорист НСВ не гарантирует, что текст дочитан.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/dc124c19c02740916713840c35358911",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "4_oh"
+    },
+    {
+      "id": "bgaor-022",
+      "lemma": "прочета",
+      "russian": "прочитать",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "прочетох"
+        ],
+        "2sg": [
+          "прочете"
+        ],
+        "3sg": [
+          "прочете"
+        ],
+        "1pl": [
+          "прочетохме"
+        ],
+        "2pl": [
+          "прочетохте"
+        ],
+        "3pl": [
+          "прочетоха"
+        ]
+      },
+      "note": "Та же модель -ох/-е, что чета — четох.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/5330d884f0f1a4158d51ffd4753c5f2f",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "4_oh"
+    },
+    {
+      "id": "bgaor-023",
+      "lemma": "отида",
+      "russian": "пойти; отправиться туда",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "отидох"
+        ],
+        "2sg": [
+          "отиде"
+        ],
+        "3sg": [
+          "отиде"
+        ],
+        "1pl": [
+          "отидохме"
+        ],
+        "2pl": [
+          "отидохте"
+        ],
+        "3pl": [
+          "отидоха"
+        ]
+      },
+      "note": "Движение туда. Отишъл — причастие, не ответ для аориста.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/6eb0eebcea1289b1cae6597cee6259cd/",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "4_oh"
+    },
+    {
+      "id": "bgaor-024",
+      "lemma": "дойда",
+      "russian": "прийти",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "дойдох"
+        ],
+        "2sg": [
+          "дойде"
+        ],
+        "3sg": [
+          "дойде"
+        ],
+        "1pl": [
+          "дойдохме"
+        ],
+        "2pl": [
+          "дойдохте"
+        ],
+        "3pl": [
+          "дойдоха"
+        ]
+      },
+      "note": "Дойдох — аорист. Дошъл — причастие, а идвам — парный НСВ.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/8d9d6baa6f1f80b35c584f4f631a3b22",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "4_oh"
+    },
+    {
+      "id": "bgaor-025",
+      "lemma": "вляза",
+      "russian": "войти",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "влязох"
+        ],
+        "2sg": [
+          "влезе"
+        ],
+        "3sg": [
+          "влезе"
+        ],
+        "1pl": [
+          "влязохме"
+        ],
+        "2pl": [
+          "влязохте"
+        ],
+        "3pl": [
+          "влязоха"
+        ]
+      },
+      "note": "Два изменения: -ох/-е и я/е. Ние влязохме, а не влезохме.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/314127fae7329993f86b2b2ad70be69a",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "4_oh"
+    },
+    {
+      "id": "bgaor-026",
+      "lemma": "изляза",
+      "russian": "выйти",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "излязох"
+        ],
+        "2sg": [
+          "излезе"
+        ],
+        "3sg": [
+          "излезе"
+        ],
+        "1pl": [
+          "излязохме"
+        ],
+        "2pl": [
+          "излязохте"
+        ],
+        "3pl": [
+          "излязоха"
+        ]
+      },
+      "note": "Излязох, но ти/той излезе. Не излязе.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/f423f4ddaad89aace1bbf92d1b363c27",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "4_oh"
+    },
+    {
+      "id": "bgaor-027",
+      "lemma": "сляза",
+      "russian": "спуститься; выйти из транспорта",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "слязох"
+        ],
+        "2sg": [
+          "слезе"
+        ],
+        "3sg": [
+          "слезе"
+        ],
+        "1pl": [
+          "слязохме"
+        ],
+        "2pl": [
+          "слязохте"
+        ],
+        "3pl": [
+          "слязоха"
+        ]
+      },
+      "note": "Слязох от автобуса — вышел из автобуса. Выйти из комнаты — изляза.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/81287ac76f0fdb324e44cc166e282b45",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "4_oh"
+    },
+    {
+      "id": "bgaor-028",
+      "lemma": "донеса",
+      "russian": "принести",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "донесох"
+        ],
+        "2sg": [
+          "донесе"
+        ],
+        "3sg": [
+          "донесе"
+        ],
+        "1pl": [
+          "донесохме"
+        ],
+        "2pl": [
+          "донесохте"
+        ],
+        "3pl": [
+          "донесоха"
+        ]
+      },
+      "note": "Модель -ох/-е. Донесъл — причастие, не личная форма аориста.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/ea750d8dc27e96fa19f061edd1b6e91f",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "4_oh"
+    },
+    {
+      "id": "bgaor-029",
+      "lemma": "облека се",
+      "russian": "одеться",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": "се",
+      "forms": {
+        "1sg": [
+          "облякох се"
+        ],
+        "2sg": [
+          "облече се"
+        ],
+        "3sg": [
+          "облече се"
+        ],
+        "1pl": [
+          "облякохме се"
+        ],
+        "2pl": [
+          "облякохте се"
+        ],
+        "3pl": [
+          "облякоха се"
+        ]
+      },
+      "note": "Чередования е/я и к/ч. Без се — одеть кого-либо. Здесь ответы с се в позиции после глагола.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/f1e35fe6d25e7db519e3aab115169f94",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "4_oh"
+    },
+    {
+      "id": "bgaor-030",
+      "lemma": "съблека се",
+      "russian": "раздеться",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": "се",
+      "forms": {
+        "1sg": [
+          "съблякох се"
+        ],
+        "2sg": [
+          "съблече се"
+        ],
+        "3sg": [
+          "съблече се"
+        ],
+        "1pl": [
+          "съблякохме се"
+        ],
+        "2pl": [
+          "съблякохте се"
+        ],
+        "3pl": [
+          "съблякоха се"
+        ]
+      },
+      "note": "Та же модель, что облека се. Частица се обязательна для значения раздеться.",
+      "source": {
+        "title": "Речник Читанка",
+        "url": "https://rechnik.chitanka.info/w/съблека",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "4_oh"
+    },
+    {
+      "id": "bgaor-031",
+      "lemma": "взема",
+      "russian": "взять",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "взех"
+        ],
+        "2sg": [
+          "взе"
+        ],
+        "3sg": [
+          "взе"
+        ],
+        "1pl": [
+          "взехме"
+        ],
+        "2pl": [
+          "взехте"
+        ],
+        "3pl": [
+          "взеха"
+        ]
+      },
+      "note": "Запомнить изменение основы: взема — взех. Не вземах, это форма вземам.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/12645f66f40bbd8fa43ca4e96a2d9394",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "5_short_or_changed"
+    },
+    {
+      "id": "bgaor-032",
+      "lemma": "приема",
+      "russian": "принять",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "приех"
+        ],
+        "2sg": [
+          "прие"
+        ],
+        "3sg": [
+          "прие"
+        ],
+        "1pl": [
+          "приехме"
+        ],
+        "2pl": [
+          "приехте"
+        ],
+        "3pl": [
+          "приеха"
+        ]
+      },
+      "note": "Сходство с взех: конечное -ма исчезает. Не приемах, это форма приемам.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/9285e8ccf5cb3b8083c30180fc94e802",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "5_short_or_changed"
+    },
+    {
+      "id": "bgaor-033",
+      "lemma": "чуя",
+      "russian": "услышать",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "чух"
+        ],
+        "2sg": [
+          "чу"
+        ],
+        "3sg": [
+          "чу"
+        ],
+        "1pl": [
+          "чухме"
+        ],
+        "2pl": [
+          "чухте"
+        ],
+        "3pl": [
+          "чуха"
+        ]
+      },
+      "note": "Краткая основа чу-. Чувам — НСВ, отдельный глагол.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/283c8c6e0d6b58c95ac9312fa8f9e080",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "5_short_or_changed"
+    },
+    {
+      "id": "bgaor-034",
+      "lemma": "пия",
+      "russian": "пить",
+      "aspect": "imperfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "пих"
+        ],
+        "2sg": [
+          "пи"
+        ],
+        "3sg": [
+          "пи"
+        ],
+        "1pl": [
+          "пихме"
+        ],
+        "2pl": [
+          "пихте"
+        ],
+        "3pl": [
+          "пиха"
+        ]
+      },
+      "note": "Пих — аорист; пиех — имперфект. Вид глагола остаётся несовершенным.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/c7fd09ab7409b6adb3a26cccedf3b8c8",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "5_short_or_changed"
+    },
+    {
+      "id": "bgaor-035",
+      "lemma": "изпия",
+      "russian": "выпить",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "изпих"
+        ],
+        "2sg": [
+          "изпи"
+        ],
+        "3sg": [
+          "изпи"
+        ],
+        "1pl": [
+          "изпихме"
+        ],
+        "2pl": [
+          "изпихте"
+        ],
+        "3pl": [
+          "изпиха"
+        ]
+      },
+      "note": "Сравни пия — пих и изпия — изпих. Приставка входит в ответ.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/3cb8035bb6470d37377caccd8741cfc2",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "5_short_or_changed"
+    },
+    {
+      "id": "bgaor-036",
+      "lemma": "ям",
+      "russian": "есть; принимать пищу",
+      "aspect": "imperfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "ядох"
+        ],
+        "2sg": [
+          "яде"
+        ],
+        "3sg": [
+          "яде"
+        ],
+        "1pl": [
+          "ядохме"
+        ],
+        "2pl": [
+          "ядохте"
+        ],
+        "3pl": [
+          "ядоха"
+        ]
+      },
+      "note": "В основе появляется д. Ядох не равнозначно изядох.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/f5f3cf3b4673911821e45f7d79cd3ce4",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "4_oh"
+    },
+    {
+      "id": "bgaor-037",
+      "lemma": "изям",
+      "russian": "съесть",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "изядох"
+        ],
+        "2sg": [
+          "изяде"
+        ],
+        "3sg": [
+          "изяде"
+        ],
+        "1pl": [
+          "изядохме"
+        ],
+        "2pl": [
+          "изядохте"
+        ],
+        "3pl": [
+          "изядоха"
+        ]
+      },
+      "note": "Та же основа яд-, что ям — ядох, с приставкой из-.",
+      "source": {
+        "title": "Речник Читанка",
+        "url": "https://rechnik.chitanka.info/w/изям",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "4_oh"
+    },
+    {
+      "id": "bgaor-038",
+      "lemma": "дам",
+      "russian": "дать",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "дадох"
+        ],
+        "2sg": [
+          "даде"
+        ],
+        "3sg": [
+          "даде"
+        ],
+        "1pl": [
+          "дадохме"
+        ],
+        "2pl": [
+          "дадохте"
+        ],
+        "3pl": [
+          "дадоха"
+        ]
+      },
+      "note": "Изменение основы: дам — дадох. Давам — другой глагол, НСВ.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/5dcc94deb3fa93df0d62c61937ef054c",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "4_oh"
+    },
+    {
+      "id": "bgaor-039",
+      "lemma": "видя",
+      "russian": "увидеть",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "видях"
+        ],
+        "2sg": [
+          "видя"
+        ],
+        "3sg": [
+          "видя"
+        ],
+        "1pl": [
+          "видяхме"
+        ],
+        "2pl": [
+          "видяхте"
+        ],
+        "3pl": [
+          "видяха"
+        ]
+      },
+      "note": "Модель -ях. Во множественном числе аориста сохраняется я: видяхме.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/0b1b47495a2e808fee5477a266012985",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "6_yah"
+    },
+    {
+      "id": "bgaor-040",
+      "lemma": "заспя",
+      "russian": "заснуть",
+      "aspect": "perfective",
+      "tense": "aorist",
+      "reflexiveParticle": null,
+      "forms": {
+        "1sg": [
+          "заспах"
+        ],
+        "2sg": [
+          "заспа"
+        ],
+        "3sg": [
+          "заспа"
+        ],
+        "1pl": [
+          "заспахме"
+        ],
+        "2pl": [
+          "заспахте"
+        ],
+        "3pl": [
+          "заспаха"
+        ]
+      },
+      "note": "Заспя — заснуть, а спя — спать. Форма аориста заспах, не заспях.",
+      "source": {
+        "title": "БЕРОН",
+        "url": "https://beron.mon.bg/leksema/334f89fbea622f96a41ef1cc527b6d51",
+        "section": "Минало свършено време",
+        "checkedOn": "2026-11-17"
+      },
+      "studyGroup": "5_short_or_changed"
+    }
+  ]
+}
